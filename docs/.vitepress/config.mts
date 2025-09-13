@@ -17,7 +17,7 @@ export default defineConfig({
           // { text: 'Object-Oriented Design', link: '/sections/ood' },
           // { text: 'Design Patterns', link: '/sections/design-patterns' },
           // { text: 'Design Principles', link: '/sections/design-principles' },
-          // { text: 'High-Level System Design', link: '/sections/hld' },
+          { text: 'High-Level System Design', link: '/sections/hld' },
           // { text: 'Low-Level System Design', link: '/sections/lld' },
           // { text: 'Behavioral Skills', link: '/sections/behavioral' },
           // { text: 'Domain-Specific Topics', link: '/sections/domain-topics' },

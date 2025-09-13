@@ -26,8 +26,12 @@ Browse the sections below to find topics that resonate with your interests, from
 4. **[Design Principles](/sections/design-principles)**  
    Considerations of principles like SOLID, DRY, and KISS, shaped by work on microservices and cloud environments.
 
-5. **[High-Level System Design](/sections/hld)**  
+   -->
+
+1. **[High-Level System Design](/sections/hld/)**  
    Perspectives on scalable system architectures, including social media feeds and ride-sharing apps, with a focus on database scaling.
+
+<!--
 
 6. **[Low-Level System Design](/sections/lld)**  
    Detailed examinations of components like rate limiters and dispatchers, refined through practical implementation.
