@@ -24,15 +24,13 @@ Whether designing a scalable e-commerce platform or a real-time notification sys
    High level idea about databases.
 2. **[Databases jargons](/sections/hld/fundamentals/database-jargons)**  
    Databases jargons.
-3. **[SQL vs No-SQL](/sections/hld/fundamentals/database-sql-vs-nosql)**  
-   SQL vs NO-SQL.
-4. **[CAP Theoram](/sections/hld/fundamentals/cap-theorem)**  
+3. **[CAP Theoram](/sections/hld/fundamentals/cap-theorem)**  
    Databases jargons.
-5. **[Sharding vs Replication](/sections/hld/fundamentals/database-sharding-vs-replication)**  
+4. **[Sharding vs Replication](/sections/hld/fundamentals/database-sharding-vs-replication)**  
    SQL vs NO-SQL.
-6. **[Caching](/sections/hld/fundamentals/caching)**  
+5. **[Caching](/sections/hld/fundamentals/caching)**  
    Caching.
-7. **[Database Indexing](/sections/hld/fundamentals/database-indexing)**  
+6. **[Database Indexing](/sections/hld/fundamentals/database-indexing)**  
    Caching.
 
 ## Blogs

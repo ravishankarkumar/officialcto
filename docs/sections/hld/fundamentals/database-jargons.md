@@ -117,7 +117,7 @@ Whether it’s Postgres, Cassandra, or MongoDB, these concepts are the foundatio
 
 ---
 
-👉 Next Steps: Pair this with our article on [SQL vs NoSQL databases](/sections/hld/fundamentals/database-sql-vs-nosql.md) and [Scaling to Millions of Users](/sections/hld/scaling-to-millions-users.md) for complete HLD prep.
+👉 Next Steps: Pair this with our article on [Databases](/sections/hld/fundamentals/database) and [Scaling to Millions of Users](/sections/hld/scaling-to-millions-users.md) for complete HLD prep.
 
 
 ---
