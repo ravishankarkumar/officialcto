@@ -10,9 +10,12 @@ The path to software engineering excellence is shaped by experience, reflection,
 
 Browse the sections below to find topics that resonate with your interests, from optimizing code to designing complex architectures. Each section provides a space to deepen your understanding and connect with practical challenges.
 
+---
+**[Interview one pager](/sections/interview-one-pager)**  Mandatory One pages doc for attempting interviews, dos and don'ts.
+
 ## Sections
-0. **[Interview one pager](/sections/interview-one-pager)**  
-   One pages doc for attemptign interviews.
+1. **[Database](/sections/database/)** Detailed review of database concepts asked in interviews.
+2. **[High-Level System Design](/sections/hld/)** Perspectives on scalable system architectures, including social media feeds and ride-sharing apps, with a focus on database scaling.
 
 <!-- 1. **[Algorithms and Data Structures](/sections/algorithms)**  
    Reflections on problem-solving techniques, including patterns and advanced structures, informed by real-world coding challenges.
@@ -25,13 +28,6 @@ Browse the sections below to find topics that resonate with your interests, from
 
 4. **[Design Principles](/sections/design-principles)**  
    Considerations of principles like SOLID, DRY, and KISS, shaped by work on microservices and cloud environments.
-
-   -->
-
-1. **[High-Level System Design](/sections/hld/)**  
-   Perspectives on scalable system architectures, including social media feeds and ride-sharing apps, with a focus on database scaling.
-
-<!--
 
 6. **[Low-Level System Design](/sections/lld)**  
    Detailed examinations of components like rate limiters and dispatchers, refined through practical implementation.

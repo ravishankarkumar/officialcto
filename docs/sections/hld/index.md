@@ -20,20 +20,8 @@ Whether designing a scalable e-commerce platform or a real-time notification sys
 - Design robust Java systems with clean code practices (Section 9). -->
 
 ## Prerequisites (Fundamentals)
-1. **[Databases](/sections/hld/fundamentals/database)**  
+1. **[Databases](/sections/database/)**  
    High level idea about databases.
-2. **[Databases jargons](/sections/hld/fundamentals/database-jargons)**  
-   Databases jargons.
-3. **[SQL vs No-SQL](/sections/hld/fundamentals/database-sql-vs-nosql)**  
-   SQL vs NO-SQL.
-4. **[CAP Theoram](/sections/hld/fundamentals/cap-theorem)**  
-   Databases jargons.
-5. **[Sharding vs Replication](/sections/hld/fundamentals/database-sharding-vs-replication)**  
-   SQL vs NO-SQL.
-6. **[Caching](/sections/hld/fundamentals/caching)**  
-   Caching.
-7. **[Database Indexing](/sections/hld/fundamentals/database-indexing)**  
-   Caching.
 
 ## Blogs
 <!-- 1. **HLD Basics: Components and Diagrams** (15 min)  

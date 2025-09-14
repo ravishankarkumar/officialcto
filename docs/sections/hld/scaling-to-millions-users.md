@@ -10,6 +10,59 @@ There are certain patterns that are used for scaling simple monolithic structure
 
 **NOTE**: There are many philosophies in designing a high level architecture of an application including API-First principle, DevOps principle ("The phoenix project" book) and 12-factor app principle. In our case, we will try to follow [15 factor app principle](https://developer.ibm.com/articles/15-factor-applications/), which is an extension of [12 factor app principle](https://12factor.net/) to guide us in our journey. If we follow 12/15-factor app principle, it justifies our action, such as stateless architecture etc.
 
+::: info mnemonic(trick) to memorise 15-factor app methodology (developed by official CTO)
+1. (Codebase) One codebase, one application
+2. API first
+3. Dependency management
+4. Design, build, release, and run
+5. Configuration, credentials, and code
+6. Logs
+7. Disposability
+8. Backing services
+9. Environment parity
+10. Administrative processes
+11. Port binding
+12. Stateless processes
+13. Concurrency
+14. Telemetry
+15. Authentication and authorization
+
+--- 
+A BALD Developer Expected Competitive CTC, After Proving Design Skills.
+
+---
+
+A -> API First
+
+B -> Backing Services
+
+A -> Administrative Process
+
+L -> Logs
+
+D -> Dependency Management
+
+D (Developer) -> Design, build, release, and run
+
+E (Expected) -> Environment parity
+
+C (Competitive) -> Codebase (One codebase, one application)
+
+C -> Configuration, credentials, and code
+
+T -> Telemetry
+
+C -> Concurrency
+
+A (After) -> Authentication and authorization
+
+P (Proving) -> Port binding
+
+D (Design) -> Disposability
+
+S (Skills) -> Stateless processes
+:::
+
 ### Why scaling matters?
 
 1. User growth is unpredictable. But, a system which is designed keeping in mind scalability will find it easy to adapt when growth surge is experienced. Best example is Instagram, which had a million users in 2/3 months of its launch. Another good example if Pokemon GO.
@@ -27,7 +80,7 @@ It's best to begin with, *One server: web app + DB + cache*. A basic setup that 
 How to identify bottlenecks?
 Look at: CPU, memory, DB connections, DB data size, SPOF (single point of failure).
 
-*NOTE:* This is not a no-brainer step. Your choice of database will keep influencing your design down the road. If you are in an interview, you will need to explain why you chose a particular database. Read this [fundamental chapter](/sections/hld/fundamentals/database-sql-vs-nosql) for pointers on how to choose a database.
+*NOTE:* This is not a no-brainer step. Your choice of database will keep influencing your design down the road. If you are in an interview, you will need to explain why you chose a particular database. Read this [fundamental chapter](/sections/database/) for pointers on how to choose a database.
 
 ## Step 2: Vertical Scaling
 
@@ -63,7 +116,7 @@ Data replication types:
 2. **Primary-Primary (multi-write)**: In this strategy, we write data on multiple nodes. Useful for write-heavy use cases. Also useful in geo-distributed systems. It sounds all nice until we reach conflicts. What if same data has been modified on two separate masters? In that case we may need conflict resolution mechanisms like last-write-wins, version vectors, or app-level reconciliation. Examples incluse MySQL Group Replication, PostgreSQL BDR, MongoDB replica sets with elections.
 
 Trade-offs:
-- Consistency vs availability([CAP Theorem](/sections/hld/fundamentals/cap-theorem.md))
+- Consistency vs availability([CAP Theorem](/sections/database/cap-theorem))
   - Synchronous system provides consistency, but compromises on availability.
   - Asynchronous system ensures availability, but runs the risk of stale data reads.
   - There are some databases that have chosen eventual consistency as their model, and they are doing great.
@@ -92,7 +145,7 @@ Please note that incorrect sharding can lead to hotspot problem. Also, sharding 
 
 Oftentimes, sharding is used in combination with replication to achieve optimal results.
 
-[Please read about sharding vs replication here](/sections/hld/fundamentals/database-sharding-vs-replication.md).
+[Please read about sharding vs replication here](/sections/database/sharding-vs-replication).
 
 ### Bottleneck Mitigation
 
