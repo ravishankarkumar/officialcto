@@ -14,8 +14,8 @@ Browse the sections below to find topics that resonate with your interests, from
 **[Interview one pager](/sections/interview-one-pager)**  Mandatory One pages doc for attempting interviews, dos and don'ts.
 
 ## Sections
-1. **[Database](/sections/database/)** Detailed review of database concepts asked in interviews.
-2. **[High-Level System Design](/sections/hld/)** Perspectives on scalable system architectures, including social media feeds and ride-sharing apps, with a focus on database scaling.
+1. **[Database](/sections/database)** Detailed review of database concepts asked in interviews.
+2. **[High-Level System Design](/sections/hld)** Perspectives on scalable system architectures, including social media feeds and ride-sharing apps, with a focus on database scaling.
 
 <!-- 1. **[Algorithms and Data Structures](/sections/algorithms)**  
    Reflections on problem-solving techniques, including patterns and advanced structures, informed by real-world coding challenges.

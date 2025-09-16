@@ -94,7 +94,7 @@ This page is a **one-pager summary** of key database concepts for HLD interviews
 - Choose the right **consistency model** for the problem.  
 - Specialized databases exist for special needs (time-series, graph, search).  
 
-For deeper study, explore the full **[Database Series Hub](/sections/database/)**.
+For deeper study, explore the full **[Database Series Hub](/sections/database)**.
 
 ---
 

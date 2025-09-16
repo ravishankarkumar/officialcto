@@ -80,7 +80,7 @@ It's best to begin with, *One server: web app + DB + cache*. A basic setup that 
 How to identify bottlenecks?
 Look at: CPU, memory, DB connections, DB data size, SPOF (single point of failure).
 
-*NOTE:* This is not a no-brainer step. Your choice of database will keep influencing your design down the road. If you are in an interview, you will need to explain why you chose a particular database. Read this [fundamental chapter](/sections/database/) for pointers on how to choose a database.
+*NOTE:* This is not a no-brainer step. Your choice of database will keep influencing your design down the road. If you are in an interview, you will need to explain why you chose a particular database. Read this [fundamental chapter](/sections/database) for pointers on how to choose a database.
 
 ## Step 2: Vertical Scaling
 
