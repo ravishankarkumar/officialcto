@@ -19,13 +19,13 @@ export default defineConfig({
           { text: 'Design Patterns', link: '/sections/design-patterns' },
           { text: 'Design Principles', link: '/sections/design-principles' },
           { text: 'Low-Level System Design', link: '/sections/lld' },
+          { text: 'Database', link: '/sections/database' },
+          { text: 'High-Level System Design', link: '/sections/hld' },
           { text: 'Behavioral Skills', link: '/sections/behavioral' },
           { text: 'Domain-Specific Topics', link: '/sections/domain-topics' },
           { text: 'Clean Code', link: '/sections/clean-code' },
           { text: 'Refactoring', link: '/sections/refactoring' },
-          { text: 'Mock Practice', link: '/sections/mocks' },
-          { text: 'Database', link: '/sections/database' },
-          { text: 'High-Level System Design', link: '/sections/hld' }
+          { text: 'Mock Practice', link: '/sections/mocks' }
         ]
       },
       { text: 'About', link: '/about' },
