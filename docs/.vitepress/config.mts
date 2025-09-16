@@ -5,7 +5,7 @@ export default defineConfig({
   title: "Official CTO blogs",
   description: "Tools to become better software engineer and do well in the tech interviews",
   cleanUrls: true,
-  head: [['link', { rel: 'icon', href: 'https://officialcto.com/favicon.png' }]],
+  head: [['link', { rel: 'icon', href: 'https://officialcto.com/images/favicon.png' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
