@@ -18,7 +18,7 @@ Since many of the skills required to be a great engineer overlap with those test
 ## About the Blog Name
 You may be wondering about the domain name. *Official CTO* is deliberately bold and eye-catching—something memorable that reflects my aspirations. I aim to grow in the tech field and one day serve as CTO of a large technology company. The name serves as both a vision for the future and a brand that readers can easily recall.
 
-[Begin Exploring →](/sections/)
+[Begin Exploring →](/interview-section/)
 
 ---
 

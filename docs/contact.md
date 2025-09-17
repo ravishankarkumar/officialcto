@@ -10,7 +10,7 @@ I welcome opportunities to connect with fellow engineers, share insights, or col
 
 - **LinkedIn**: [https://www.linkedin.com/in/ravi-shankar-a725b0225/](https://www.linkedin.com/in/ravi-shankar-a725b0225/)
 
-For the latest updates or to explore the content further, consider joining the journey via the [sections page](/sections/) or upcoming YouTube content.
+For the latest updates or to explore the content further, consider joining the journey via the [sections page](/interview-section/) or upcoming YouTube content.
 
 ---
 

@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Begin Exploring
-      link: /sections/
+      link: /interview-section/
     # - theme: alt
     #   text: Watch on YouTube
     #   link: https://youtube.com/@officialcto
@@ -29,7 +29,7 @@ I am a software engineer with over eight years of experience, having worked on s
 
 Whether you’re preparing for technical interviews or seeking to refine your craft, this space offers a range of perspectives. Dive in at your own pace, and stay tuned for videos to deepen the conversation.
 
-[Begin Exploring →](/sections/)
+[Begin Exploring →](/interview-section/)
 
 ---
 
