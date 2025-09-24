@@ -11,7 +11,7 @@ The path to software engineering excellence is shaped by experience, reflection,
 Browse the sections below to find topics that resonate with your interests, from optimizing code to designing complex architectures. Each section provides a space to deepen your understanding and connect with practical challenges.
 
 ---
-**[Interview one pager](/interview-section/interview-one-pager)**  Mandatory One pages doc for attempting interviews, dos and don'ts.
+**[Facing Interviews](/interview-section/facing-interviews)**  Mandatory One pages doc for attempting interviews, dos and don'ts.
 
 ## Sections
 1. **[Database](/interview-section/database)** Detailed review of database concepts asked in interviews.

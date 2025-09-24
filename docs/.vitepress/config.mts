@@ -14,7 +14,7 @@ export default defineConfig({
       {
         text: 'Topics',
         items: [
-          { text: 'Interview one pager', link: '/interview-section/interview-one-pager' },
+          { text: 'Facing Interviews', link: '/interview-section/facing-interviews' },
           { text: 'General Engineering Awareness', link: '/interview-section/fundamentals' },
           { text: 'Object-Oriented Design', link: '/interview-section/ood' },
           { text: 'Design Patterns', link: '/interview-section/design-patterns' },
