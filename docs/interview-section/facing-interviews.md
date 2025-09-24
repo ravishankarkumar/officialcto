@@ -3,9 +3,9 @@ title: Facing Interviews
 description: Points to keep in mind while facing/attempting interviews.
 ---
 
-# Tech Interview One-Pager: Do's, Don'ts, Time Allocation, Requirements, and Revision Topics
+# On the day of Interview
 
-## 1. Do's and Don'ts of Tech Interviews
+## 1. Do's and Don'ts
 ### Do's:
 - Think out loud.
 - Clarify assumptions with the interviewer; never assume anything.

@@ -8,12 +8,18 @@ description: Understanding the OSI and TCP/IP models, their layers, roles, and i
 Networking is the backbone of modern distributed systems.  
 To understand **how data travels across the internet**, we need a clear picture of the **OSI model** and the **TCP/IP model**.
 
----
+::: info Mnemonics to remember OSI model
+  **Please Do Not Throw Sausage Pizza Away**  
+  *(Physical, Data link, Network, Transport, Session, Presentation, Application)*  
+:::
+
 
 ## 1. OSI Model (Open Systems Interconnection)
 
 The OSI model is a **conceptual framework** created by ISO to standardize network communication.  
 It divides communication into **7 layers**, each with a specific role.
+
+![OSI Model](/images/gg_osi_model.png)
 
 ### Layers of OSI Model
 
@@ -46,7 +52,7 @@ It divides communication into **7 layers**, each with a specific role.
    - User-facing services.  
    - Example: HTTP, FTP, SMTP, DNS.  
 
----
+
 
 ## 2. TCP/IP Model (Internet Protocol Suite)
 
@@ -71,7 +77,8 @@ It has **4 layers** (sometimes 5, depending on variant).
    - Combines OSI Application + Presentation + Session.  
    - Example: HTTP, HTTPS, FTP, DNS, SMTP.  
 
----
+![TCP/IP Model](/images/gg_tcpip_model.png)
+
 
 ## 3. OSI vs TCP/IP: Side-by-Side
 
@@ -85,7 +92,7 @@ It has **4 layers** (sometimes 5, depending on variant).
 | 2. Data Link                  | Network Access               | Ethernet, Wi-Fi           |
 | 1. Physical                   | Network Access               | Cables, radio signals     |
 
----
+
 
 ## 4. Key Differences
 
@@ -94,19 +101,6 @@ It has **4 layers** (sometimes 5, depending on variant).
 - OSI separates **Presentation** and **Session** layers, TCP/IP merges them into Application.  
 - TCP/IP is simpler, OSI is more descriptive.  
 
----
-
-## 5. Interview Tips
-
-- When asked: *“Why learn OSI if the internet uses TCP/IP?”* →  
-  - OSI gives a **structured mental model** for networking.  
-  - TCP/IP is how it works in practice.  
-
-- Mnemonic for OSI (bottom to top):  
-  **Please Do Not Throw Sausage Pizza Away**  
-  *(Physical, Data link, Network, Transport, Session, Presentation, Application)*  
-
----
 
 <footer>
   <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>

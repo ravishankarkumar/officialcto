@@ -17,8 +17,9 @@ From **networking basics → operating systems → CPUs & GPUs → AI concepts �
 ### **1. Networking Basics**
 1. [OSI vs TCP/IP Model](/interview-section/fundamentals/networking/osi-tcpip.md)  
 2. [How the Internet Works (DNS, IP, Routing, NAT)](/interview-section/fundamentals/networking/internet.md)  
-3. [HTTP & HTTPS Basics](/interview-section/fundamentals/networking/http-basics.md)  
-4. [Common HTTP Status Codes (2xx, 3xx, 4xx, 5xx)](/interview-section/fundamentals/networking/http-codes.md)  
+3. [HTTP & HTTPS Basics](/interview-section/fundamentals/networking/http-https-basics.md)  
+4. [SSL/TLS Basics](/interview-section/fundamentals/networking/ssl-tls-basics)
+5. [Common HTTP Status Codes (2xx, 3xx, 4xx, 5xx)](/interview-section/fundamentals/networking/http-codes.md)  
 
 ---
 

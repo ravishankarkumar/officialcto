@@ -14,7 +14,7 @@ export default defineConfig({
       {
         text: 'Topics',
         items: [
-          { text: 'Facing Interviews', link: '/interview-section/facing-interviews' },
+          { text: 'On the day of Interview', link: '/interview-section/facing-interviews' },
           { text: 'General Engineering Awareness', link: '/interview-section/fundamentals' },
           { text: 'Object-Oriented Design', link: '/interview-section/ood' },
           { text: 'Design Patterns', link: '/interview-section/design-patterns' },
@@ -393,7 +393,8 @@ export default defineConfig({
           items: [
             { text: 'OSI vs TCP/IP Model', link: '/interview-section/fundamentals/networking/osi-tcpip' },
             { text: 'How the Internet Works', link: '/interview-section/fundamentals/networking/internet' },
-            { text: 'HTTP & HTTPS Basics', link: '/interview-section/fundamentals/networking/http-basics' },
+            { text: 'HTTP & HTTPS Basics', link: '/interview-section/fundamentals/networking/http-https-basics' },
+            { text: 'SSL/TLS Basics', link: '/interview-section/fundamentals/networking/ssl-tls-basics'},
             { text: 'HTTP Status Codes', link: '/interview-section/fundamentals/networking/http-codes' }
           ]
         },
