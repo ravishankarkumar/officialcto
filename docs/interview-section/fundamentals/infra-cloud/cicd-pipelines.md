@@ -227,7 +227,7 @@ class HealthController {
 ## Conclusion
 Mastering CI/CD pipelines equips you to excel in FAANG interviews and automate scalable deployments. This lecture builds on cloud fundamentals, IaC, containerization, distributed systems, monitoring, AI infra, and microservices from Lectures 1–7, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [Security in Infra: Fraud Prevention](/interview-section/domain-topics/security-infra) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [Security in Infra: Fraud Prevention](/interview-section/fundamentals/infra-cloud/security-infra) or revisit [all sections](/interview-section/).
 
 ---
 

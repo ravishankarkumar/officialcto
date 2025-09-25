@@ -206,7 +206,7 @@ spec:
 ## Conclusion
 Mastering containerization with Docker and Kubernetes equips you to excel in FAANG interviews and build scalable systems. This lecture builds on cloud fundamentals and IaC from Lectures 1–2, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [Distributed Systems: CAP, Consensus](/interview-section/domain-topics/distributed-systems) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [Distributed Systems: CAP, Consensus](/interview-section/fundamentals/infra-cloud/distributed-systems) or revisit [all sections](/interview-section/).
 
 ---
 

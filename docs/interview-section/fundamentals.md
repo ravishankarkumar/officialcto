@@ -19,7 +19,7 @@ Also, if you are short on time, you may skip these sections. They are low priori
 
 ![CS Fundamentals](/images/cg_cs_fundamentals.png)
 
----
+
 
 ## Articles in This Series
 
@@ -27,7 +27,7 @@ Also, if you are short on time, you may skip these sections. They are low priori
 1. [OSI vs TCP/IP Model](/interview-section/fundamentals/networking/osi-tcpip.md)  
 2. [How the Internet Works (DNS, IP, Routing, NAT)](/interview-section/fundamentals/networking/internet.md)  
 3. [HTTP & HTTPS Basics](/interview-section/fundamentals/networking/http-https-basics.md)  
-4. [SSL/TLS Basics](/interview-section/fundamentals/networking/ssl-tls-basics)
+4. [SSL/TLS Basics](/interview-section/fundamentals/networking/ssl-tls-basics.md)  
 5. [Common HTTP Status Codes (2xx, 3xx, 4xx, 5xx)](/interview-section/fundamentals/networking/http-codes.md)  
 
 ---
@@ -37,7 +37,7 @@ Also, if you are short on time, you may skip these sections. They are low priori
 2. [CPU Scheduling & Context Switching](/interview-section/fundamentals/os/scheduling.md)  
 3. [Memory Management (Paging, Segmentation)](/interview-section/fundamentals/os/memory.md)  
 4. [Concurrency Control (Locks, Deadlocks, Semaphores)](/interview-section/fundamentals/os/concurrency.md)  
-5. [Concurrency vs Parallelism](/interview-section/fundamentals/os/concurrency-vs-parallelism)
+5. [Concurrency vs Parallelism](/interview-section/fundamentals/os/concurrency-vs-parallelism.md)
 
 ---
 
@@ -57,7 +57,7 @@ Also, if you are short on time, you may skip these sections. They are low priori
 ---
 
 ### **5. AI & Modern Computing**
-1. [How AI Works: A Layman’s Guide](/interview-section/fundamentals/ai/how-ai-works.md)  
+1. [How AI Works (Layman’s Guide)](/interview-section/fundamentals/ai/how-ai-works.md)  
    - Why math (linear algebra, probability, optimization) drives AI decisions.  
    - Difference between Small Language Models (SLMs), Large Language Models (LLMs), and Context-Specific LLMs.  
    - High-level “mental picture” of how AI systems operate.  
@@ -66,13 +66,27 @@ Also, if you are short on time, you may skip these sections. They are low priori
 
 ---
 
-### **6. Miscellaneous Core Topics**
+### **6. Infrastructure & Cloud Fundamentals**
+1. [Cloud Fundamentals: AWS/GCP/OCI](/interview-section/fundamentals/infra-cloud/cloud-fundamentals.md)  
+2. [IaC with Terraform](/interview-section/fundamentals/infra-cloud/terraform-iac.md)  
+3. [Containerization: Docker and Kubernetes](/interview-section/fundamentals/infra-cloud/containerization.md)  
+4. [Distributed Systems: CAP, Consensus](/interview-section/fundamentals/infra-cloud/distributed-systems.md)  
+5. [Monitoring and Alerts](/interview-section/fundamentals/infra-cloud/monitoring-alerts.md)  
+6. [GPU and AI Infra: Telemetry and SCADA](/interview-section/fundamentals/infra-cloud/ai-infra.md)  
+7. [Microservices Pitfalls and Best Practices](/interview-section/fundamentals/infra-cloud/microservices.md)  
+8. [CI/CD Pipelines](/interview-section/fundamentals/infra-cloud/cicd-pipelines.md)  
+9. [Security in Infra: Fraud Prevention](/interview-section/fundamentals/infra-cloud/security-infra.md)  
+10. [Capstone: Integrating All Sections](/interview-section/fundamentals/infra-cloud/capstone.md)  
+
+---
+
+### **7. Miscellaneous Core Topics**
 1. [DNS Deep Dive](/interview-section/fundamentals/misc/dns.md)  
 2. [CDN Basics](/interview-section/fundamentals/misc/cdn-basics.md)  
 3. [Email Protocols (SMTP, IMAP, POP3)](/interview-section/fundamentals/misc/email.md)  
 4. [Compression & Encoding (Base64, gzip)](/interview-section/fundamentals/misc/compression.md)  
 
----
+
 
 ## How to Use This Series
 - **Beginner?** Start with Networking + OS basics.  
@@ -80,7 +94,7 @@ Also, if you are short on time, you may skip these sections. They are low priori
 - **Real-world Engineer?** Deep dive into Architecture, GPUs, and AI.  
 - **Quick Refresh?** Use it as a glossary to cross-reference during HLD/LLD prep.  
 
----
+
 
 ## Further Reading
 - *Computer Networking: A Top-Down Approach* — Kurose & Ross  
@@ -89,7 +103,7 @@ Also, if you are short on time, you may skip these sections. They are low priori
 - *Deep Learning* — Ian Goodfellow et al.  
 - Engineering blogs of Google, NVIDIA, OpenAI, and Cloudflare  
 
----
+
 
 <footer>
   <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>

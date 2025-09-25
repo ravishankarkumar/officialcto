@@ -190,7 +190,7 @@ public class LambdaElasticsearchLogger implements RequestHandler<Map<String, Str
 ## Conclusion
 Mastering monitoring and alerts equips you to excel in FAANG interviews and ensure system reliability. This lecture builds on cloud fundamentals, IaC, containerization, and distributed systems from Lectures 1–4, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [GPU and AI Infra: Telemetry and SCADA](/interview-section/domain-topics/ai-infra) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [GPU and AI Infra: Telemetry and SCADA](/interview-section/fundamentals/infra-cloud/ai-infra) or revisit [all sections](/interview-section/).
 
 ---
 

@@ -232,7 +232,7 @@ public class PaxosLeaderElection {
 ## Conclusion
 Mastering the CAP theorem and consensus mechanisms equips you to excel in FAANG interviews and design resilient distributed systems. This lecture builds on cloud fundamentals, IaC, and containerization from Lectures 1–3, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [Monitoring and Alerts](/interview-section/domain-topics/monitoring-alerts) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [Monitoring and Alerts](/interview-section/fundamentals/infra-cloud/monitoring-alerts) or revisit [all sections](/interview-section/).
 
 ---
 

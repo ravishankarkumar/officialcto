@@ -35,7 +35,7 @@ Browse the sections below to find topics that resonate with your interests, from
 7. **[Behavioral and Leadership Skills](/interview-section/behavioral)**  
    Reflections on leadership through real-world stories, covering conflict resolution and influencing teams.
 
-8. **[Domain-Specific Topics](/interview-section/domain-topics)**  
+8. **[Domain-Specific Topics](/interview-section/fundamentals/infra-cloud)**  
    Insights into cloud technologies, Kubernetes, and distributed systems, drawn from modern infrastructure projects.
 
 9. **[Writing Clean Code](/interview-section/clean-code)**  

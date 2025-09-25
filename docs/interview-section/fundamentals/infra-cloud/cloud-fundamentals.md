@@ -189,7 +189,7 @@ public class S3FileUploader {
 ## Conclusion
 Mastering cloud fundamentals equips you to excel in FAANG interviews and build scalable systems. This lecture kicks off Section 8, building on Sections 1–7, and advances your *Official CTO* journey.
 
-**Next Step**: Explore [IaC with Terraform](/interview-section/domain-topics/terraform-iac) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [IaC with Terraform](/interview-section/fundamentals/infra-cloud/terraform-iac) or revisit [all sections](/interview-section/).
 
 ---
 

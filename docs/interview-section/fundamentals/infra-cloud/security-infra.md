@@ -230,7 +230,7 @@ public class FraudDetector {
 ## Conclusion
 Mastering security and fraud prevention equips you to excel in FAANG interviews and protect cloud infrastructure. This lecture builds on cloud fundamentals, IaC, containerization, distributed systems, monitoring, AI infra, microservices, and CI/CD from Lectures 1–8, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [Capstone: Integrating All Sections](/interview-section/domain-topics/capstone) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [Capstone: Integrating All Sections](/interview-section/fundamentals/infra-cloud/capstone) or revisit [all sections](/interview-section/).
 
 ---
 

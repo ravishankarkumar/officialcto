@@ -205,7 +205,7 @@ output "bucket_name" {
 ## Conclusion
 Mastering IaC with Terraform equips you to excel in FAANG interviews and build scalable infrastructure. This lecture builds on cloud fundamentals from Lecture 1, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [Containerization: Docker and Kubernetes](/interview-section/domain-topics/containerization) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [Containerization: Docker and Kubernetes](/interview-section/fundamentals/infra-cloud/containerization) or revisit [all sections](/interview-section/).
 
 ---
 

@@ -27,7 +27,7 @@ export default defineConfig({
           { text: 'Database', link: '/interview-section/database' },
           { text: 'High-Level System Design', link: '/interview-section/hld' },
           { text: 'Behavioral Skills', link: '/interview-section/behavioral' },
-          { text: 'Domain-Specific Topics', link: '/interview-section/domain-topics' },
+          // { text: 'Domain-Specific Topics', link: '/interview-section/fundamentals/infra-cloud' },
           { text: 'Clean Code', link: '/interview-section/clean-code' },
           { text: 'Refactoring', link: '/interview-section/refactoring' },
           { text: 'Mock Practice', link: '/interview-section/mocks' }
@@ -213,23 +213,23 @@ export default defineConfig({
           ]
         }
       ],
-      '/interview-section/domain-topics': [
-        {
-          text: 'Domain-Specific Topics',
-          items: [
-            { text: '1. Cloud Fundamentals: AWS/GCP/OCI', link: '/interview-section/domain-topics/cloud-fundamentals' },
-            { text: '2. IaC with Terraform', link: '/interview-section/domain-topics/terraform-iac' },
-            { text: '3. Containerization: Docker and Kubernetes', link: '/interview-section/domain-topics/containerization' },
-            { text: '4. Distributed Systems: CAP, Consensus', link: '/interview-section/domain-topics/distributed-systems' },
-            { text: '5. Monitoring and Alerts', link: '/interview-section/domain-topics/monitoring-alerts' },
-            { text: '6. GPU and AI Infra: Telemetry and SCADA', link: '/interview-section/domain-topics/ai-infra' },
-            { text: '7. Microservices Pitfalls and Best Practices', link: '/interview-section/domain-topics/microservices' },
-            { text: '8. CI/CD Pipelines', link: '/interview-section/domain-topics/cicd-pipelines' },
-            { text: '9. Security in Infra: Fraud Prevention', link: '/interview-section/domain-topics/security-infra' },
-            { text: '10. Capstone: Integrating All Sections', link: '/interview-section/domain-topics/capstone' }
-          ]
-        }
-      ],
+      // '/interview-section/fundamentals/infra-cloud': [
+      //   {
+      //     text: 'Domain-Specific Topics',
+      //     items: [
+      //       { text: '1. Cloud Fundamentals: AWS/GCP/OCI', link: '/interview-section/fundamentals/infra-cloud/cloud-fundamentals' },
+      //       { text: '2. IaC with Terraform', link: '/interview-section/fundamentals/infra-cloud/terraform-iac' },
+      //       { text: '3. Containerization: Docker and Kubernetes', link: '/interview-section/fundamentals/infra-cloud/containerization' },
+      //       { text: '4. Distributed Systems: CAP, Consensus', link: '/interview-section/fundamentals/infra-cloud/distributed-systems' },
+      //       { text: '5. Monitoring and Alerts', link: '/interview-section/fundamentals/infra-cloud/monitoring-alerts' },
+      //       { text: '6. GPU and AI Infra: Telemetry and SCADA', link: '/interview-section/fundamentals/infra-cloud/ai-infra' },
+      //       { text: '7. Microservices Pitfalls and Best Practices', link: '/interview-section/fundamentals/infra-cloud/microservices' },
+      //       { text: '8. CI/CD Pipelines', link: '/interview-section/fundamentals/infra-cloud/cicd-pipelines' },
+      //       { text: '9. Security in Infra: Fraud Prevention', link: '/interview-section/fundamentals/infra-cloud/security-infra' },
+      //       { text: '10. Capstone: Integrating All Sections', link: '/interview-section/fundamentals/infra-cloud/capstone' }
+      //     ]
+      //   }
+      // ],
       '/interview-section/clean-code': [
         {
           text: 'Clean Code',
@@ -438,7 +438,22 @@ export default defineConfig({
           ]
         },
         {
-          text: '6. Miscellaneous Core Topics',
+          text: '6. Infrastructure & Cloud Fundamentals',
+          items: [
+            { text: 'Cloud Fundamentals: AWS/GCP/OCI', link: '/interview-section/fundamentals/infra-cloud/cloud-fundamentals' },
+            { text: 'IaC with Terraform', link: '/interview-section/fundamentals/infra-cloud/terraform-iac' },
+            { text: 'Containerization: Docker and Kubernetes', link: '/interview-section/fundamentals/infra-cloud/containerization' },
+            { text: 'Distributed Systems: CAP, Consensus', link: '/interview-section/fundamentals/infra-cloud/distributed-systems' },
+            { text: 'Monitoring and Alerts', link: '/interview-section/fundamentals/infra-cloud/monitoring-alerts' },
+            { text: 'GPU and AI Infra: Telemetry and SCADA', link: '/interview-section/fundamentals/infra-cloud/ai-infra' },
+            { text: 'Microservices Pitfalls and Best Practices', link: '/interview-section/fundamentals/infra-cloud/microservices' },
+            { text: 'CI/CD Pipelines', link: '/interview-section/fundamentals/infra-cloud/cicd-pipelines' },
+            { text: 'Security in Infra: Fraud Prevention', link: '/interview-section/fundamentals/infra-cloud/security-infra' },
+            { text: 'Capstone: Integrating All Sections', link: '/interview-section/fundamentals/infra-cloud/capstone' }
+          ]
+        },
+        {
+          text: '7. Miscellaneous Core Topics',
           items: [
             { text: 'DNS Deep Dive', link: '/interview-section/fundamentals/misc/dns' },
             { text: 'CDN Basics', link: '/interview-section/fundamentals/misc/cdn-basics' },

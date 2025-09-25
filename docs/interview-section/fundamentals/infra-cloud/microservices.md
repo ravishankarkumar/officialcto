@@ -196,7 +196,7 @@ class UserController {
 ## Conclusion
 Mastering microservices pitfalls and best practices equips you to excel in FAANG interviews and build scalable systems. This lecture builds on cloud fundamentals, IaC, containerization, distributed systems, monitoring, and AI infra from Lectures 1–6, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [CI/CD Pipelines](/interview-section/domain-topics/cicd-pipelines) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [CI/CD Pipelines](/interview-section/fundamentals/infra-cloud/cicd-pipelines) or revisit [all sections](/interview-section/).
 
 ---
 

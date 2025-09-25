@@ -199,7 +199,7 @@ public class GPUTelemetryCollector {
 ## Conclusion
 Mastering telemetry and SCADA for GPU-based AI infrastructure equips you to excel in FAANG interviews and ensure data center reliability. This lecture builds on cloud fundamentals, IaC, containerization, distributed systems, and monitoring from Lectures 1–5, advancing your *Official CTO* journey.
 
-**Next Step**: Explore [Microservices Pitfalls and Best Practices](/interview-section/domain-topics/microservices) or revisit [all sections](/interview-section/).
+**Next Step**: Explore [Microservices Pitfalls and Best Practices](/interview-section/fundamentals/infra-cloud/microservices) or revisit [all sections](/interview-section/).
 
 ---
 
