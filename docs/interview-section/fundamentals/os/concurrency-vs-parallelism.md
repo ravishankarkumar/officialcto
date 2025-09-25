@@ -8,7 +8,6 @@ description: Understanding the difference between concurrency and parallelism wi
 Concurrency and parallelism are fundamental concepts in **system design** and **operating systems**.  
 They are often confused, but they are **not the same thing**.
 
----
 
 ## 1. Concurrency
 
@@ -23,7 +22,6 @@ They are often confused, but they are **not the same thing**.
 **Analogy:**  
 - A single chef cooking multiple dishes by switching between them.  
 
----
 
 ## 2. Parallelism
 
@@ -38,7 +36,6 @@ They are often confused, but they are **not the same thing**.
 **Analogy:**  
 - Multiple chefs cooking different dishes at the same time.  
 
----
 
 ## 3. Concurrency vs Parallelism Table
 
@@ -49,7 +46,6 @@ They are often confused, but they are **not the same thing**.
 | Goal            | Better utilization & responsiveness  | Faster execution (performance)     |
 | Example         | Async programming, goroutines        | Multi-threading, distributed jobs  |
 
----
 
 ## 4. Real-World Examples
 
@@ -61,7 +57,6 @@ They are often confused, but they are **not the same thing**.
   - Video encoding on multiple cores.  
   - Training ML models on GPU clusters.  
 
----
 
 ## 5. Interview Tips
 
@@ -70,7 +65,6 @@ They are often confused, but they are **not the same thing**.
 - Be ready to mention that **concurrency ≠ parallelism**, but they can **co-exist**.  
   - Example: A multi-core server handling concurrent async requests → concurrency + parallelism.  
 
----
 
 <footer>
   <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>

@@ -8,7 +8,6 @@ description: Understanding the difference between processes and threads, their m
 In operating systems, **processes** and **threads** are the basic units of execution.  
 Understanding their differences is essential for **concurrency, parallelism, and system design interviews**.
 
----
 
 ## 1. What is a Process?
 
@@ -23,7 +22,6 @@ Understanding their differences is essential for **concurrency, parallelism, and
 - Isolated: one process cannot access another’s memory directly.  
 - Communicates via **Inter-Process Communication (IPC)** → pipes, sockets, shared memory.  
 
----
 
 ## 2. What is a Thread?
 
@@ -37,7 +35,6 @@ Understanding their differences is essential for **concurrency, parallelism, and
 - Shares memory: threads of the same process share code, data, and heap.  
 - Needs synchronization (locks, semaphores) to avoid race conditions.  
 
----
 
 ## 3. Memory Model Comparison
 
@@ -48,7 +45,6 @@ Understanding their differences is essential for **concurrency, parallelism, and
 | Context Switch| Expensive                   | Cheaper                        |
 | Failure      | One process crash isolated  | One thread crash may affect all|
 
----
 
 ## 4. Use Cases
 
@@ -60,7 +56,6 @@ Understanding their differences is essential for **concurrency, parallelism, and
   - Parallel tasks (multi-threaded servers).  
   - Real-time responsiveness (UI + background tasks).  
 
----
 
 ## 5. Processes vs Threads in Interviews
 
@@ -71,14 +66,14 @@ Understanding their differences is essential for **concurrency, parallelism, and
   - Threads → race conditions.  
   - Processes → heavy context switching.  
 
----
+
 
 ## 6. Analogy
 
 - **Process** = A house (with its own kitchen, bathroom, resources).  
 - **Thread** = Roommates in the same house (sharing resources, but needing rules to avoid conflicts).  
 
----
+
 
 <footer>
   <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
