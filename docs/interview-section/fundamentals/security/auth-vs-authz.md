@@ -1,8 +1,14 @@
+---
+title: 👉 Authentication vs Authorization - Key Differences Explained with Examples
+description: 👉 Learn the difference between authentication (authn) and authorization (authz). Covers definitions, HTTP status codes (401 vs 403), common methods (OAuth, JWT, RBAC), and real-world examples for system design interviews and secure app development.
+image: /images/gg_auth.png
+---
+
 # Authentication vs Authorization
 
 This article distinguishes between **authentication** and **authorization**, two fundamental concepts in security. Understanding their differences is essential for system design interviews and building secure applications.
 
----
+![Authentication vs Authorization](/images/gg_auth.png)
 
 ## What is Authentication?
 **Authentication** (often abbreviated as "authn") is the process of **verifying the identity** of a user, device, or system. It answers the question: **"Who are you?"**
@@ -22,7 +28,6 @@ Authentication typically involves:
 
 **Challenges**: Phishing, credential stuffing, and weak passwords. Best practices include rate limiting, CAPTCHA, and password policies.
 
----
 
 ## What is Authorization?
 **Authorization** (often abbreviated as "authz") is the process of **determining what an authenticated user is allowed to do**. It answers the question: **"What can you do?"**
@@ -41,7 +46,7 @@ Authorization occurs **after authentication** and involves:
 
 **Challenges**: Over-privileging (principle of least privilege), policy complexity, and dynamic changes in user roles.
 
----
+
 
 ## Key Differences: Authentication vs Authorization
 | Aspect              | Authentication                          | Authorization                          |
@@ -58,7 +63,7 @@ Authorization occurs **after authentication** and involves:
 ### Analogy
 Authentication is like showing your ID at a club entrance. Authorization is like the bouncer checking if your ID allows VIP access or just the dance floor.
 
----
+
 
 ## Real-World Integration
 In modern systems:
@@ -71,17 +76,22 @@ In modern systems:
 - Token Management: Secure storage (e.g., HttpOnly cookies for JWTs) and short expiration times.
 - Scalability: Centralized auth (e.g., LDAP) vs. federated (e.g., SAML).
 
----
+
 
 ## Real-World Context
 - **Interview Relevance**: System design questions often involve secure access patterns (e.g., "Design a microservices auth system"). Explain how authn feeds into authz.
 - **Practical Use**: In cloud environments (AWS IAM, Azure AD), authn verifies identity, while policies enforce authz. Critical for compliance (GDPR, HIPAA).
 - **Modern Trends**: Passwordless auth (e.g., WebAuthn), AI-driven anomaly detection, and blockchain for decentralized identity.
 
----
+
 
 ## Further Reading
 - *Security Engineering* by Ross Anderson
 - OAuth 2.0 RFC (RFC 6749) and OpenID Connect specs
 - OWASP Authentication Cheat Sheet
 - Blogs from Auth0, Okta, and NIST on best practices
+
+<footer>
+  <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
+  <p>&copy; 2025 Official CTO. All rights reserved.</p>
+</footer>

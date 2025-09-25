@@ -1,14 +1,23 @@
 ---
-title: General Engineering Awareness Hub
+title: Computer Science fundamentals
 description: A structured guide to computer fundamentals, networking, OS, architecture, GPUs, AI basics, and security for system design interviews and real-world engineering awareness.
+image: /images/cg_cs_fundamentals.png
 ---
 
-# General Engineering Awareness
+# Computer Science fundamentals for Tech Interviews
 
 This section covers the **fundamental building blocks of computer systems** and modern computing essentials.  
 It’s designed to give you the **baseline knowledge** required for **HLD/LLD interviews** and to strengthen your overall **engineering awareness**.  
 
 From **networking basics → operating systems → CPUs & GPUs → AI concepts → security**, this hub ensures you’re equipped to connect low-level fundamentals with high-level system design.
+
+::: info
+Computer Science is a very wide field. We are covering bare minimum that will help you in interviews. Please read proper books if you want to become expert at CS fundamentals.
+
+Also, if you are short on time, you may skip these sections. They are low priority.
+:::
+
+![CS Fundamentals](/images/cg_cs_fundamentals.png)
 
 ---
 

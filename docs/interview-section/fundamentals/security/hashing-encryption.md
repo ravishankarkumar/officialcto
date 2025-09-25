@@ -1,102 +1,137 @@
+---
+title: Hashing vs Encryption - Key Differences, Examples, and Best Practices
+description: Understand the difference between hashing (integrity, passwords) and encryption (confidentiality, data protection). Learn algorithms, use cases, and security best practices.
+image: /images/cg_hash_encryption.png
+---
+
 # Hashing vs Encryption
 
-This article explains the differences between **hashing** and **encryption**, two critical concepts in security. It’s designed for system design interviews and to enhance understanding of secure system design.
+Hashing and encryption are two fundamental concepts in security that are often confused.  
+Both transform data, but they serve **very different purposes**:  
+- **Hashing** ensures *integrity* (data has not been tampered with).  
+- **Encryption** ensures *confidentiality* (data is hidden from unauthorized users).  
 
----
+Understanding the distinction is critical in **system design interviews** and for building secure applications.
 
-## What is Hashing?
-**Hashing** is a one-way process that transforms input data (of any size) into a fixed-size output, called a **hash value** or **digest**, using a mathematical function. It is **irreversible**, meaning you cannot retrieve the original data from the hash.
+![Hashing vs Encryption](/images/cg_hashing_vs_encryption.png)
 
-### Key Characteristics of Hashing
-- **Deterministic**: The same input always produces the same hash.
-- **Fixed Output Size**: Regardless of input size, the output is a fixed length (e.g., 256 bits for SHA-256).
-- **Collision Resistance**: It’s computationally hard for two different inputs to produce the same hash.
-- **Fast Computation**: Hash functions are designed to be quick.
-- **Preimage Resistance**: You cannot reverse-engineer the input from the hash.
-- **Avalanche Effect**: Small changes in input cause significant changes in the output hash.
 
-### Common Hashing Algorithms
-- **MD5**: Fast but insecure due to collision vulnerabilities (not recommended for security).
-- **SHA-1**: Deprecated for security purposes due to weaknesses.
-- **SHA-256/SHA-3**: Secure, widely used in modern applications (e.g., blockchain, digital signatures).
-- **bcrypt**: Designed for password hashing, adds salt and work factor to resist brute-force attacks.
-- **Argon2**: Memory-hard function, resistant to GPU-based attacks, winner of the 2015 Password Hashing Competition.
+
+## 1. What is Hashing?
+**Hashing** is a one-way process that transforms input data (of any size) into a fixed-size output, called a **hash value** or **digest**.  
+It is **irreversible**, meaning you cannot reconstruct the original input from the hash.
+
+### Key Characteristics
+- **Deterministic**: Same input → same output.  
+- **Fixed Output Size**: Input can be 1 byte or 1 GB, output length is constant (e.g., 256 bits for SHA-256).  
+- **Collision Resistance**: Hard to find two inputs that produce the same hash.  
+- **Preimage Resistance**: Given a hash, infeasible to reverse it to the input.  
+- **Avalanche Effect**: Small input changes drastically change the output.  
+- **Fast Computation**: Efficient for large-scale use.  
+
+### Common Algorithms
+- **MD5** → Obsolete (broken).  
+- **SHA-1** → Deprecated.  
+- **SHA-256/SHA-3** → Secure, widely used.  
+- **bcrypt / scrypt / Argon2** → Designed for password hashing (slow + salted).  
 
 ### Use Cases
-- **Password Storage**: Store hashed passwords (with salt) to prevent recovery of plaintext passwords.
-- **Data Integrity**: Verify file or message integrity (e.g., checksums for downloads).
-- **Digital Signatures**: Hash a message and sign the hash to ensure authenticity.
-- **Blockchain**: Hashing links blocks and secures transactions (e.g., Bitcoin uses SHA-256).
+- **Password Storage**: Store salted & hashed passwords instead of plaintext.  
+- **Integrity Checks**: File checksums (e.g., software downloads).  
+- **Digital Signatures**: Hash message before signing.  
+- **Blockchain**: Links blocks securely using hash chains.  
 
----
+ **Best Practice**: For password hashing, always use salt + slow functions (bcrypt, Argon2). Consider adding a "pepper" (a secret key stored separately).  
 
-## What is Encryption?
-**Encryption** is a two-way process that transforms **plaintext** into **ciphertext** using a key, making data unreadable without the key. It is **reversible**, allowing decryption back to the original data with the correct key.
 
-### Key Characteristics of Encryption
-- **Reversible**: Decryption recovers the original data using a key.
-- **Key Dependency**: Security relies on the secrecy and strength of the key.
-- **Confidentiality**: Protects data from unauthorized access.
-- **Variable Output Size**: Ciphertext size typically scales with input size.
+
+## 2. What is Encryption?
+**Encryption** is a reversible process that transforms **plaintext** into **ciphertext** using a key.  
+Decryption recovers the original data with the correct key.
+
+### Key Characteristics
+- **Reversible**: Requires correct key for decryption.  
+- **Key Dependency**: Security depends on the secrecy of the key.  
+- **Confidentiality**: Protects data from unauthorized access.  
+- **Variable Output Size**: Ciphertext size grows with input.  
 
 ### Types of Encryption
-1. **Symmetric Encryption**:
-   - Same key for encryption and decryption.
-   - Examples: **AES** (Advanced Encryption Standard), **DES** (outdated).
-   - Fast and suitable for large data but requires secure key exchange.
-2. **Asymmetric Encryption**:
-   - Uses a public key for encryption and a private key for decryption.
-   - Examples: **RSA**, **ECC** (Elliptic Curve Cryptography).
-   - Slower, used for key exchange or small data (e.g., SSL/TLS handshake).
+1. **Symmetric Encryption**
+   - Same key for encryption & decryption.  
+   - Example: **AES-256** (fast, secure).  
+   - Challenge: Secure key distribution.  
+
+2. **Asymmetric Encryption**
+   - Public key for encryption, private key for decryption.  
+   - Example: **RSA, ECC**.  
+   - Slower, used for key exchange, digital signatures.  
 
 ### Use Cases
-- **Secure Communication**: Encrypt data in transit (e.g., HTTPS via TLS).
-- **Data Protection**: Encrypt sensitive data at rest (e.g., disk encryption).
-- **Key Exchange**: Asymmetric encryption secures symmetric keys (e.g., in SSL/TLS).
-- **Digital Signatures**: Encrypt a hash with a private key to prove authenticity.
+- **Secure Communication**: HTTPS/TLS.  
+- **Data Protection**: Disk encryption, encrypted databases.  
+- **Key Exchange**: Asymmetric used to share symmetric keys.  
+- **Digital Signatures**: Encrypt hash with private key to prove authenticity.  
 
----
 
-## Key Differences: Hashing vs Encryption
+
+## 3. Key Differences: Hashing vs Encryption
+
 | Aspect               | Hashing                                 | Encryption                              |
 |----------------------|-----------------------------------------|-----------------------------------------|
-| **Purpose**          | Data integrity, non-reversible mapping | Data confidentiality, reversible       |
-| **Reversibility**    | One-way (irreversible)                 | Two-way (reversible with key)          |
-| **Output**           | Fixed-size hash/digest                 | Variable-size ciphertext               |
-| **Key Usage**        | No key (or salt for password hashing)  | Requires key(s)                        |
-| **Examples**         | SHA-256, bcrypt                        | AES, RSA                               |
+| **Purpose**          | Integrity, verification                 | Confidentiality, secrecy                |
+| **Reversibility**    | One-way (irreversible)                 | Two-way (reversible with key)           |
+| **Output**           | Fixed-size digest                      | Variable-size ciphertext                |
+| **Key Usage**        | No key (uses salt/pepper for passwords)| Requires key(s)                         |
+| **Examples**         | SHA-256, bcrypt                        | AES, RSA                                |
 | **Use Case**         | Password storage, checksums            | Secure communication, data protection   |
-| **Performance**      | Fast, lightweight                      | Slower, especially asymmetric          |
+| **Performance**      | Very fast                              | Slower (especially asymmetric)          |
+| **Analogy**          | Fingerprint: unique, can’t reconstruct | Locked box: key opens to original data  |
 
-### Analogy
-- **Hashing**: Like a fingerprint—unique to the input, but you can’t recreate the person from it.
-- **Encryption**: Like locking a box—you can unlock it with the right key to access the contents.
 
----
 
-## Practical Considerations
-- **Hashing for Passwords**:
-  - Always use a **salt** (random data) to prevent rainbow table attacks.
-  - Use slow, memory-hard functions like bcrypt or Argon2 to resist brute-force attacks.
-- **Encryption for Data**:
-  - Symmetric encryption (e.g., AES-256) is preferred for large data due to speed.
-  - Asymmetric encryption (e.g., RSA) is used for secure key exchange or small data.
-- **Common Mistakes**:
-  - Using weak hash functions (e.g., MD5, SHA-1) for security-critical tasks.
-  - Failing to secure encryption keys, leading to compromised data.
-  - Confusing hashing with encryption (e.g., storing encrypted passwords instead of hashed).
+## 4. When Hashing and Encryption Work Together
 
----
+Many secure systems combine both:  
+- **Digital Signatures** → Message is hashed, then hash is encrypted with private key.  
+- **TLS/HTTPS** → Uses asymmetric encryption to exchange keys, then symmetric encryption for data, plus hashing for integrity.  
 
-## Real-World Context
-- **Interview Relevance**: System design interviews often involve securing data (e.g., "Design a secure API"). Explain when to hash (e.g., passwords) vs. encrypt (e.g., API payloads).
-- **Practical Use**: Hashing ensures data integrity in databases or blockchain; encryption secures HTTPS traffic and cloud storage.
-- **Modern Trends**: Post-quantum cryptography for encryption (e.g., NIST’s quantum-resistant algorithms) and GPU-resistant hashing (e.g., Argon2) are gaining traction.
+This layered approach ensures confidentiality, integrity, and authenticity.  
 
----
 
-## Further Reading
-- *Cryptography and Network Security* by William Stallings
-- OWASP Password Storage Cheat Sheet
-- NIST SP 800-63B (Digital Identity Guidelines)
-- Blogs from Cloudflare, Okta, and AWS on security practices
+## 5. Practical Considerations
+
+### Hashing
+- Always salt passwords before hashing.  
+- Use slow, memory-hard algorithms (Argon2, bcrypt).  
+- Never use MD5 or SHA-1 for security.  
+
+### Encryption
+- Use AES-256 for data-at-rest or in-transit.  
+- Use RSA/ECC only for key exchange, not bulk data.  
+- Protect encryption keys (e.g., with HSMs or KMS).  
+
+### Common Mistakes
+- Encrypting passwords instead of hashing them.  
+- Using weak hash functions in security-critical systems.  
+- Confusing integrity (hash) with confidentiality (encryption).  
+
+
+## 6. Real-World Context
+
+- **Interview Relevance**: Expect questions like *“How would you store user passwords securely?”* or *“Why not encrypt passwords instead of hashing?”*  
+- **Practical Use**: Hashing → blockchain, password security; Encryption → HTTPS, VPNs, cloud storage.  
+- **Modern Trends**:  
+  - **Post-quantum encryption** to resist quantum attacks.  
+  - **GPU-resistant hashing** (e.g., Argon2) to prevent brute-force.  
+
+
+## 7. Further Reading
+- *Cryptography and Network Security* — William Stallings  
+- OWASP Password Storage Cheat Sheet  
+- NIST SP 800-63B (Digital Identity Guidelines)  
+- Cloudflare, Okta, AWS blogs on security practices  
+
+<footer>
+  <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
+  <p>&copy; 2025 Official CTO. All rights reserved.</p>
+</footer>

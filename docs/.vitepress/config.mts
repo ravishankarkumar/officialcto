@@ -1,11 +1,15 @@
 import { defineConfig } from 'vitepress'
+import mathjax3 from 'markdown-it-mathjax3'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Official CTO blogs",
   description: "Tools to become better software engineer and do well in the tech interviews",
   cleanUrls: true,
-  head: [['link', { rel: 'icon', href: 'https://officialcto.com/images/favicon.png' }]],
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css' }],
+    ['link', { rel: 'icon', href: 'https://officialcto.com/images/favicon.png' }]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -15,7 +19,7 @@ export default defineConfig({
         text: 'Topics',
         items: [
           { text: 'On the day of Interview', link: '/interview-section/facing-interviews' },
-          { text: 'General Engineering Awareness', link: '/interview-section/fundamentals' },
+          { text: 'CS Fundamentals', link: '/interview-section/fundamentals' },
           { text: 'Object-Oriented Design', link: '/interview-section/ood' },
           { text: 'Design Patterns', link: '/interview-section/design-patterns' },
           { text: 'Design Principles', link: '/interview-section/design-principles' },
@@ -394,7 +398,7 @@ export default defineConfig({
             { text: 'OSI vs TCP/IP Model', link: '/interview-section/fundamentals/networking/osi-tcpip' },
             { text: 'How the Internet Works', link: '/interview-section/fundamentals/networking/internet' },
             { text: 'HTTP & HTTPS Basics', link: '/interview-section/fundamentals/networking/http-https-basics' },
-            { text: 'SSL/TLS Basics', link: '/interview-section/fundamentals/networking/ssl-tls-basics'},
+            { text: 'SSL/TLS Basics', link: '/interview-section/fundamentals/networking/ssl-tls-basics' },
             { text: 'HTTP Status Codes', link: '/interview-section/fundamentals/networking/http-codes' }
           ]
         },
@@ -447,5 +451,13 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ravishankarkumar/officialcto' }
     ]
-  }
+  },
+  markdown: {
+    math: {
+      engine: 'katex' // Explicitly use KaTeX
+    },
+    config: (md) => {
+      md.use(mathjax3)
+    }
+  },
 })
