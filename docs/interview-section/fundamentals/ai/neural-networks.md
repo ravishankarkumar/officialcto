@@ -1,13 +1,21 @@
+---
+title: Neural Networks Explained - Structure, Types, and Applications
+description: Learn how neural networks work, their layers, key architectures (CNNs, RNNs, Transformers), and real-world applications in AI and system design.
+image: /images/cp_neural_network.png
+---
+
 # Neural Networks at a Glance
 
 This article provides a concise yet comprehensive overview of **neural networks**, the cornerstone of modern artificial intelligence (AI). It covers their structure, functionality, and applications, tailored for system design interviews and engineers seeking a foundational understanding of AI systems.
 
----
+
 
 ## What is a Neural Network?
 A **neural network** is a computational model inspired by the human brain, designed to learn patterns from data. It consists of interconnected **nodes** (or neurons) organized in **layers** that process input data to produce meaningful outputs, such as predictions, classifications, or generated content.
 
 Neural networks are the backbone of many AI applications, from image recognition to natural language processing (NLP).
+
+![Typical Neural Network](/images/cg_neural_network.png)
 
 ---
 
@@ -37,7 +45,7 @@ Neural networks are composed of three main types of layers:
   - **Tanh**: Similar to sigmoid but outputs between -1 and 1.
   - **Softmax**: Converts raw scores into probabilities for multi-class classification.
 
----
+
 
 ## How Neural Networks Work
 Neural networks operate in two phases: **training** and **inference**.
@@ -69,7 +77,9 @@ Neural networks operate in two phases: **training** and **inference**.
   - The output layer produces the final result (e.g., “This is a 7” for a handwritten digit).
 - **Example**: A trained model takes an image of a digit and outputs a probability distribution over possible digits.
 
----
+![Neural Network working](/images/gg_neural_network.png)
+
+
 
 ## Types of Neural Networks
 Different neural network architectures are designed for specific tasks:
@@ -99,7 +109,7 @@ Different neural network architectures are designed for specific tasks:
    - Used for generating realistic images, audio, or text.
    - Applications: Deepfakes, image synthesis.
 
----
+
 
 ## Why Neural Networks are Powerful
 - **Non-Linearity**: Activation functions allow neural networks to model complex, non-linear relationships.
@@ -107,7 +117,7 @@ Different neural network architectures are designed for specific tasks:
 - **Adaptability**: Can be tailored to various tasks (e.g., vision, language, audio).
 - **Data-Driven**: Learn directly from data, reducing the need for manual feature engineering.
 
----
+
 
 ## Challenges of Neural Networks
 - **Computational Cost**: Training requires significant compute power (e.g., GPUs/TPUs) and large datasets.
@@ -115,7 +125,7 @@ Different neural network architectures are designed for specific tasks:
 - **Interpretability**: Neural networks are often “black boxes,” making it hard to understand their decisions.
 - **Hyperparameter Tuning**: Choosing the right architecture, learning rate, or layer size requires experimentation.
 
----
+
 
 ## Real-World Context
 - **Interview Relevance**: System design interviews may ask about neural network architecture for tasks like recommendation systems or chatbots. Explain layer types, training, and hardware needs.
@@ -125,10 +135,15 @@ Different neural network architectures are designed for specific tasks:
   - **Self-Supervised Learning**: Models like BERT learn from unlabeled data, reducing data annotation costs.
   - **AI Ethics**: Addressing bias and fairness in neural network outputs is critical.
 
----
+
 
 ## Further Reading
 - *Deep Learning* by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
 - *Neural Networks and Deep Learning* by Michael Nielsen (free online)
 - Google’s Transformer paper: “Attention is All You Need” (Vaswani et al., 2017)
 - Blogs from NVIDIA, DeepMind, and Hugging Face on neural network advancements
+
+<footer>
+  <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
+  <p>&copy; 2025 Official CTO. All rights reserved.</p>
+</footer>

@@ -1,6 +1,25 @@
+---
+title: GPU vs TPU for AI Workloads
+description: A detailed comparison of GPUs and TPUs for AI workloads. Learn their architectures, strengths, weaknesses, and use cases to make better hardware choices for machine learning, training, and inference.
+image: /images/cg_gpu_tpu.png
+keywords:
+  - GPU vs TPU
+  - TPU vs GPU performance
+  - GPU TPU comparison
+  - Tensor Processing Unit
+  - Graphics Processing Unit
+  - AI hardware accelerators
+  - Machine learning training hardware
+  - TPU for deep learning
+  - GPU for AI
+  - Google Cloud TPU
+---
+
 # GPU vs TPU for AI Workloads
 
 This article compares **Graphics Processing Units (GPUs)** and **Tensor Processing Units (TPUs)** for AI workloads, detailing their architectures, strengths, and use cases. It’s designed for system design interviews and engineers seeking to understand hardware choices for AI applications.
+
+![GPU vs TPU](/images/cg_gpu_tpu.png)
 
 ---
 
@@ -132,3 +151,8 @@ TPUs are application-specific integrated circuits (ASICs) designed by Google for
 - NVIDIA CUDA Programming Guide
 - Google Cloud TPU Documentation
 - Blogs from NVIDIA, Google Cloud, and AWS on AI hardware advancements
+
+<footer>
+  <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
+  <p>&copy; 2025 Official CTO. All rights reserved.</p>
+</footer>
