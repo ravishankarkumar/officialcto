@@ -443,7 +443,7 @@ export default defineConfig({
             { text: 'Cloud Fundamentals: AWS/GCP/OCI', link: '/interview-section/fundamentals/infra-cloud/cloud-fundamentals' },
             { text: 'IaC with Terraform', link: '/interview-section/fundamentals/infra-cloud/terraform-iac' },
             { text: 'Containerization: Docker and Kubernetes', link: '/interview-section/fundamentals/infra-cloud/containerization' },
-            { text: 'Distributed Systems: CAP, Consensus', link: '/interview-section/fundamentals/infra-cloud/distributed-systems' },
+            { text: 'Distributed Systems: CAP, Consensus', link: '/interview-section/fundamentals/infra-cloud/distributed-systems-cap-consensus' },
             { text: 'Monitoring and Alerts', link: '/interview-section/fundamentals/infra-cloud/monitoring-alerts' },
             { text: 'GPU and AI Infra: Telemetry and SCADA', link: '/interview-section/fundamentals/infra-cloud/ai-infra' },
             { text: 'Microservices Pitfalls and Best Practices', link: '/interview-section/fundamentals/infra-cloud/microservices' },

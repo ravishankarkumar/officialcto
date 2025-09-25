@@ -70,7 +70,7 @@ Also, if you are short on time, you may skip these sections. They are low priori
 1. [Cloud Fundamentals: AWS/GCP/OCI](/interview-section/fundamentals/infra-cloud/cloud-fundamentals.md)  
 2. [IaC with Terraform](/interview-section/fundamentals/infra-cloud/terraform-iac.md)  
 3. [Containerization: Docker and Kubernetes](/interview-section/fundamentals/infra-cloud/containerization.md)  
-4. [Distributed Systems: CAP, Consensus](/interview-section/fundamentals/infra-cloud/distributed-systems.md)  
+4. [Distributed Systems: CAP, Consensus](/interview-section/fundamentals/infra-cloud/distributed-systems-cap-consensus.md)  
 5. [Monitoring and Alerts](/interview-section/fundamentals/infra-cloud/monitoring-alerts.md)  
 6. [GPU and AI Infra: Telemetry and SCADA](/interview-section/fundamentals/infra-cloud/ai-infra.md)  
 7. [Microservices Pitfalls and Best Practices](/interview-section/fundamentals/infra-cloud/microservices.md)  

@@ -21,6 +21,14 @@ features:
   - title: Shared Growth
     details: A space to learn and connect, complemented by upcoming video content.
 
+image: /images/logo-large.png
+title: Official CTO is a blog for tech interview preparation covering DS/Algo, LLD, and HLD System Design and CS fundamentals
+
+---
+
+
+
+
 ---
 
 # Welcome to Official CTO
@@ -29,7 +37,7 @@ I am a software engineer with over eight years of experience, having worked on s
 
 Whether you’re preparing for technical interviews or seeking to refine your craft, this space offers a range of perspectives. Dive in at your own pace, and stay tuned for videos to deepen the conversation.
 
-[Begin Exploring →](/interview-section/)
+<!-- [Begin Exploring →](/interview-section/) -->
 
 ---
 
