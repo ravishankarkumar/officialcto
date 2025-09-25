@@ -1,8 +1,14 @@
+---
+title: CDN Basics
+description: This article provides a clear and comprehensive overview of Content Delivery Networks (CDNs), explaining their purpose, architecture, and benefits. It’s designed for system design interviews and engineers seeking to understand how CDNs improve web performance and scalability.
+image: /images/cg_cdn.png
+---
+
 # CDN Basics
 
 This article provides a clear and comprehensive overview of **Content Delivery Networks (CDNs)**, explaining their purpose, architecture, and benefits. It’s designed for system design interviews and engineers seeking to understand how CDNs improve web performance and scalability.
 
----
+![CDN](/images/cg_cdn.png)
 
 ## What is a CDN?
 A **Content Delivery Network (CDN)** is a distributed network of servers strategically placed across multiple geographic locations to deliver web content (e.g., HTML, images, videos, scripts) to users with low latency and high reliability. CDNs cache content closer to users, reducing the distance data travels and alleviating load on origin servers.
@@ -14,7 +20,7 @@ A **Content Delivery Network (CDN)** is a distributed network of servers strateg
 - **Scalability**: Handles traffic spikes by distributing requests across the network.
 - **Security**: Provides features like DDoS protection and Web Application Firewalls (WAFs).
 
----
+
 
 ## How CDNs Work
 CDNs operate by caching content at **edge servers** and intelligently routing user requests to the nearest or most optimal server. Here’s the process:
@@ -44,7 +50,7 @@ CDNs operate by caching content at **edge servers** and intelligently routing us
 - The CDN routes the request to a Tokyo edge server.
 - If cached, the image is served instantly; if not, the edge server fetches it from the origin (e.g., in New York), caches it, and serves it.
 
----
+
 
 ## CDN Architecture
 CDNs consist of several key components:
@@ -61,7 +67,7 @@ CDNs consist of several key components:
 - **Purge Mechanisms**: Allow manual or automated cache invalidation when content updates.
 - **Prefetching**: Proactively cache content based on predicted user behavior.
 
----
+
 
 ## Benefits of CDNs
 - **Reduced Latency**: Content served from nearby edge servers minimizes RTT, improving page load times.
@@ -71,7 +77,7 @@ CDNs consist of several key components:
 - **Security Enhancements**: Mitigates DDoS attacks, enforces HTTPS, and filters malicious traffic via WAFs.
 - **Global Reach**: Serves users worldwide efficiently with geographically distributed PoPs.
 
----
+
 
 ## Challenges of CDNs
 - **Cache Invalidation**: Updating cached content (e.g., after a website change) can be delayed by TTLs.
@@ -80,7 +86,7 @@ CDNs consist of several key components:
 - **Configuration Complexity**: Misconfigured caching or security rules can cause issues (e.g., stale content, blocked legitimate users).
 - **Dependency**: Reliance on third-party CDNs introduces potential points of failure or vendor lock-in.
 
----
+
 
 ## Common CDN Providers
 - **Cloudflare**: Offers CDN, DDoS protection, WAF, and DNS services.
@@ -89,7 +95,7 @@ CDNs consist of several key components:
 - **Fastly**: Focuses on real-time content delivery and edge computing.
 - **Microsoft Azure CDN**: Integrated with Azure services for scalability.
 
----
+
 
 ## Real-World Context
 - **Interview Relevance**: System design interviews often involve CDNs in scenarios like “Design a scalable video streaming platform.” Explain how CDNs reduce latency, handle traffic, and integrate with DNS or load balancers.
@@ -99,7 +105,7 @@ CDNs consist of several key components:
   - **Zero Trust Security**: Integrating CDNs with zero-trust models for secure access.
   - **Dynamic Content Acceleration**: Techniques like dynamic caching and prefetching improve performance for personalized content.
 
----
+
 
 ## Further Reading
 - *Computer Networking: A Top-Down Approach* by Kurose & Ross

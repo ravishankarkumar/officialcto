@@ -449,7 +449,6 @@ export default defineConfig({
             { text: 'Microservices Pitfalls and Best Practices', link: '/interview-section/fundamentals/infra-cloud/microservices' },
             { text: 'CI/CD Pipelines', link: '/interview-section/fundamentals/infra-cloud/cicd-pipelines' },
             { text: 'Security in Infra: Fraud Prevention', link: '/interview-section/fundamentals/infra-cloud/security-infra' },
-            { text: 'Capstone: Integrating All Sections', link: '/interview-section/fundamentals/infra-cloud/capstone' }
           ]
         },
         {
@@ -458,7 +457,14 @@ export default defineConfig({
             { text: 'DNS Deep Dive', link: '/interview-section/fundamentals/misc/dns' },
             { text: 'CDN Basics', link: '/interview-section/fundamentals/misc/cdn-basics' },
             { text: 'Email Protocols', link: '/interview-section/fundamentals/misc/email' },
-            { text: 'Compression & Encoding', link: '/interview-section/fundamentals/misc/compression' }
+            { text: 'Compression & Encoding', link: '/interview-section/fundamentals/misc/compression' },
+            { text: 'REST Architecture', link: '/interview-section/fundamentals/misc/rest_architecture' },
+            { text: 'Multipart APIs', link: '/interview-section/fundamentals/misc/multipart_apis' },
+            { text: 'Circuit Breaker', link: '/interview-section/fundamentals/misc/circuit_breaker' },
+            { text: 'Video Streaming Technology', link: '/interview-section/fundamentals/misc/video_streaming_technology' },
+            { text: 'Websockets, Server-Sent events, Long Polling, Short Polling', link: '/interview-section/fundamentals/misc/real_time_communication' },
+            { text: 'Messaging Queues and Streaming Technologies', link: '/interview-section/fundamentals/misc/messaging_queues_streaming' },
+            { text: 'Common terms in Infra and System Design', link: '/interview-section/fundamentals/misc/common_terms' }
           ]
         }
       ]

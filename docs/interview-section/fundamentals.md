@@ -76,7 +76,6 @@ Also, if you are short on time, you may skip these sections. They are low priori
 7. [Microservices Pitfalls and Best Practices](/interview-section/fundamentals/infra-cloud/microservices.md)  
 8. [CI/CD Pipelines](/interview-section/fundamentals/infra-cloud/cicd-pipelines.md)  
 9. [Security in Infra: Fraud Prevention](/interview-section/fundamentals/infra-cloud/security-infra.md)  
-10. [Capstone: Integrating All Sections](/interview-section/fundamentals/infra-cloud/capstone.md)  
 
 ---
 
@@ -85,6 +84,13 @@ Also, if you are short on time, you may skip these sections. They are low priori
 2. [CDN Basics](/interview-section/fundamentals/misc/cdn-basics.md)  
 3. [Email Protocols (SMTP, IMAP, POP3)](/interview-section/fundamentals/misc/email.md)  
 4. [Compression & Encoding (Base64, gzip)](/interview-section/fundamentals/misc/compression.md)  
+5. [REST Architecture](/interview-section/fundamentals/misc/rest_architecture.md)  
+6. [Multipart APIs](/interview-section/fundamentals/misc/multipart_apis)
+7. [Circuit Breaker](/interview-section/fundamentals/misc/circuit_breaker)
+8. [Video Streaming Technology](/interview-section/fundamentals/misc/video_streaming_technology)
+9. [Websockets, Server-Sent events, Long Polling, Short Polling](/interview-section/fundamentals/misc/real_time_communication)
+10. [Messaging Queues and Streaming Technologies](/interview-section/fundamentals/misc/messaging_queues_streaming)
+11. [Common terms in Infra and System Design](/interview-section/fundamentals/misc/common_terms)
 
 
 

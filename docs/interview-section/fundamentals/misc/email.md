@@ -1,8 +1,14 @@
+---
+title: Email Protocols (SMTP, IMAP, POP3)
+description: This article provides a detailed overview of the core email protocols—SMTP, IMAP, and POP3—explaining their roles, functionalities, and differences. It’s designed for system design interviews and engineers seeking to understand email system architectures.
+image: /images/cg_dns.png
+---
+
 # Email Protocols (SMTP, IMAP, POP3)
 
 This article provides a detailed overview of the core **email protocols**—**SMTP**, **IMAP**, and **POP3**—explaining their roles, functionalities, and differences. It’s designed for system design interviews and engineers seeking to understand email system architectures.
 
----
+
 
 ## What are Email Protocols?
 Email protocols are standardized rules that enable the sending, receiving, and management of emails across networks. The three primary protocols are:
@@ -13,7 +19,7 @@ Email protocols are standardized rules that enable the sending, receiving, and m
 
 These protocols work together to ensure reliable email communication across clients (e.g., Gmail, Outlook) and servers.
 
----
+
 
 ## SMTP: Simple Mail Transfer Protocol
 **SMTP** is the protocol for **sending emails** and relaying them between servers.
@@ -41,7 +47,7 @@ These protocols work together to ensure reliable email communication across clie
 - No retrieval or management of emails (handled by IMAP/POP3).
 - Vulnerable to spam without authentication or security (e.g., SPF, DKIM, DMARC).
 
----
+
 
 ## IMAP: Internet Message Access Protocol
 **IMAP** is designed for **retrieving and managing emails** while keeping them stored on the server.
@@ -69,7 +75,7 @@ These protocols work together to ensure reliable email communication across clie
 - Higher bandwidth usage for syncing compared to POP3.
 - Dependency on server availability for access.
 
----
+
 
 ## POP3: Post Office Protocol version 3
 **POP3** is designed for **downloading emails** from a server to a client, typically removing them from the server.
@@ -95,7 +101,7 @@ These protocols work together to ensure reliable email communication across clie
 - Limited folder support (typically only Inbox).
 - Risk of data loss if the client device fails and emails are deleted from the server.
 
----
+
 
 ## Key Differences: SMTP, IMAP, POP3
 | Aspect              | SMTP                                   | IMAP                                   | POP3                                  |
@@ -113,7 +119,7 @@ These protocols work together to ensure reliable email communication across clie
 - **IMAP**: A shared mailbox you check from multiple locations, keeping letters in place.
 - **POP3**: Taking letters out of the mailbox to store at home, leaving the box empty.
 
----
+
 
 ## Security Considerations
 Email protocols are vulnerable to attacks, so security enhancements are critical:
@@ -133,7 +139,7 @@ Email protocols are vulnerable to attacks, so security enhancements are critical
   - **Man-in-the-Middle**: Interception of emails without TLS.
   - **Spam/Abuse**: Open SMTP relays can be exploited without authentication.
 
----
+
 
 ## Practical Considerations
 - **Choosing IMAP vs. POP3**:
@@ -149,7 +155,7 @@ Email protocols are vulnerable to attacks, so security enhancements are critical
   - Use redundant mail servers and MX records for failover.
   - Monitor server performance to avoid downtime.
 
----
+
 
 ## Real-World Context
 - **Interview Relevance**: System design interviews may involve email systems (e.g., “Design an email service”). Explain protocol roles, security (SPF/DKIM), and scalability considerations.
@@ -159,7 +165,7 @@ Email protocols are vulnerable to attacks, so security enhancements are critical
   - **Security Enhancements**: Widespread adoption of TLS, DMARC, and OAuth.
   - **Automation**: Transactional email APIs (e.g., SendGrid) simplify SMTP integration.
 
----
+
 
 ## Further Reading
 - *Computer Networking: A Top-Down Approach* by Kurose & Ross

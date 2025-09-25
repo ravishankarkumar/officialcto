@@ -2,7 +2,6 @@
 
 This article explores **compression** and **encoding**, focusing on **Base64** and **gzip**. It explains their purposes, mechanisms, and applications, tailored for system design interviews and engineers seeking to understand data optimization and transmission.
 
----
 
 ## What are Compression and Encoding?
 - **Compression**: Reduces the size of data to save storage space or bandwidth, typically reversible to recover the original data.
@@ -10,7 +9,7 @@ This article explores **compression** and **encoding**, focusing on **Base64** a
 
 While both are used to prepare data for efficient handling, compression focuses on size reduction, whereas encoding ensures data is usable in a specific context.
 
----
+
 
 ## Base64 Encoding
 **Base64** is an encoding scheme that converts binary data into a text-based format using a 64-character alphabet, making it safe for transmission in systems that handle text (e.g., email, JSON, HTTP).
@@ -46,7 +45,7 @@ While both are used to prepare data for efficient handling, compression focuses 
 - Not human-readable despite being text-based.
 - Requires decoding before use, adding processing overhead.
 
----
+
 
 ## Gzip Compression
 **Gzip** is a compression algorithm that reduces the size of data (text, HTML, JSON, etc.) using the **DEFLATE** algorithm, combining **Huffman coding** and **LZ77** compression.
@@ -83,7 +82,7 @@ While both are used to prepare data for efficient handling, compression focuses 
 - Requires CPU resources for compression and decompression.
 - Not human-readable; meant for machine processing.
 
----
+
 
 ## Base64 vs Gzip: Key Differences
 | Aspect              | Base64                                  | Gzip                                   |
@@ -100,7 +99,7 @@ While both are used to prepare data for efficient handling, compression focuses 
 - **Base64**: Like translating a book into a universal language for safe transport, even if it takes more pages.
 - **Gzip**: Like vacuum-sealing clothes to fit more into a suitcase, saving space.
 
----
+
 
 ## Combining Base64 and Gzip
 In practice, Base64 and gzip are often used together:
@@ -111,7 +110,7 @@ In practice, Base64 and gzip are often used together:
   2. Compressed data → Base64 encoding (text-safe).
   3. Receiver decodes Base64 → Decompresses gzip → Original data.
 
----
+
 
 ## Practical Considerations
 - **Base64**:
@@ -127,7 +126,7 @@ In practice, Base64 and gzip are often used together:
   - Neither provides encryption; use TLS/HTTPS for secure transmission.
   - Gzip can expose vulnerabilities (e.g., BREACH attack) if compressing sensitive data over HTTP.
 
----
+
 
 ## Real-World Context
 - **Interview Relevance**: System design interviews may involve optimizing data transfer (e.g., “Design a scalable API”). Discuss Base64 for encoding binary data and gzip for reducing payload size.
@@ -137,7 +136,7 @@ In practice, Base64 and gzip are often used together:
   - **Web Standards**: HTTP/2 and HTTP/3 enhance compression and delivery efficiency.
   - **Edge Computing**: CDNs apply gzip/Brotli at the edge for faster content delivery.
 
----
+
 
 ## Further Reading
 - *Computer Networking: A Top-Down Approach* by Kurose & Ross
