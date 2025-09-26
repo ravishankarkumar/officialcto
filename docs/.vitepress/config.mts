@@ -411,23 +411,63 @@ export default defineConfig({
           text: 'Design Patterns',
           items: [
             { text: 'Overview', link: '/interview-section/design-patterns' },
-            { text: '1. Introduction to Design Patterns', link: '/interview-section/design-patterns/intro-design-patterns' },
-            { text: '2. Singleton Pattern', link: '/interview-section/design-patterns/singleton-pattern' },
-            { text: '3. Factory Method Pattern', link: '/interview-section/design-patterns/factory-method-pattern' },
-            { text: '4. Abstract Factory Pattern', link: '/interview-section/design-patterns/abstract-factory-pattern' },
-            { text: '5. Builder Pattern', link: '/interview-section/design-patterns/builder-pattern' },
-            { text: '6. Adapter Pattern', link: '/interview-section/design-patterns/adapter-pattern' },
-            { text: '7. Decorator Pattern', link: '/interview-section/design-patterns/decorator-pattern' },
-            { text: '8. Facade Pattern', link: '/interview-section/design-patterns/facade-pattern' },
-            { text: '9. Composite Pattern', link: '/interview-section/design-patterns/composite-pattern' },
-            { text: '10. Strategy Pattern', link: '/interview-section/design-patterns/strategy-pattern' },
-            { text: '11. Observer Pattern', link: '/interview-section/design-patterns/observer-pattern' },
-            { text: '12. Command Pattern', link: '/interview-section/design-patterns/command-pattern' },
-            { text: '13. Template Method Pattern', link: '/interview-section/design-patterns/template-method-pattern' },
-            { text: '14. Dependency Injection', link: '/interview-section/design-patterns/dependency-injection' },
-            { text: '15. Mock Interview: Applying Patterns', link: '/interview-section/design-patterns/mock-interview-patterns' }
+            {
+              text: 'Introduction', items: [
+                { text: '1. Introduction to Design Patterns', link: '/interview-section/design-patterns/intro-design-patterns' },
+                { text: '2. Classification of Design Patterns', link: '/interview-section/design-patterns/patterns-classification' }
+              ]
+            },
+            {
+              text: 'Creational Patterns', items: [
+                { text: '3. Singleton Pattern', link: '/interview-section/design-patterns/singleton-pattern' },
+                { text: '4. Factory Method Pattern', link: '/interview-section/design-patterns/factory-method-pattern' },
+                { text: '5. Abstract Factory Pattern', link: '/interview-section/design-patterns/abstract-factory-pattern' },
+                { text: '6. Builder Pattern', link: '/interview-section/design-patterns/builder-pattern' },
+                { text: '7. Prototype Pattern', link: '/interview-section/design-patterns/prototype-pattern' }
+              ]
+            },
+            {
+              text: 'Structural Patterns', items: [
+                { text: '8. Adapter Pattern', link: '/interview-section/design-patterns/adapter-pattern' },
+                { text: '9. Decorator Pattern', link: '/interview-section/design-patterns/decorator-pattern' },
+                { text: '10. Facade Pattern', link: '/interview-section/design-patterns/facade-pattern' },
+                { text: '11. Composite Pattern', link: '/interview-section/design-patterns/composite-pattern' },
+                { text: '12. Proxy Pattern', link: '/interview-section/design-patterns/proxy-pattern' },
+                { text: '13. Bridge Pattern', link: '/interview-section/design-patterns/bridge-pattern' },
+                { text: '14. Flyweight Pattern', link: '/interview-section/design-patterns/flyweight-pattern' }
+              ]
+            },
+            {
+              text: 'Behavioral Patterns', items: [
+                { text: '15. Strategy Pattern', link: '/interview-section/design-patterns/strategy-pattern' },
+                { text: '16. Observer Pattern', link: '/interview-section/design-patterns/observer-pattern' },
+                { text: '17. Command Pattern', link: '/interview-section/design-patterns/command-pattern' },
+                { text: '18. Template Method Pattern', link: '/interview-section/design-patterns/template-method-pattern' },
+                { text: '19. State Pattern', link: '/interview-section/design-patterns/state-pattern' },
+                { text: '20. Chain of Responsibility Pattern', link: '/interview-section/design-patterns/chain-of-responsibility-pattern' },
+                { text: '21. Mediator Pattern', link: '/interview-section/design-patterns/mediator-pattern' },
+                { text: '22. Memento Pattern', link: '/interview-section/design-patterns/memento-pattern' },
+                { text: '23. Iterator Pattern', link: '/interview-section/design-patterns/iterator-pattern' },
+                { text: '24. Interpreter Pattern', link: '/interview-section/design-patterns/interpreter-pattern' },
+                { text: '25. Visitor Pattern', link: '/interview-section/design-patterns/visitor-pattern' }
+              ]
+            },
+            {
+              text: 'Modern & Architectural Patterns', items: [
+                { text: '26. Dependency Injection', link: '/interview-section/design-patterns/dependency-injection' },
+                { text: '27. Repository Pattern', link: '/interview-section/design-patterns/repository-pattern' },
+                { text: '28. Event Sourcing', link: '/interview-section/design-patterns/event-sourcing-pattern' },
+                { text: '29. CQRS (Command Query Responsibility Segregation)', link: '/interview-section/design-patterns/cqrs-pattern' }
+              ]
+            },
+            {
+              text: 'Capstone', items: [
+                { text: '30. Mock Interview: Applying Patterns', link: '/interview-section/design-patterns/mock-interview-patterns' }
+              ]
+            }
           ]
         }
+
       ],
       '/interview-section/design-principles': [
         {

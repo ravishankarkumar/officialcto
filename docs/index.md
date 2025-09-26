@@ -28,19 +28,6 @@ title: Official CTO is a blog for tech interview preparation covering DS/Algo, L
 
 
 
-
----
-
-# Welcome to Official CTO
-
-I am a software engineer with over eight years of experience, having worked on scalable e-commerce platforms, notification systems, and cloud infrastructure. This site is a personal endeavor to share insights from that journey while continuing to grow alongside others in the field. Drawing from industry standards like *Clean Code* and *Refactoring*, the content reflects a commitment to making software better—through thoughtful design, clean practices, and effective leadership.
-
-Whether you’re preparing for technical interviews or seeking to refine your craft, this space offers a range of perspectives. Dive in at your own pace, and stay tuned for videos to deepen the conversation.
-
-<!-- [Begin Exploring →](/interview-section/) -->
-
----
-
 <footer>
   <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
   <!-- <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p> -->

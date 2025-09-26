@@ -1,80 +1,118 @@
 ---
 title: Design Patterns
-description: Master design patterns in Java to build reusable, maintainable systems, with 15 lessons covering creational, structural, and behavioral patterns for better software engineering.
+description: Master design patterns in Java to build reusable, maintainable systems, with 30 lessons covering all 23 GoF patterns, classification, and modern patterns like Dependency Injection, CQRS, and Event Sourcing for better software engineering.
 ---
 
 # Design Patterns: Reusable Solutions for Scalable Systems
 
 ## Overview
-Design patterns are time-tested, reusable solutions to common software design problems, enabling modular, maintainable, and scalable code. This section’s **15 lessons** dive into the Gang of Four (GoF) patterns and modern patterns like Dependency Injection, equipping you to build elegant Java systems. Whether implementing a notification system for a social app or a payment processor for an e-commerce platform, these patterns enhance your design skills. By mastering design patterns, you’ll create robust software and mentor others effectively.
+Design patterns are time-tested, reusable solutions to common software design problems, enabling modular, maintainable, and scalable code. In this hub, we cover **all 23 Gang of Four (GoF) patterns** — creational, structural, and behavioral — along with **modern patterns** like Dependency Injection, Repository, Event Sourcing, and CQRS.  
 
-Inspired by *Design Patterns* by Gang of Four, *Head First Design Patterns*, and *Clean Code*, this section emphasizes practical Java implementations, covering creational, structural, and behavioral patterns. Each lesson includes real-world examples and practice exercises to advance your skills in the *Official CTO* journey to becoming a better engineer.
+By mastering these patterns, you’ll learn how to design elegant, extensible Java systems and apply them in real-world projects, from e-commerce platforms to distributed microservices.
 
 ## Learning Objectives
-- Master **creational patterns** (e.g., Singleton, Factory) for object creation.
-- Learn **structural patterns** (e.g., Adapter, Decorator) for object composition.
-- Apply **behavioral patterns** (e.g., Strategy, Observer) for dynamic behavior.
-- Design **scalable systems** using patterns, UML, and clean code (Sections 2, 9).
+- Master **creational patterns** (e.g., Singleton, Factory, Builder, Prototype) for object creation.
+- Learn **structural patterns** (e.g., Adapter, Decorator, Proxy, Bridge, Composite, Flyweight, Facade) for object composition.
+- Apply **behavioral patterns** (e.g., Strategy, Observer, Command, State, Chain of Responsibility, Template Method, Mediator, Memento, Iterator, Interpreter, Visitor) for dynamic behavior.
+- Explore **modern enterprise patterns** (e.g., Dependency Injection, Repository, Event Sourcing, CQRS).
+- Design **scalable systems** using patterns, UML, and clean code.
 
 ## Lessons
+
+### Introduction
 1. **Introduction to Design Patterns** (15 min)  
-   Explore the purpose and types of design patterns (creational, structural, behavioral). Example: Overview of patterns in a social app.  
    [Start Lesson →](/interview-section/design-patterns/intro-design-patterns)
 
-2. **Singleton Pattern** (15 min)  
-   Learn the Singleton pattern for single-instance objects. Example: Logger for an e-commerce platform.  
+2. **Classification of Design Patterns** (15 min)  
+   [Start Lesson →](/interview-section/design-patterns/patterns-classification)
+
+### Creational Patterns (5 GoF)
+3. **Singleton Pattern** (15 min)  
    [Start Lesson →](/interview-section/design-patterns/singleton-pattern)
 
-3. **Factory Method Pattern** (20 min)  
-   Use Factory Method to create objects flexibly. Example: Payment processor factory for a retail app.  
+4. **Factory Method Pattern** (20 min)  
    [Start Lesson →](/interview-section/design-patterns/factory-method-pattern)
 
-4. **Abstract Factory Pattern** (20 min)  
-   Apply Abstract Factory for families of related objects. Example: UI components for a travel platform.  
+5. **Abstract Factory Pattern** (20 min)  
    [Start Lesson →](/interview-section/design-patterns/abstract-factory-pattern)
 
-5. **Builder Pattern** (20 min)  
-   Master the Builder pattern for complex object construction. Example: Order builder for an e-commerce system.  
+6. **Builder Pattern** (20 min)  
    [Start Lesson →](/interview-section/design-patterns/builder-pattern)
 
-6. **Adapter Pattern** (15 min)  
-   Use Adapter to bridge incompatible interfaces. Example: Integrate legacy payment APIs in a modern app.  
+7. **Prototype Pattern** (20 min)  
+   [Start Lesson →](/interview-section/design-patterns/prototype-pattern)
+
+### Structural Patterns (7 GoF)
+8. **Adapter Pattern** (15 min)  
    [Start Lesson →](/interview-section/design-patterns/adapter-pattern)
 
-7. **Decorator Pattern** (20 min)  
-   Apply Decorator to extend functionality dynamically. Example: Add features to a notification system.  
+9. **Decorator Pattern** (20 min)  
    [Start Lesson →](/interview-section/design-patterns/decorator-pattern)
 
-8. **Facade Pattern** (15 min)  
-   Simplify complex subsystems with Facade. Example: Unified API for a booking system.  
-   [Start Lesson →](/interview-section/design-patterns/facade-pattern)
+10. **Facade Pattern** (15 min)  
+    [Start Lesson →](/interview-section/design-patterns/facade-pattern)
 
-9. **Composite Pattern** (20 min)  
-   Use Composite for hierarchical structures. Example: File system representation in a cloud app.  
-   [Start Lesson →](/interview-section/design-patterns/composite-pattern)
+11. **Composite Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/composite-pattern)
 
-10. **Strategy Pattern** (20 min)  
-    Master Strategy for interchangeable algorithms. Example: Sorting strategies for a product catalog.  
+12. **Proxy Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/proxy-pattern)
+
+13. **Bridge Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/bridge-pattern)
+
+14. **Flyweight Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/flyweight-pattern)
+
+### Behavioral Patterns (11 GoF)
+15. **Strategy Pattern** (20 min)  
     [Start Lesson →](/interview-section/design-patterns/strategy-pattern)
 
-11. **Observer Pattern** (20 min)  
-    Apply Observer for event-driven systems. Example: User notifications in a social app.  
+16. **Observer Pattern** (20 min)  
     [Start Lesson →](/interview-section/design-patterns/observer-pattern)
 
-12. **Command Pattern** (20 min)  
-    Use Command to encapsulate actions. Example: Undoable operations in a text editor.  
+17. **Command Pattern** (20 min)  
     [Start Lesson →](/interview-section/design-patterns/command-pattern)
 
-13. **Template Method Pattern** (15 min)  
-    Learn Template Method for algorithm skeletons. Example: Workflow for a payment processor.  
+18. **Template Method Pattern** (15 min)  
     [Start Lesson →](/interview-section/design-patterns/template-method-pattern)
 
-14. **Dependency Injection** (20 min)  
-    Explore Dependency Injection for loose coupling. Example: Inject services in a cloud system.  
+19. **State Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/state-pattern)
+
+20. **Chain of Responsibility Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/chain-of-responsibility-pattern)
+
+21. **Mediator Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/mediator-pattern)
+
+22. **Memento Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/memento-pattern)
+
+23. **Iterator Pattern** (15 min)  
+    [Start Lesson →](/interview-section/design-patterns/iterator-pattern)
+
+24. **Interpreter Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/interpreter-pattern)
+
+25. **Visitor Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/visitor-pattern)
+
+### Modern Patterns
+26. **Dependency Injection** (20 min)  
     [Start Lesson →](/interview-section/design-patterns/dependency-injection)
 
-15. **Mock Interview: Applying Patterns** (30 min)  
-    Practice applying multiple patterns in a mock interview. Example: Design a notification system combining patterns.  
+27. **Repository Pattern** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/repository-pattern)
+
+28. **Event Sourcing** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/event-sourcing-pattern)
+
+29. **CQRS (Command Query Responsibility Segregation)** (20 min)  
+    [Start Lesson →](/interview-section/design-patterns/cqrs-pattern)
+
+### Capstone
+30. **Mock Interview: Applying Patterns** (30 min)  
     [Start Lesson →](/interview-section/design-patterns/mock-interview-patterns)
 
 ## Start Your Journey
@@ -83,7 +121,6 @@ Ready to build reusable, scalable systems with design patterns? Dive into [Intro
 ---
 
 <footer>
-  <p>Connect: <a href="https://github.com/your-profile">GitHub</a> | <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
-  <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
   <p>&copy; 2025 Official CTO. All rights reserved.</p>
 </footer>
