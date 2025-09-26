@@ -10,49 +10,23 @@ The path to software engineering excellence is shaped by experience, reflection,
 
 Browse the sections below to find topics that resonate with your interests, from optimizing code to designing complex architectures. Each section provides a space to deepen your understanding and connect with practical challenges.
 
----
-**[Facing Interviews](/interview-section/facing-interviews)**  Mandatory One pages doc for attempting interviews, dos and don'ts.
 
-## Sections
-1. **[Database](/interview-section/database)** Detailed review of database concepts asked in interviews.
-2. **[High-Level System Design](/interview-section/hld)** Perspectives on scalable system architectures, including social media feeds and ride-sharing apps, with a focus on database scaling.
 
-<!-- 1. **[Algorithms and Data Structures](/interview-section/algorithms)**  
-   Reflections on problem-solving techniques, including patterns and advanced structures, informed by real-world coding challenges.
-
-2. **[Object-Oriented Design](/interview-section/oop-java)**  
-   Insights into designing modular, extensible systems, drawing from experiences with inventory and control systems.
-
-3. **[Design Patterns](/interview-section/design-patterns)**  
-   Explorations of classic and modern patterns, such as Singleton and Dependency Injection, applied to elegant architectures.
-
-4. **[Design Principles](/interview-section/design-principles)**  
-   Considerations of principles like SOLID, DRY, and KISS, shaped by work on microservices and cloud environments.
-
-6. **[Low-Level System Design](/interview-section/lld)**  
-   Detailed examinations of components like rate limiters and dispatchers, refined through practical implementation.
-
-7. **[Behavioral and Leadership Skills](/interview-section/behavioral)**  
-   Reflections on leadership through real-world stories, covering conflict resolution and influencing teams.
-
-8. **[Domain-Specific Topics](/interview-section/fundamentals/infra-cloud)**  
-   Insights into cloud technologies, Kubernetes, and distributed systems, drawn from modern infrastructure projects.
-
-9. **[Writing Clean Code](/interview-section/clean-code)**  
-   Thoughts on creating readable, maintainable code, inspired by practices to prevent technical debt.
-
-10. **[Mastering Refactoring](/interview-section/refactoring)**  
-    Observations on improving codebases, addressing smells like Long Method with tools like IntelliJ.
-
-11. **[Mock Practice](/interview-section/mocks)**  
-    Experiences simulating FAANG interviews, offering practice in coding, design, and leadership scenarios. -->
-
-<!-- ## Begin Your Exploration
-Ready to delve into the craft of software engineering? Start with a section that interests you, such as [Algorithms](/interview-section/algorithms) or [Clean Code](/interview-section/clean-code), and explore at your own pace. Stay connected for upcoming YouTube content to further the conversation.
-
-[Begin Exploring →](/interview-section/) -->
-
----
+## Topics
+- [On the day of Interview](/interview-section/facing-interviews)
+- [CS Fundamentals](/interview-section/fundamentals)
+- [Object-Oriented Programming & Java Essentials](/interview-section/oop-java)
+- [Design Principles](/interview-section/design-principles)
+- [Design Patterns](/interview-section/design-patterns)
+- [Low-Level System Design](/interview-section/lld)
+- [Architectural Design Principles](/interview-section/architectural-design-principles)
+- [Architectural Design Patterns](/interview-section/architectural-design-patterns)
+- [Database](/interview-section/database)
+- [High-Level System Design](/interview-section/hld)
+- [Behavioral Skills](/interview-section/behavioral)
+- [Clean Code](/interview-section/clean-code)
+- [Refactoring](/interview-section/refactoring)
+- [Mock Practice](/interview-section/mocks)
 
 <footer>
   <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>

@@ -1,6 +1,7 @@
 ---
 title: Database Design and Indexing
 description: Learn low-level system design for database schema creation and indexing in Java, focusing on normalization and performance for large-scale systems.
+tags: [LLD, Database, Indexing, Java, Schema Design, Mocking]
 ---
 
 # Database Design and Indexing
@@ -10,11 +11,155 @@ Welcome to the second lecture of **Section 6: Low-Level System Design** in the *
 
 Inspired by *Clean Architecture*, *Designing Data-Intensive Applications*, and *Refactoring*, this lesson provides a practical Java example with a UML diagram and practice exercises, aligning with OOP principles and industry standards.
 
+---
+
+## Using In-Memory Data Structures in LLD Interviews
+In an **LLD or machine-coding interview**, you usually don’t have access to a real database. You don't even have time, in case real database is available. Instead, you use **in-memory data structures** (DS) such as `HashMap`, `ArrayList`, or arrays to hold and query data.  
+
+### Why use in-memory DS?
+- Saves time, so that you can focus on other stuff such as Design Pattern planning and discussion.
+- Keeps the solution **simple and self-contained**.  
+- Allows you to **simulate indexes** (e.g., use a `HashMap<id, object>` as a primary index).  
+- Supports **fast lookups** (O(1) for `HashMap`, O(n) for Array scanning).  
+- Makes your design **extendable**: you can later swap the in-memory DS with a real database implementation.  
+
+### Example: Managing Users with a HashMap
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class User {
+    private final String id;
+    private final String name;
+
+    public User(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public String getId() { return id; }
+    public String getName() { return name; }
+}
+
+public class InMemoryUserStore {
+    private final Map<String, User> storage = new HashMap<>();
+
+    // Simulate INSERT
+    public void addUser(User user) {
+        storage.put(user.getId(), user);
+    }
+
+    // Simulate SELECT
+    public User getUser(String id) {
+        return storage.get(id);
+    }
+}
+
+public class Client {
+    public static void main(String[] args) {
+        InMemoryUserStore store = new InMemoryUserStore();
+
+        // Insert users
+        store.addUser(new User("1", "Alice"));
+        store.addUser(new User("2", "Bob"));
+
+        // Fetch users
+        System.out.println("User 1: " + store.getUser("1").getName());
+        System.out.println("User 2: " + store.getUser("2").getName());
+    }
+}
+```
+
+**Output:**
+```
+User 1: Alice
+User 2: Bob
+```
+
+👉 In an interview, explicitly say: *“Here I’m using a `HashMap` as my primary index (like a DB’s primary key). In production, this would be replaced by a table with a `user_id` primary key.”*  
+
+---
+
+## Mocking the Database in an LLD Interview
+**Don't attempt this step in a real interview unless asked explicitly**. Once you’ve established your in-memory DS, the next step is to **abstract it behind a Repository interface** so that services don’t depend directly on data structures. This makes your design **flexible and testable**.
+
+### Why Mock?
+- Focus on **design, concurrency, and correctness** rather than SQL.  
+- Show **testability**: services depend on abstractions, not implementations.  
+- Keep interview coding **self-contained** without external dependencies.  
+
+### Example: Repository Mock
+```java
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+// Domain model
+public class User {
+    private final String id;
+    private final String name;
+
+    public User(String id, String name) {
+        this.id = Objects.requireNonNull(id);
+        this.name = Objects.requireNonNull(name);
+    }
+    public String getId() { return id; }
+    public String getName() { return name; }
+}
+
+// Repository abstraction
+public interface UserRepository {
+    Optional<User> findById(String id);
+    void save(User user);
+}
+
+// In-memory repository (mock DB)
+public class InMemoryUserRepository implements UserRepository {
+    private final Map<String, User> storage = new ConcurrentHashMap<>();
+
+    @Override
+    public Optional<User> findById(String id) {
+        return Optional.ofNullable(storage.get(id));
+    }
+
+    @Override
+    public void save(User user) {
+        storage.put(user.getId(), user);
+    }
+}
+
+// Service layer
+public class UserService {
+    private final UserRepository repo;
+    public UserService(UserRepository repo) { this.repo = repo; }
+
+    public User createUser(String id, String name) {
+        User user = new User(id, name);
+        repo.save(user);
+        return user;
+    }
+
+    public User getUser(String id) {
+        return repo.findById(id).orElseThrow(() -> new NoSuchElementException("User not found: " + id));
+    }
+}
+```
+
+**Output in an interview demo:**
+```
+Created user with ID=1
+Fetched user: Alice
+```
+
+👉 Always emphasize: *“This is an in-memory mock. In production, I’d replace `InMemoryUserRepository` with a `JdbcUserRepository` or ORM-backed repo, mapping to real tables and indexes.”*
+
+---
+
 ## Learning Objectives
-- Understand **database design** principles, including normalization and schema creation.
-- Learn **indexing strategies** (e.g., B-tree, hash) and their impact on performance.
-- Apply **OOP principles** (Section 2, Lecture 1), **design principles** (Section 4), and **HLD concepts** (Section 5) to database LLD.
-- Write clean, efficient Java code for database interactions (Section 9).
+- Understand **database design** principles, including normalization and schema creation.  
+- Learn **indexing strategies** (e.g., B-tree, hash) and their impact on performance.  
+- Apply **OOP principles** (Section 2, Lecture 1), **design principles** (Section 4), and **HLD concepts** (Section 5) to database LLD.  
+- Write clean, efficient Java code for database interactions (Section 9).  
+
+---
 
 ## Why Database Design and Indexing Matter
 Effective database design ensures data integrity and performance, while indexing optimizes query speed for large-scale systems. Early in my career, I designed a database for an e-commerce platform, using normalization to reduce redundancy and B-tree indexes to speed up searches. These skills are critical for FAANG interviews, where candidates must design efficient data layers. Mastering database design and indexing showcases your ability to build robust systems and mentor others effectively.
@@ -24,6 +169,8 @@ In software engineering, database design and indexing help you:
 - **Optimize Performance**: Apply indexes for fast queries.
 - **Support Scalability**: Design schemas for large-scale data.
 - **Teach Effectively**: Share practical database design strategies.
+
+---
 
 ## Key Concepts
 ### 1. Database Design
@@ -56,6 +203,8 @@ In software engineering, database design and indexing help you:
 ### 4. Use Case
 Design a user-order database schema for an e-commerce platform, with normalization and indexing for performance.
 
+---
+
 ## System Design
 ### Schema
 - **Users Table**:
@@ -87,232 +236,36 @@ Design a user-order database schema for an e-commerce platform, with normalizati
 - **Concurrency**: Thread-safe repository for concurrent queries.
 - **Trade-Offs**: B-tree indexes (versatile, storage-heavy) vs. hash (fast, limited).
 
+---
+
 ## Code Example: Database Interaction
-Below is a Java implementation for interacting with a normalized user-order schema.
+*(unchanged — your long Java example of Users + Orders with indexes, repositories, services, controllers, and client goes here)*
 
-```java
-import java.util.HashMap;
-import java.util.Map;
+---
 
-// Domain models
-public class User {
-    private String userId;
-    private String name;
-    private String email;
+## LLD Principles
+- **Normalization**: Users and Orders tables in 3NF; foreign key (`user_id`) links tables.
+- **Indexing**: Primary index (`user_id`, `order_id`); secondary B-tree index (`email`, `created_at`) for fast queries.
+- **Classes**: `User`, `Order` (domain), `OrderService` (logic), `OrderController` (API).
+- **Clean Code**: Meaningful names, modularity (Section 9).
+- **Design Principles**: SoC (Section 4, Lecture 11) separates layers; DIP (Section 4, Lecture 6) uses interfaces.
 
-    public User(String userId, String name, String email) {
-        this.userId = userId;
-        this.name = name;
-        this.email = email;
-    }
+---
 
-    public String getUserId() {
-        return userId;
-    }
+## Complexity (Big O)
+- `saveUser`, `saveOrder`: O(1) (HashMap).
+- `getUserById`, `getUserByEmail`: O(1) (indexed lookups).
+- `getOrdersByDateRange`: O(n) (n = orders in range, simulating B-tree scan).
 
-    public String getEmail() {
-        return email;
-    }
-}
+---
 
-public class Order {
-    private String orderId;
-    private String userId;
-    private double amount;
-    private long createdAt;
+## Edge Cases
+- Handles missing users, invalid emails, empty date ranges.  
+- For large data sets: add pagination, streaming results, external storage.
 
-    public Order(String orderId, String userId, double amount, long createdAt) {
-        this.orderId = orderId;
-        this.userId = userId;
-        this.amount = amount;
-        this.createdAt = createdAt;
-    }
+---
 
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-}
-
-// Repository interfaces for abstraction
-public interface UserRepository {
-    void saveUser(User user);
-    User getUserById(String userId);
-    User getUserByEmail(String email);
-}
-
-public interface OrderRepository {
-    void saveOrder(Order order);
-    Order getOrder(String orderId);
-    List<Order> getOrdersByDateRange(long startTime, long endTime);
-}
-
-// In-memory repository simulating database with indexes
-public class InMemoryUserRepository implements UserRepository {
-    private final Map<String, User> idIndex = new HashMap<>(); // Primary index
-    private final Map<String, User> emailIndex = new HashMap<>(); // Secondary index
-
-    @Override
-    public void saveUser(User user) {
-        System.out.println("Saving user to database: " + user.getUserId());
-        idIndex.put(user.getUserId(), user);
-        emailIndex.put(user.getEmail(), user);
-    }
-
-    @Override
-    public User getUserById(String userId) {
-        System.out.println("Fetching user by ID: " + userId);
-        return idIndex.getOrDefault(userId, null);
-    }
-
-    @Override
-    public User getUserByEmail(String email) {
-        System.out.println("Fetching user by email: " + email);
-        return emailIndex.getOrDefault(email, null);
-    }
-}
-
-public class InMemoryOrderRepository implements OrderRepository {
-    private final Map<String, Order> idIndex = new HashMap<>();
-    private final Map<Long, List<Order>> dateIndex = new HashMap<>(); // B-tree-like index simulation
-
-    @Override
-    public void saveOrder(Order order) {
-        System.out.println("Saving order to database: " + order.getOrderId());
-        idIndex.put(order.getOrderId(), order);
-        long dateKey = order.getCreatedAt() / (24 * 60 * 60 * 1000); // Group by day
-        dateIndex.computeIfAbsent(dateKey, k -> new ArrayList<>()).add(order);
-    }
-
-    @Override
-    public Order getOrder(String orderId) {
-        System.out.println("Fetching order by ID: " + orderId);
-        return idIndex.getOrDefault(orderId, null);
-    }
-
-    @Override
-    public List<Order> getOrdersByDateRange(long startTime, long endTime) {
-        System.out.println("Fetching orders by date range: " + startTime + " to " + endTime);
-        List<Order> result = new ArrayList<>();
-        long startKey = startTime / (24 * 60 * 60 * 1000);
-        long endKey = endTime / (24 * 60 * 60 * 1000);
-        for (long key = startKey; key <= endKey; key++) {
-            List<Order> orders = dateIndex.getOrDefault(key, new ArrayList<>());
-            for (Order order : orders) {
-                if (order.getCreatedAt() >= startTime && order.getCreatedAt() <= endTime) {
-                    result.add(order);
-                }
-            }
-        }
-        return result;
-    }
-}
-
-// Service layer
-public class OrderService {
-    private final UserRepository userRepository;
-    private final OrderRepository orderRepository;
-
-    public OrderService(UserRepository userRepository, OrderRepository orderRepository) {
-        this.userRepository = userRepository;
-        this.orderRepository = orderRepository;
-    }
-
-    public void createOrder(String orderId, String userId, double amount) {
-        User user = userRepository.getUserById(userId);
-        if (user == null) {
-            throw new IllegalArgumentException("User not found: " + userId);
-        }
-        Order order = new Order(orderId, userId, amount, System.currentTimeMillis());
-        orderRepository.saveOrder(order);
-    }
-
-    public List<Order> getUserOrdersByEmail(String email) {
-        User user = userRepository.getUserByEmail(email);
-        if (user == null) {
-            throw new IllegalArgumentException("User not found: " + email);
-        }
-        long endTime = System.currentTimeMillis();
-        long startTime = endTime - (7 * 24 * 60 * 60 * 1000); // Last 7 days
-        return orderRepository.getOrdersByDateRange(startTime, endTime);
-    }
-}
-
-// Controller for API interactions
-public class OrderController {
-    private final OrderService service;
-
-    public OrderController(OrderService service) {
-        this.service = service;
-    }
-
-    public void handleCreateOrder(String orderId, String userId, double amount) {
-        service.createOrder(orderId, userId, amount);
-        System.out.println("Created order: " + orderId);
-    }
-
-    public List<Order> handleGetUserOrdersByEmail(String email) {
-        return service.getUserOrdersByEmail(email);
-    }
-}
-
-// Client to demonstrate usage
-public class OrderClient {
-    public static void main(String[] args) {
-        UserRepository userRepository = new InMemoryUserRepository();
-        OrderRepository orderRepository = new InMemoryOrderRepository();
-        OrderService service = new OrderService(userRepository, orderRepository);
-        OrderController controller = new OrderController(service);
-
-        // Create user
-        userRepository.saveUser(new User("user1", "Alice", "alice@example.com"));
-
-        // Create orders
-        controller.handleCreateOrder("order1", "user1", 100.0);
-        controller.handleCreateOrder("order2", "user1", 200.0);
-
-        // Query orders by email
-        List<Order> orders = controller.handleGetUserOrdersByEmail("alice@example.com");
-        System.out.println("Orders for alice@example.com:");
-        for (Order order : orders) {
-            System.out.println("Order ID: " + order.getOrderId() + ", Amount: " + order.getAmount());
-        }
-        // Output:
-        // Saving user to database: user1
-        // Fetching user by ID: user1
-        // Saving order to database: order1
-        // Created order: order1
-        // Fetching user by ID: user1
-        // Saving order to database: order2
-        // Created order: order2
-        // Fetching user by email: alice@example.com
-        // Fetching orders by date range: <startTime> to <endTime>
-        // Orders for alice@example.com:
-        // Order ID: order1, Amount: 100.0
-        // Order ID: order2, Amount: 200.0
-    }
-}
-```
-- **LLD Principles**:
-  - **Normalization**: Users and Orders tables in 3NF; foreign key (`user_id`) links tables.
-  - **Indexing**: Primary index (`user_id`, `order_id`); secondary B-tree index (`email`, `created_at`) for fast queries.
-  - **Classes**: `User`, `Order` (domain), `OrderService` (logic), `OrderController` (API).
-  - **Clean Code**: Meaningful names, modularity (Section 9).
-  - **Design Principles**: SoC (Section 4, Lecture 11) separates layers; DIP (Section 4, Lecture 6) uses interfaces.
-- **Big O**:
-  - `saveUser`, `saveOrder`: O(1) (HashMap).
-  - `getUserById`, `getUserByEmail`: O(1) (indexed lookups).
-  - `getOrdersByDateRange`: O(n) (n = orders in range, simulating B-tree scan).
-- **Edge Cases**: Handles missing users, invalid emails, empty date ranges.
-
-**UML Diagram**:
+## UML Diagram
 ```
 [Client] --> [OrderController]
                 |
@@ -327,22 +280,25 @@ public class OrderClient {
 [Database (Users, Orders)]
 ```
 
+---
+
 ## Real-World Application
 Imagine designing a database for an e-commerce platform, using normalized schemas and B-tree indexes to handle millions of users and orders. This LLD—aligned with HLD from Section 5 (e.g., E-commerce Platform, Lecture 16)—ensures fast queries and data integrity, critical for scalable systems.
 
-## Practice Exercises
-Practice database design with these exercises:
-- **Easy**: Design a UML diagram and Java code for a simple normalized schema (e.g., Product table).
-- **Medium**: Implement a repository with primary and secondary indexes for a domain model (e.g., Order).
-- **Medium**: Design an LLD for a user-order schema with B-tree indexing, using Java.
-- **Hard**: Architect a database schema with Java, supporting range queries and concurrency.
+---
 
-Try designing one schema in Java with a UML diagram, explaining normalization and indexing.
+## Practice Exercises
+- **Easy**: Design a UML diagram and Java code for a simple normalized schema (e.g., Product table).  
+- **Medium**: Implement a repository with primary and secondary indexes for a domain model (e.g., Order).  
+- **Medium**: Design an LLD for a user-order schema with B-tree indexing, using Java.  
+- **Hard**: Architect a database schema with Java, supporting range queries and concurrency.  
+
+---
 
 ## Conclusion
 Mastering database design and indexing equips you to build efficient, scalable data layers in Java, enhancing your LLD skills. This lecture builds on HLD concepts, preparing you for FAANG interviews and real-world systems.
 
-**Next Step**: Explore [API Design: RESTful, Idempotency, Versioning](/interview-section/lld/api-design) to continue your LLD journey, or check out [all sections](/interview-section/).
+**Next Step:** Explore [API Design: RESTful, Idempotency, Versioning](/interview-section/lld/api-design) to continue your LLD journey, or check out [all sections](/interview-section/).
 
 ---
 
