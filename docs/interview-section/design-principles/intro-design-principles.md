@@ -1,23 +1,21 @@
 ---
 title: Introduction to Design Principles
-description: Master design principles in Java, including SOLID, DRY, KISS, YAGNI, Law of Demeter, Separation of Concerns, POLA, and GRASP, to build robust, maintainable systems for better software engineering.
+description: Master design principles in Java, including SOLID, DRY, KISS, YAGNI, Law of Demeter, Separation of Concerns, Composition over Inheritance, Programming to an Interface, Immutability, POLA, GRASP, and more to build robust, maintainable systems for better software engineering.
 ---
 
 # Introduction to Design Principles
 
 ## Overview
-Design principles are foundational guidelines that shape high-quality, maintainable, and scalable software, ensuring your code is robust, modular, and intuitive. In this first lesson of Section 4 in the *Official CTO* journey, we explore the **fundamentals of design principles**, their purpose, and their distinction from design patterns. Whether improving an e-commerce payment system or simplifying a social app’s architecture, these principles—SOLID, DRY, KISS, YAGNI, Law of Demeter, Separation of Concerns, POLA, and GRASP—equip you to write better code. By mastering them, you’ll create reliable Java systems and mentor others effectively.
-
-Inspired by *Clean Code*, *Effective Java*, and *Design Patterns* by Gang of Four, this 15-minute lesson introduces the concepts, a practical Java example with a UML diagram, and practice exercises to kickstart your journey in Section 4. Let’s become a better engineer!
+Design principles are foundational guidelines that shape high-quality, maintainable, and scalable software, ensuring your code is robust, modular, and intuitive. In this Section, we explore the **fundamentals of design principles**, their purpose, and their distinction from design patterns. Whether improving an e-commerce payment system or simplifying a social app’s architecture, these principles—**SOLID, DRY, KISS, YAGNI, Law of Demeter, Separation of Concerns, Composition over Inheritance, Programming to an Interface, Information Hiding, High Cohesion & Low Coupling, Favor Immutability, Principle of Least Privilege, POLA, and GRASP**—equip you to write better code. By mastering them, you’ll create reliable Java systems and mentor others effectively.
 
 ## Learning Objectives
 - Understand the **purpose and benefits** of design principles.
-- Learn the **key principles**: SOLID, DRY, KISS, YAGNI, LoD, SoC, POLA, GRASP.
+- Learn the **key principles**: SOLID, DRY, KISS, YAGNI, LoD, SoC, Composition over Inheritance, Programming to Interface, Information Hiding, High Cohesion/Low Coupling, Immutability, Least Privilege, POLA, GRASP.
 - Contrast principles with **design patterns** (Section 3).
 - Apply principles to improve Java code with clean code practices (Section 9).
 
 ## Why Design Principles Matter
-Design principles guide developers to write code that is easier to maintain, extend, and understand, forming the foundation for professional software engineering. Early in my career, I transformed a messy payment system for an e-commerce platform by applying principles like Single Responsibility and DRY, improving readability and scalability. Unlike design patterns (Section 3), which provide specific solutions, principles offer general guidelines applicable across systems. Mastering them enhances your ability to design robust systems and mentor teams effectively.
+Design principles guide developers to write code that is easier to maintain, extend, and understand, forming the foundation for professional software engineering. Early in my career, I transformed a messy payment system for an e-commerce platform by applying principles like Single Responsibility and DRY, improving readability and scalability. Unlike design patterns (Section 3), which provide specific solutions, **principles are philosophies (guidelines) while patterns are recipes (ready-made solutions).** Mastering them enhances your ability to design robust systems and mentor teams effectively.
 
 In software engineering, design principles help you:
 - **Enhance Maintainability**: Write code that’s easy to update (Section 9).
@@ -35,17 +33,23 @@ Design principles are high-level guidelines for structuring code to achieve modu
 - Align teams on best practices for FAANG-level quality.
 
 ### 2. Principles Covered in Section 4
-- **SOLID** (Lectures 2-6): Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion for modular OOP.
-- **DRY** (Lecture 7): Don’t Repeat Yourself to eliminate duplication.
-- **KISS** (Lecture 8): Keep It Simple, Stupid for simplicity.
-- **YAGNI** (Lecture 9): You Aren’t Gonna Need It to avoid over-engineering.
-- **Law of Demeter** (Lecture 10): Reduce coupling by limiting object interactions.
-- **Separation of Concerns** (Lecture 11): Modularize functionality.
-- **POLA and GRASP** (Lecture 12): Principle of Least Astonishment for intuitive code; GRASP for responsibility assignment.
+- **SOLID** (Lectures 2-6): SRP, OCP, LSP, ISP, DIP for modular OOP.
+- **Programming to an Interface** (Lecture 7): Code to contracts, not implementations.
+- **Composition over Inheritance** (Lecture 8): Favor flexible object composition.
+- **DRY** (Lecture 9): Eliminate duplication.
+- **KISS** (Lecture 10): Keep designs simple.
+- **YAGNI** (Lecture 11): Avoid unnecessary features.
+- **Law of Demeter** (Lecture 12): Reduce coupling by limiting object interactions.
+- **Separation of Concerns** (Lecture 13): Modularize functionality.
+- **Information Hiding** (Lecture 14): Encapsulate internal details.
+- **High Cohesion & Low Coupling** (Lecture 15): Group related logic, minimize dependencies.
+- **Favor Immutability** (Lecture 16): Safer, predictable designs.
+- **Least Privilege** (Lecture 17): Grant minimum rights needed.
+- **POLA and GRASP** (Lecture 18): Intuitive APIs and responsibility-driven design.
 
 ### 3. Principles vs. Patterns
-- **Design Patterns** (Section 3): Specific solutions (e.g., Singleton, Observer) for recurring problems.
-- **Design Principles**: General guidelines (e.g., SOLID, DRY) to shape overall design, often applied with patterns.
+- **Design Patterns** (Section 3): Specific recipes (e.g., Singleton, Observer) for recurring problems.
+- **Design Principles**: Philosophical guidelines (e.g., SOLID, DRY) to shape overall design.
 
 **Example**: Refactoring a payment system to follow Single Responsibility (principle) using the Strategy pattern (Section 3, Lecture 10).
 
@@ -107,10 +111,10 @@ public class PaymentProcessor {
 }
 ```
 - **Issues**:
-  - Violates **Single Responsibility** (Lecture 2): Handles validation, processing, and logging.
-  - Violates **Open/Closed** (Lecture 3): Requires modification for new payment types.
-  - Violates **DRY** (Lecture 7): Duplicated validation logic.
-  - Violates **KISS** (Lecture 8): Complex method with conditionals.
+  - Violates **SRP**: Handles validation, processing, and logging.
+  - Violates **OCP**: Requires modification for new payment types.
+  - Violates **DRY**: Duplicated validation logic.
+  - Violates **KISS**: Complex conditional logic.
 
 ### Principled Design (After Principles)
 **UML Diagram (After)**
@@ -118,38 +122,56 @@ public class PaymentProcessor {
 +---------------------+       +---------------------+
 | PaymentProcessor    |       |    PaymentService   |
 +---------------------+       +---------------------+
-| +process(amount: double, userId: String) | +process(amount: double, userId: String) |
+| +process(amount, userId) |  | +process(amount, userId) |
 +---------------------+       +---------------------+
             |                           |
             | uses                     | implements
 +---------------------+       +---------------------+       +---------------------+
 |    PaymentClient    |       | CreditCardService  |       |   PayPalService     |
 +---------------------+       +---------------------+       +---------------------+
-| +executePayment()   |       | +process           |       | +process           |
+| +main()             |       | +process           |       | +process           |
 +---------------------+       +---------------------+       +---------------------+
+                          |
+                          v
+                  +---------------------+
+                  |       Logger        |
+                  +---------------------+
+                  | +log(message)       |
+                  +---------------------+
 ```
 
 ```java
+// Logger as a separate concern
+public class Logger {
+    public void log(String message) {
+        System.out.println("LOG: " + message);
+    }
+}
+
 // Principled payment system
 public interface PaymentService {
     void process(double amount, String userId);
 }
 
 public class CreditCardService implements PaymentService {
+    private final Logger logger = new Logger();
+
     @Override
     public void process(double amount, String userId) {
         System.out.println("Validating credit card for " + userId);
         System.out.println("Processing credit card payment: $" + amount + " for " + userId);
-        System.out.println("Logging credit card transaction: $" + amount + " for " + userId);
+        logger.log("Credit card transaction: $" + amount + " for " + userId);
     }
 }
 
 public class PayPalService implements PaymentService {
+    private final Logger logger = new Logger();
+
     @Override
     public void process(double amount, String userId) {
         System.out.println("Validating PayPal for " + userId);
         System.out.println("Processing PayPal payment: $" + amount + " for " + userId);
-        System.out.println("Logging PayPal transaction: $" + amount + " for " + userId);
+        logger.log("PayPal transaction: $" + amount + " for " + userId);
     }
 }
 
@@ -172,52 +194,42 @@ public class PaymentClient {
         
         creditCardProcessor.process(100.0, "user1");
         payPalProcessor.process(50.0, "user2");
-        // Output:
-        // Validating credit card for user1
-        // Processing credit card payment: $100.0 for user1
-        // Logging credit card transaction: $100.0 for user1
-        // Validating PayPal for user2
-        // Processing PayPal payment: $50.0 for user2
-        // Logging PayPal transaction: $50.0 for user2
     }
 }
 ```
 - **Improvements with Principles**:
-  - **Single Responsibility** (Lecture 2): Each class has one job (e.g., `CreditCardService` handles credit card logic).
-  - **Open/Closed** (Lecture 3): New payment types added via new classes.
-  - **Dependency Inversion** (Lecture 6): Depends on `PaymentService` abstraction.
-  - **KISS** (Lecture 8): Simplified logic with clear interfaces.
-  - **Clean Code** (Section 9): Meaningful names, modularity.
-- **Big O**: O(1) for `process` (direct calls).
-- **Edge Cases**: Handles invalid inputs via service implementations.
+  - **SRP**: Each class has one job (`CreditCardService`, `Logger`).
+  - **OCP**: Add new payment types with new classes.
+  - **DIP**: `PaymentProcessor` depends on `PaymentService` abstraction.
+  - **SoC**: Logging separated into `Logger` class.
+  - **KISS**: Simplified flow with interfaces.
+  - **Clean Code**: Meaningful names, modularity.
 
 **Systematic Approach**:
 - Clarified requirements (process payments, support extensibility).
 - Designed UML diagrams to show poor vs. principled designs.
-- Implemented Java classes with principled design (SOLID, KISS).
+- Implemented Java classes with principled design (SOLID, SoC, KISS).
 - Tested with `main` method for different payment types.
 
 ## Real-World Application
-Imagine refactoring an e-commerce payment system to follow design principles, where Single Responsibility separates payment logic, Open/Closed enables new payment types, and KISS simplifies the codebase. This ensures scalability and maintainability, supporting features like new payment methods or logging. Applying principles—paired with patterns like Strategy (Section 3, Lecture 10)—demonstrates your ability to mentor teams on robust design.
+Imagine refactoring an e-commerce payment system to follow design principles, where SRP separates payment logic, OCP enables new payment types, and SoC separates logging. This ensures scalability and maintainability. Pairing principles with patterns like Strategy (Section 3) demonstrates your ability to design robust, extensible systems.
 
 ## Practice Exercises
 Apply design principles with these exercises:
-- **Easy**: Design a UML diagram and Java code for a `Logger` system, comparing poor vs. principled design (SRP, KISS).
-- **Medium**: Refactor a `UserManager` for a social app to follow SRP and Dependency Inversion.
-- **Medium**: Create a `BookingSystem` for a travel platform, applying Open/Closed and DRY.
+- **Easy**: Design a UML diagram and Java code for a `Logger` system, comparing poor vs. principled design (SRP, SoC, KISS).
+- **Medium**: Refactor a `UserManager` for a social app to follow SRP and DIP.
+- **Medium**: Create a `BookingSystem` for a travel platform, applying OCP and DRY.
 - **Hard**: Design a `NotificationSystem` for a cloud app, using SRP, KISS, and LoD.
-
-Try refactoring one system in Java with a UML diagram, explaining how principles improve the design.
+- **Interview**: Show how to apply *Composition over Inheritance* in a Java system with a code example.
 
 ## Conclusion
-Design principles like SOLID, DRY, KISS, YAGNI, LoD, SoC, POLA, and GRASP guide you to write robust, maintainable Java systems. By understanding their purpose, you’ll optimize software, enhance scalability, and teach others effectively. This starts Section 4 of the *Official CTO* journey, setting you up for deeper principle exploration.
+Design principles like SOLID, DRY, KISS, YAGNI, LoD, SoC, Composition over Inheritance, Programming to Interface, Information Hiding, High Cohesion/Low Coupling, Favor Immutability, Least Privilege, POLA, and GRASP guide you to write robust, maintainable Java systems. By understanding their purpose, you’ll optimize software, enhance scalability, and teach others effectively. This starts Section 4 of the *Official CTO* journey, setting you up for deeper principle exploration.
 
 **Next Step**: Explore [Single Responsibility Principle](/interview-section/design-principles/single-responsibility-principle) to dive into modular design, or check out [all sections](/interview-section/) to continue your journey.
 
 ---
 
 <footer>
-  <p>Connect: <a href="https://github.com/your-profile">GitHub</a> | <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
-  <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
   <p>&copy; 2025 Official CTO. All rights reserved.</p>
 </footer>

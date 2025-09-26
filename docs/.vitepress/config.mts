@@ -24,6 +24,7 @@ export default defineConfig({
           { text: 'Design Principles', link: '/interview-section/design-principles' },
           { text: 'Design Patterns', link: '/interview-section/design-patterns' },
           { text: 'Low-Level System Design', link: '/interview-section/lld' },
+          { text: 'Architectural Design Principles', link: '/interview-section/architectural-design-principles' },
           { text: 'Database', link: '/interview-section/database' },
           { text: 'High-Level System Design', link: '/interview-section/hld' },
           { text: 'Behavioral Skills', link: '/interview-section/behavioral' },
@@ -366,22 +367,22 @@ export default defineConfig({
         {
           text: 'Locks & Synchronization in Java',
           items: [
-            { text: 'Synchronization Basics', link: '/interview-section/oop-java/locks-synchronization/synchronization_basics'},
-            { text: 'Explicit Locks in Java — ReentrantLock', link: '/interview-section/oop-java/locks-synchronization/explicit_locks_reentrantlock'},
-            { text: 'Read-Write & Stamped Locks', link: '/interview-section/oop-java/locks-synchronization/readwrite_stamped_lock'},
-            { text: 'Advanced Locking & Patterns in Java', link: '/interview-section/oop-java/locks-synchronization/advanced_locking_patterns'},
-            { text: 'High-Level Abstractions vs Locks in Java', link: '/interview-section/oop-java/locks-synchronization/high_level_abstractions_vs_locks'}
+            { text: 'Synchronization Basics', link: '/interview-section/oop-java/locks-synchronization/synchronization_basics' },
+            { text: 'Explicit Locks in Java — ReentrantLock', link: '/interview-section/oop-java/locks-synchronization/explicit_locks_reentrantlock' },
+            { text: 'Read-Write & Stamped Locks', link: '/interview-section/oop-java/locks-synchronization/readwrite_stamped_lock' },
+            { text: 'Advanced Locking & Patterns in Java', link: '/interview-section/oop-java/locks-synchronization/advanced_locking_patterns' },
+            { text: 'High-Level Abstractions vs Locks in Java', link: '/interview-section/oop-java/locks-synchronization/high_level_abstractions_vs_locks' }
           ]
         },
         {
           text: 'Memory Management & Garbage Collection',
           items: [
-            { text: 'Synchronization Basics', link: '/interview-section/oop-java/memory-gc/java_memory_model_basics'},
-            { text: 'Garbage Collection Fundamentals in Java', link: '/interview-section/oop-java/memory-gc/garbage_collection_fundamentals'},
-            { text: 'Garbage Collection Algorithms', link: '/interview-section/oop-java/memory-gc/gc_algorithms'},
-            { text: 'GC Implementations in HotSpot JVM', link: '/interview-section/oop-java/memory-gc/gc_hotspot'},
-            { text: 'Tuning & Monitoring Garbage Collection in JVM', link: '/interview-section/oop-java/memory-gc/gc_tuning_monitoring'},
-            { text: 'Advanced GC Topics in Java', link: '/interview-section/oop-java/memory-gc/gc_advanced_topics'}
+            { text: 'Synchronization Basics', link: '/interview-section/oop-java/memory-gc/java_memory_model_basics' },
+            { text: 'Garbage Collection Fundamentals in Java', link: '/interview-section/oop-java/memory-gc/garbage_collection_fundamentals' },
+            { text: 'Garbage Collection Algorithms', link: '/interview-section/oop-java/memory-gc/gc_algorithms' },
+            { text: 'GC Implementations in HotSpot JVM', link: '/interview-section/oop-java/memory-gc/gc_hotspot' },
+            { text: 'Tuning & Monitoring Garbage Collection in JVM', link: '/interview-section/oop-java/memory-gc/gc_tuning_monitoring' },
+            { text: 'Advanced GC Topics in Java', link: '/interview-section/oop-java/memory-gc/gc_advanced_topics' }
           ]
         },
         {
@@ -434,17 +435,28 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/interview-section/design-principles' },
             { text: '1. Introduction to Design Principles', link: '/interview-section/design-principles/intro-design-principles' },
-            { text: '2. Single Responsibility Principle', link: '/interview-section/design-principles/single-responsibility-principle' },
-            { text: '3. Open-Closed Principle', link: '/interview-section/design-principles/open-closed-principle' },
-            { text: '4. Liskov Substitution Principle', link: '/interview-section/design-principles/liskov-substitution-principle' },
-            { text: '5. Interface Segregation Principle', link: '/interview-section/design-principles/interface-segregation-principle' },
-            { text: '6. Dependency Inversion Principle', link: '/interview-section/design-principles/dependency-inversion-principle' },
-            { text: '7. DRY: Don’t Repeat Yourself', link: '/interview-section/design-principles/dry-principle' },
-            { text: '8. KISS: Keep It Simple, Stupid', link: '/interview-section/design-principles/kiss-principle' },
-            { text: '9. YAGNI: You Aren’t Gonna Need It', link: '/interview-section/design-principles/yagni-principle' },
-            { text: '10. Law of Demeter', link: '/interview-section/design-principles/law-of-demeter' },
-            { text: '11. Separation of Concerns', link: '/interview-section/design-principles/separation-of-concerns' },
-            { text: '12. POLA and GRASP Principles', link: '/interview-section/design-principles/pola-grasp-principles' }
+            {
+              text: '2. SOLID Design Principle',
+              items: [
+                { text: 'Single Responsibility Principle (SRP)', link: '/interview-section/design-principles/single-responsibility-principle' },
+                { text: 'Open-Closed Principle (OCP)', link: '/interview-section/design-principles/open-closed-principle' },
+                { text: 'Liskov Substitution Principle (LSP)', link: '/interview-section/design-principles/liskov-substitution-principle' },
+                { text: 'Interface Segregation Principle (ISP)', link: '/interview-section/design-principles/interface-segregation-principle' },
+                { text: 'Dependency Inversion Principle (DIP)', link: '/interview-section/design-principles/dependency-inversion-principle' },
+              ]
+            },
+            { text: '3. Programming to an Interface, not an Implementation', link: '/interview-section/design-principles/program-to-interface' },
+            { text: '4. Composition over Inheritance', link: '/interview-section/design-principles/composition-over-inheritance' },
+            { text: '5. DRY: Don’t Repeat Yourself', link: '/interview-section/design-principles/dry-principle' },
+            { text: '6. KISS: Keep It Simple, Stupid', link: '/interview-section/design-principles/kiss-principle' },
+            { text: '7. YAGNI: You Aren’t Gonna Need It', link: '/interview-section/design-principles/yagni-principle' },
+            { text: '8. Law of Demeter (Principle of Least Knowledge)', link: '/interview-section/design-principles/law-of-demeter' },
+            { text: '9. Separation of Concerns', link: '/interview-section/design-principles/separation-of-concerns' },
+            { text: '10. Information Hiding', link: '/interview-section/design-principles/information-hiding' },
+            { text: '11. High Cohesion & Low Coupling', link: '/interview-section/design-principles/high-cohesion-low-coupling' },
+            { text: '12. Favor Immutability', link: '/interview-section/design-principles/favor-immutability' },
+            { text: '13. Principle of Least Privilege / Least Authority', link: '/interview-section/design-principles/least-privilege' },
+            { text: '14. POLA and GRASP Principles', link: '/interview-section/design-principles/pola-grasp-principles' }
           ]
         }
       ],

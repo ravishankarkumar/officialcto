@@ -1,14 +1,12 @@
 ---
 title: Open-Closed Principle
-description: Master the Open-Closed Principle in Java to create extensible, maintainable systems, with practical examples for better software engineering.
+description: Master the Open-Closed Principle (OCP) in Java with real-world examples, UML diagrams, and interview prep to build extensible, maintainable systems.
 ---
 
 # Open-Closed Principle
 
 ## Overview
-The Open-Closed Principle (OCP), part of the SOLID principles, states that software entities (classes, modules, functions) should be **open for extension but closed for modification**, allowing new functionality without altering existing code. In this third lesson of Section 4 in the *Official CTO* journey, we explore **OCP**, its implementation in Java, and its applications in system design. Whether adding new payment types to an e-commerce app or extending features in a social platform, OCP promotes extensibility and maintainability. By mastering OCP, you’ll create robust Java systems and mentor others effectively.
-
-Inspired by *Clean Code*, *Effective Java*, and *Design Patterns* by Gang of Four, this 20-minute lesson covers the concepts, a practical Java example with a UML diagram, and practice exercises to advance your skills. Let’s continue the journey to becoming a better engineer!
+The Open-Closed Principle (OCP), part of the SOLID principles, states that software entities (classes, modules, functions) should be **open for extension but closed for modification**, allowing new functionality without altering existing code.
 
 ## Learning Objectives
 - Understand the **Open-Closed Principle** and its role in SOLID.
@@ -17,13 +15,12 @@ Inspired by *Clean Code*, *Effective Java*, and *Design Patterns* by Gang of Fou
 - Use OCP in real-world scenarios with clean code practices (Section 9).
 
 ## Why the Open-Closed Principle Matters
-OCP ensures systems can be extended with new functionality without modifying existing, tested code, reducing bugs and improving scalability. Early in my career, I applied OCP to extend a payment system for an e-commerce platform, adding new payment methods without altering core logic. This principle—leveraging polymorphism and abstraction—aligns with clean code practices and is critical for FAANG-level designs. Explaining OCP clearly showcases your mentorship skills.
+OCP allows systems to grow by extension rather than modification. This reduces bugs in tested code and supports scalability. For example, in a payment system, new payment methods can be added without touching the core processor. By leveraging abstraction and polymorphism, OCP ensures stability and extensibility.
 
 In software engineering, OCP helps you:
 - **Enhance Extensibility**: Add features without changing existing code.
 - **Improve Maintainability**: Minimize regression risks in tested modules.
 - **Support Scalability**: Enable systems to grow with new requirements.
-- **Teach Effectively**: Share extensible design strategies with teams.
 
 ## Key Concepts
 ### 1. Open-Closed Principle Overview
@@ -171,23 +168,18 @@ public class PaymentClient {
     }
 }
 ```
-- **OCP and OOP Principles**:
-  - **Open-Closed**: New payment types (e.g., `CryptoService`) added via new classes without modifying `PaymentProcessor`.
-  - **Encapsulation**: Private `service` field with constructor injection.
-  - **Polymorphism**: `PaymentService` interface supports multiple implementations.
-  - **Abstraction**: `PaymentProcessor` hides service details.
-  - **Clean Code**: Meaningful names, modularity (Section 9).
+- **OCP in Action**: New services like `CryptoService` can be added without modifying `PaymentProcessor`.
+- **Design Principles**: Uses interfaces, polymorphism, and constructor injection to keep code clean and extensible.
 - **Big O**: O(1) for `processPayment` (direct call to service).
-- **Edge Cases**: Handles invalid inputs via service implementations.
 
 **Systematic Approach**:
 - Clarified requirements (process payments, support extensibility).
 - Designed UML diagrams to show non-extensible vs. OCP-compliant designs.
-- Refactored Java code to follow OCP, using Strategy pattern (Section 3, Lecture 10) for extensibility.
+- Refactored Java code to follow OCP, using Strategy pattern (Section 3, Lecture 10).
 - Tested with `main` method for different payment types.
 
 ## Real-World Application
-Imagine designing a payment system for an e-commerce app, where OCP allows adding new payment methods (e.g., cryptocurrency) without modifying existing code. This ensures stability in tested modules and supports scalability for future payment types. OCP—paired with patterns like Dependency Injection (Section 3, Lecture 14) and SRP (Lecture 2)—demonstrates your ability to mentor teams on extensible design.
+In an e-commerce app, OCP makes it easy to support new payment methods like cryptocurrency without changing existing logic. Combined with Dependency Injection and SRP, this principle helps build scalable and maintainable systems.
 
 ## Practice Exercises
 Apply the Open-Closed Principle with these exercises:

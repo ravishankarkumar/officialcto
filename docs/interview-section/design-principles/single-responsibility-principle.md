@@ -1,23 +1,24 @@
 ---
 title: Single Responsibility Principle
-description: Master the Single Responsibility Principle in Java to create modular, maintainable systems, with practical examples for better software engineering.
+description: Master the Single Responsibility Principle (SRP) in Java with real-world examples, UML diagrams, interview prep, and clean code practices to build modular, maintainable systems.
 ---
 
 # Single Responsibility Principle
 
 ## Overview
-The Single Responsibility Principle (SRP), part of the SOLID principles, states that a class should have only one reason to change, ensuring each class has a single, well-defined responsibility. In this second lesson of Section 4 in the *Official CTO* journey, we explore **SRP**, its implementation in Java, and its applications in system design. Whether refactoring a payment processor for an e-commerce app or simplifying a user manager for a social platform, SRP promotes modularity and maintainability. By mastering SRP, you’ll create robust Java systems and mentor others effectively.
+The Single Responsibility Principle (SRP), part of the SOLID principles, states that a class should have **only one reason to change**, ensuring each class has a single, well-defined responsibility. In this section, we explore **SRP**, its implementation in Java, and its applications in system design.
 
-Inspired by *Clean Code*, *Effective Java*, and *Design Patterns* by Gang of Four, this 20-minute lesson covers the concepts, a practical Java example with a UML diagram, and practice exercises to advance your skills. Let’s continue the journey to becoming a better engineer!
+Unlike the misconception that SRP means “only one method per class,” the true meaning is broader: a class should encapsulate **one kind of responsibility**. If multiple reasons exist for it to change (e.g., logging, validation, and payment processing), then SRP is being violated.
 
 ## Learning Objectives
 - Understand the **Single Responsibility Principle** and its role in SOLID.
 - Learn to implement **SRP** in Java to separate concerns.
 - Apply **OOP principles** (Section 2, Lecture 1), **UML** (Section 2, Lecture 2), and **design patterns** (Section 3) to SRP design.
 - Use SRP in real-world scenarios with clean code practices (Section 9).
+- Prepare for interview questions like: *“How would you refactor a God Class?”*
 
 ## Why the Single Responsibility Principle Matters
-SRP ensures that each class has a single, focused purpose, reducing complexity and making code easier to maintain and extend. Early in my career, I refactored a monolithic payment processor for an e-commerce platform by applying SRP, splitting payment logic, validation, and logging into separate classes, improving scalability and testability. This principle—leveraging encapsulation and modularity—aligns with clean code practices and is critical for FAANG-level designs. Explaining SRP clearly showcases your mentorship skills.
+SRP ensures that each class has a single, focused purpose, reducing complexity and making code easier to maintain and extend. Early in my career, I refactored a monolithic payment processor for an e-commerce platform by applying SRP, splitting payment logic, validation, and logging into separate classes, improving scalability and testability. This principle—leveraging encapsulation and modularity—aligns with clean code practices and is critical for FAANG-level designs. Explaining SRP clearly showcases your mentors...
 
 In software engineering, SRP helps you:
 - **Enhance Modularity**: Separate concerns for low coupling.
@@ -103,28 +104,27 @@ public class PaymentProcessor {
 **UML Diagram (After)**
 ```
 +---------------------+       +---------------------+       +---------------------+
-| PaymentProcessor    |       | PaymentValidator    |       | TransactionLogger   |
-+---------------------+       +---------------------+       +---------------------+
-| -validator: PaymentValidator | +validate(type: String, userId: String) | +log(amount: double, userId: String) |
-| -logger: TransactionLogger | +---------------------+       +---------------------+
-| -paymentService: PaymentService |
+| PaymentProcessor    | uses  | PaymentValidator    |       | TransactionLogger   |
++---------------------+ ----> +---------------------+       +---------------------+
+| -validator          |       | +validate(type, id) |       | +log(amount, id)    |
+| -logger             |       +---------------------+       +---------------------+
+| -paymentService     |
 +---------------------+
-| +processPayment(amount: double, userId: String, type: String) |
-+---------------------+
-            |
-            | uses
-+---------------------+
-|   PaymentService    |
-+---------------------+
-| +process(amount: double, userId: String) |
+| +processPayment(...)|
 +---------------------+
             |
-            | implements
+            | depends on
+            v
 +---------------------+       +---------------------+
-| CreditCardService   |       |   PayPalService     |
+|   PaymentService    |<------+ CreditCardService   |
 +---------------------+       +---------------------+
-| +process            |       | +process            |
+| +process(amount,id) |       | +process            |
 +---------------------+       +---------------------+
+                            +---------------------+
+                            |   PayPalService     |
+                            +---------------------+
+                            | +process            |
+                            +---------------------+
 ```
 
 ```java
@@ -149,6 +149,9 @@ public class PayPalService implements PaymentService {
 
 public class PaymentValidator {
     public void validate(String paymentType, String userId) {
+        if (!paymentType.equals("CreditCard") && !paymentType.equals("PayPal")) {
+            throw new IllegalArgumentException("Unsupported payment type: " + paymentType);
+        }
         System.out.println("Validating " + paymentType + " for " + userId);
     }
 }
@@ -164,6 +167,7 @@ public class PaymentProcessor {
     private final PaymentValidator validator;
     private final TransactionLogger logger;
     
+    // In real-world Java, frameworks like Spring inject these dependencies
     public PaymentProcessor(PaymentService paymentService, PaymentValidator validator, TransactionLogger logger) {
         this.paymentService = paymentService;
         this.validator = validator;
@@ -187,13 +191,9 @@ public class PaymentClient {
         
         creditCardProcessor.processPayment(100.0, "user1", "CreditCard");
         payPalProcessor.processPayment(50.0, "user2", "PayPal");
-        // Output:
-        // Validating CreditCard for user1
-        // Processing credit card payment: $100.0 for user1
-        // Logging transaction: $100.0 for user1
-        // Validating PayPal for user2
-        // Processing PayPal payment: $50.0 for user2
-        // Logging transaction: $50.0 for user2
+        
+        // Uncomment to test invalid type:
+        // creditCardProcessor.processPayment(20.0, "user3", "Crypto");
     }
 }
 ```
@@ -204,7 +204,7 @@ public class PaymentClient {
   - **Abstraction**: Classes hide implementation details.
   - **Clean Code**: Meaningful names, modularity (Section 9).
 - **Big O**: O(1) for `processPayment`, `validate`, `log` (direct calls).
-- **Edge Cases**: Handles invalid payment types via validation logic.
+- **Edge Cases**: Invalid payment types handled gracefully.
 
 **Systematic Approach**:
 - Clarified requirements (process payments, separate concerns).
@@ -213,7 +213,9 @@ public class PaymentClient {
 - Tested with `main` method for different payment types.
 
 ## Real-World Application
-Imagine refactoring a payment processor for an e-commerce app, where SRP separates payment processing, validation, and logging into distinct classes. This ensures that changes to one responsibility (e.g., adding a new payment type) don’t affect others (e.g., logging), improving scalability and testability. SRP—paired with patterns like Dependency Injection (Section 3, Lecture 14)—demonstrates your ability to mentor teams on modular design.
+Imagine refactoring a payment processor for an e-commerce app, where SRP separates payment processing, validation, and logging into distinct classes. This ensures that changes to one responsibility (e.g., adding a new payment type) don’t affect others (e.g., logging), improving scalability and testability.  
+
+In interviews, SRP is often tested with questions like: *“How would you refactor a God Class?”* A strong answer is to split responsibilities into multiple classes using SRP, then enhance with patterns like **Strategy** (Section 3, Lecture 10) or **Dependency Injection** for real-world maintainability.
 
 ## Practice Exercises
 Apply the Single Responsibility Principle with these exercises:
@@ -221,6 +223,7 @@ Apply the Single Responsibility Principle with these exercises:
 - **Medium**: Refactor a `UserManager` for a social app to follow SRP, separating authentication and profile management.
 - **Medium**: Create a `BookingSystem` for a travel platform, separating reservation and notification logic.
 - **Hard**: Design an `OrderProcessor` for an e-commerce app, separating order validation, processing, and logging.
+- **Interview**: Refactor a “God Class” with too many responsibilities. Explain how SRP applies, and suggest complementary patterns.
 
 Try refactoring one system in Java with a UML diagram, explaining how SRP improves the design.
 
@@ -232,7 +235,6 @@ The Single Responsibility Principle equips you to design modular, maintainable J
 ---
 
 <footer>
-  <p>Connect: <a href="https://github.com/your-profile">GitHub</a> | <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
-  <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  <p>Connect: <a href="https://www.linkedin.com/in/ravi-shankar-a725b0225/">LinkedIn</a></p>
   <p>&copy; 2025 Official CTO. All rights reserved.</p>
 </footer>
