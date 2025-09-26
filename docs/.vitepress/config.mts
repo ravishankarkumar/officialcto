@@ -25,6 +25,7 @@ export default defineConfig({
           { text: 'Design Patterns', link: '/interview-section/design-patterns' },
           { text: 'Low-Level System Design', link: '/interview-section/lld' },
           { text: 'Architectural Design Principles', link: '/interview-section/architectural-design-principles' },
+          { text: 'Architectural Design Patterns', link: '/interview-section/architectural-design-patterns' },
           { text: 'Database', link: '/interview-section/database' },
           { text: 'High-Level System Design', link: '/interview-section/hld' },
           { text: 'Behavioral Skills', link: '/interview-section/behavioral' },
@@ -38,6 +39,49 @@ export default defineConfig({
     ],
 
     sidebar: {
+      '/interview-section/architectural-design-principles': [
+        {
+          text: 'Architectural Design Principles',
+          link: '/interview-section/architectural-design-principles',
+          items: [
+            { text: 'Introduction', link: '/interview-section/architectural-design-principles/intro' },
+            { text: 'Dependency Rule', link: '/interview-section/architectural-design-principles/dependency-rule' },
+            { text: 'Component Cohesion (REP, CCP, CRP)', link: '/interview-section/architectural-design-principles/component-cohesion' },
+            { text: 'Component Coupling (ADP, SDP, SAP)', link: '/interview-section/architectural-design-principles/component-coupling' },
+            { text: 'System-Level Cohesion & Coupling', link: '/interview-section/architectural-design-principles/system-cohesion-coupling' },
+            { text: 'DDD Principles (Lite)', link: '/interview-section/architectural-design-principles/ddd-principles' },
+            { text: 'Scalability & Availability', link: '/interview-section/architectural-design-principles/scalability-availability' },
+            { text: 'Information Hiding', link: '/interview-section/architectural-design-principles/architecture-info-hiding' },
+            { text: 'Least Knowledge at Service Boundaries', link: '/interview-section/architectural-design-principles/least-knowledge-services' },
+            { text: 'Security Principles', link: '/interview-section/architectural-design-principles/security-principles' },
+            { text: 'Architectural Trade-offs', link: '/interview-section/architectural-design-principles/architectural-tradeoffs' },
+            { text: 'Evolutionary Architecture', link: '/interview-section/architectural-design-principles/evolutionary-architecture' },
+            { text: 'Performance & Caching', link: '/interview-section/architectural-design-principles/performance-caching' },
+            { text: 'Resilience & Fault Tolerance', link: '/interview-section/architectural-design-principles/resilience-fault-tolerance' },
+            { text: 'Observability Principles', link: '/interview-section/architectural-design-principles/observability' },
+          ]
+        }
+      ],
+      '/interview-section/architectural-design-patterns': [
+        {
+          text: 'Architectural Design Patterns',
+          link: '/interview-section/architectural-design-patterns',
+          items: [
+            { text: 'Layered Architecture', link: '/interview-section/architectural-design-patterns/layered-architecture' },
+            { text: 'Hexagonal Architecture', link: '/interview-section/architectural-design-patterns/hexagonal-architecture' },
+            { text: 'Onion Architecture', link: '/interview-section/architectural-design-patterns/onion-architecture' },
+            { text: 'Microservices vs Modular Monolith', link: '/interview-section/architectural-design-patterns/microservices-vs-monolith' },
+            { text: 'Event-Driven Architecture', link: '/interview-section/architectural-design-patterns/event-driven-architecture' },
+            { text: 'Event Sourcing', link: '/interview-section/architectural-design-patterns/event-sourcing-pattern' },
+            { text: 'CQRS', link: '/interview-section/architectural-design-patterns/cqrs-pattern' },
+            { text: 'Saga Pattern', link: '/interview-section/architectural-design-patterns/saga-pattern' },
+            { text: 'Strangler Fig Pattern', link: '/interview-section/architectural-design-patterns/strangler-fig' },
+            { text: 'Circuit Breaker Pattern', link: '/interview-section/architectural-design-patterns/circuit-breaker' },
+            { text: 'API Gateway / BFF Pattern', link: '/interview-section/architectural-design-patterns/api-gateway-bff' },
+            { text: 'Database per Service Pattern', link: '/interview-section/architectural-design-patterns/database-per-service' },
+          ]
+        }
+      ],
       '/interview-section/database': [
         {
           text: 'Database Series Hub',
