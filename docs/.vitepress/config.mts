@@ -20,14 +20,13 @@ export default defineConfig({
         items: [
           { text: 'On the day of Interview', link: '/interview-section/facing-interviews' },
           { text: 'CS Fundamentals', link: '/interview-section/fundamentals' },
-          { text: 'Object-Oriented Design', link: '/interview-section/ood' },
-          { text: 'Design Patterns', link: '/interview-section/design-patterns' },
+          { text: 'Object-Oriented Programming & Java Essentials', link: '/interview-section/oop-java' },
           { text: 'Design Principles', link: '/interview-section/design-principles' },
+          { text: 'Design Patterns', link: '/interview-section/design-patterns' },
           { text: 'Low-Level System Design', link: '/interview-section/lld' },
           { text: 'Database', link: '/interview-section/database' },
           { text: 'High-Level System Design', link: '/interview-section/hld' },
           { text: 'Behavioral Skills', link: '/interview-section/behavioral' },
-          // { text: 'Domain-Specific Topics', link: '/interview-section/fundamentals/infra-cloud' },
           { text: 'Clean Code', link: '/interview-section/clean-code' },
           { text: 'Refactoring', link: '/interview-section/refactoring' },
           { text: 'Mock Practice', link: '/interview-section/mocks' }
@@ -332,19 +331,77 @@ export default defineConfig({
           ]
         }
       ],
-      '/interview-section/ood': [
+      '/interview-section/oop-java': [
+        { text: 'Overview', link: '/interview-section/oop-java' },
         {
-          text: 'Object-Oriented Design',
+          text: 'Object-Oriented Programming & Java Essentials',
           items: [
-            { text: 'Overview', link: '/interview-section/ood' },
-            { text: '1. OOP Fundamentals', link: '/interview-section/ood/oop-fundamentals' },
-            { text: '2. UML and Class Diagrams', link: '/interview-section/ood/uml-class-diagrams' },
-            { text: '3. Designing Simple Systems: Parking Lot', link: '/interview-section/ood/parking-lot-design' },
-            { text: '4. Concurrency in OOD', link: '/interview-section/ood/concurrency-in-ood' },
-            { text: '5. Advanced OOD: Elevator System', link: '/interview-section/ood/elevator-system-design' },
-            { text: '6. OOD for E-Commerce: Inventory Management', link: '/interview-section/ood/ecommerce-inventory-management' },
-            { text: '7. Trade-Offs and Refactoring', link: '/interview-section/ood/trade-offs-refactoring' },
-            { text: '8. Mock Interview: Live OOD', link: '/interview-section/ood/mock-interview-ood' }
+            { text: 'Encapsulation', link: '/interview-section/oop-java/essentials/encapsulation' },
+            { text: 'Abstraction', link: '/interview-section/oop-java/essentials/abstraction' },
+            { text: 'Abstraction vs Encapsulation', link: '/interview-section/oop-java/essentials/abstraction-vs-encapsulation' },
+            { text: 'Inheritance', link: '/interview-section/oop-java/essentials/inheritance' },
+            { text: 'Polymorphism', link: '/interview-section/oop-java/essentials/polymorphism' },
+          ]
+        },
+        {
+          text: 'UML Modeling',
+          items: [
+            { text: 'Use case Diagrams', link: '/interview-section/oop-java/uml/use_case_diagrams' },
+            { text: 'Class Diagrams', link: '/interview-section/oop-java/uml/class_diagrams' },
+            { text: 'Sequence Diagrams', link: '/interview-section/oop-java/uml/sequence_diagrams' },
+          ]
+        },
+        {
+          text: 'Java Multithreading and Concurrency',
+          items: [
+            { text: 'Overview', link: '/interview-section/oop-java/multithreading-concurrency/overview' },
+            { text: 'Thread Basics', link: '/interview-section/oop-java/multithreading-concurrency/java-thread-basics' },
+            { text: 'Synchronization & Thread Safety', link: '/interview-section/oop-java/multithreading-concurrency/java_synchronization_thread_safety' },
+            { text: 'Executor Framework', link: '/interview-section/oop-java/multithreading-concurrency/java_executor_framework' },
+            { text: 'Concurrency Utilities in Java', link: '/interview-section/oop-java/multithreading-concurrency/java-concurrency-utilities' },
+            { text: 'Advanced Topics in Java Concurrency', link: '/interview-section/oop-java/multithreading-concurrency/java_advanced_concurrency' },
+            { text: 'Java Concurrency - Interview & Real-World Scenarios', link: '/interview-section/oop-java/multithreading-concurrency/java_concurrency_misc' }
+          ]
+        },
+        {
+          text: 'Locks & Synchronization in Java',
+          items: [
+            { text: 'Synchronization Basics', link: '/interview-section/oop-java/locks-synchronization/synchronization_basics'},
+            { text: 'Explicit Locks in Java — ReentrantLock', link: '/interview-section/oop-java/locks-synchronization/explicit_locks_reentrantlock'},
+            { text: 'Read-Write & Stamped Locks', link: '/interview-section/oop-java/locks-synchronization/readwrite_stamped_lock'},
+            { text: 'Advanced Locking & Patterns in Java', link: '/interview-section/oop-java/locks-synchronization/advanced_locking_patterns'},
+            { text: 'High-Level Abstractions vs Locks in Java', link: '/interview-section/oop-java/locks-synchronization/high_level_abstractions_vs_locks'}
+          ]
+        },
+        {
+          text: 'Memory Management & Garbage Collection',
+          items: [
+            { text: 'Synchronization Basics', link: '/interview-section/oop-java/memory-gc/java_memory_model_basics'},
+            { text: 'Garbage Collection Fundamentals in Java', link: '/interview-section/oop-java/memory-gc/garbage_collection_fundamentals'},
+            { text: 'Garbage Collection Algorithms', link: '/interview-section/oop-java/memory-gc/gc_algorithms'},
+            { text: 'GC Implementations in HotSpot JVM', link: '/interview-section/oop-java/memory-gc/gc_hotspot'},
+            { text: 'Tuning & Monitoring Garbage Collection in JVM', link: '/interview-section/oop-java/memory-gc/gc_tuning_monitoring'},
+            { text: 'Advanced GC Topics in Java', link: '/interview-section/oop-java/memory-gc/gc_advanced_topics'}
+          ]
+        },
+        {
+          text: 'Exceptions & Error Handling in Java',
+          link: '/interview-section/oop-java/exceptions_error_handling'
+        },
+        {
+          text: 'Immutability in Java — final, String, and Collections',
+          link: '/interview-section/oop-java/immutability_java'
+        },
+        {
+          text: 'Collections Framework & Hashing in Java',
+          link: '/interview-section/oop-java/collections_hashing_java'
+        },
+        {
+          text: 'Java 8+ Features (Lambdas, Streams, Optional)',
+          items: [
+            { text: 'Lambdas & Functional Interfaces in Java', link: '/interview-section/oop-java/java-8/lambdas_functional_interfaces' },
+            { text: 'Streams API in Java', link: '/interview-section/oop-java/java-8/streams_api_java' },
+            { text: 'Optional in Java', link: '/interview-section/oop-java/java-8/optional_in_java' },
           ]
         }
       ],

@@ -148,7 +148,7 @@ Try solving one problem in Java, using the systematic approach: clarify, explore
 ## Conclusion
 Advanced string algorithms like KMP and Rabin-Karp are essential for writing efficient, scalable Java code for text processing. By mastering these techniques, you’ll optimize real-world systems, solve complex challenges, and teach others effectively. This completes Section 1, equipping you with powerful algorithmic tools for your engineering journey.
 
-**Next Step**: Start [Section 2: Object-Oriented Design](/interview-section/ood) with [OOP Fundamentals](/interview-section/ood/oop-fundamentals), or check out [all sections](/interview-section/) to continue your journey.
+**Next Step**: Start [Section 2: Object-Oriented Design](/interview-section/oop-java) with [Encapsulation](/interview-section/oop-java/essentials/encapsulation), or check out [all sections](/interview-section/) to continue your journey.
 
 ---
 

@@ -20,7 +20,7 @@ Browse the sections below to find topics that resonate with your interests, from
 <!-- 1. **[Algorithms and Data Structures](/interview-section/algorithms)**  
    Reflections on problem-solving techniques, including patterns and advanced structures, informed by real-world coding challenges.
 
-2. **[Object-Oriented Design](/interview-section/ood)**  
+2. **[Object-Oriented Design](/interview-section/oop-java)**  
    Insights into designing modular, extensible systems, drawing from experiences with inventory and control systems.
 
 3. **[Design Patterns](/interview-section/design-patterns)**  

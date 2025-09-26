@@ -122,7 +122,7 @@ Try solving one problem in Java, using the systematic approach: clarify, explore
 ## Conclusion
 Mixing algorithmic patterns like BFS, hashing, and DP is essential for writing efficient, scalable Java code for complex problems. By mastering this capstone, you’ll optimize real-world systems, excel in challenging scenarios, and teach others effectively. This wraps up Section 1, setting you up for success in the journey to becoming a better software engineer.
 
-**Next Step**: Start [Section 2: Object-Oriented Design](/interview-section/ood) with [OOP Fundamentals](/interview-section/ood/oop-fundamentals), or check out [all sections](/interview-section/) to continue your journey.
+**Next Step**: Start [Section 2: Object-Oriented Design](/interview-section/oop-java) with [Encapsulation](/interview-section/oop-java/essentials/encapsulation), or check out [all sections](/interview-section/) to continue your journey.
 
 ---
 
