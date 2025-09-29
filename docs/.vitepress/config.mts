@@ -134,13 +134,19 @@ export default defineConfig({
           ]
         },
         {
-          text: '2. Databases & Storage',
+          text: '2. Diagramming',
+          items: [
+            { text: 'C4 Model', link: '/interview-section/hld/diagramming/c4_model' },
+          ]
+        },
+        {
+          text: '3. Databases & Storage',
           items: [
             { text: 'Database for HLD', link: '/interview-section/hld/database-for-hld' }
           ]
         },
         {
-          text: '3. Caching',
+          text: '4. Caching',
           items: [
             { text: 'Cache-aside, Write-through, Write-back', link: '/interview-section/hld/caching/strategies' },
             { text: 'TTLs & Eviction Policies', link: '/interview-section/hld/caching/eviction-policies' },
@@ -149,7 +155,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '4. Networking & Communication',
+          text: '5. Networking & Communication',
           items: [
             { text: 'Protocols', link: '/interview-section/hld/networking/protocols' },
             { text: 'APIs: REST vs GraphQL', link: '/interview-section/hld/networking/apis' },
@@ -158,7 +164,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '5. Scalability Patterns',
+          text: '6. Scalability Patterns',
           items: [
             { text: 'Horizontal vs Vertical Scaling', link: '/interview-section/hld/scalability/scaling' },
             { text: 'Microservices vs Monoliths', link: '/interview-section/hld/scalability/microservices-vs-monoliths' },
@@ -166,7 +172,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '6. Distributed Systems Concepts',
+          text: '7. Distributed Systems Concepts',
           items: [
             { text: 'CAP Theorem & PACELC', link: '/interview-section/hld/distributed/cap-pacelc' },
             { text: 'Consensus Algorithms', link: '/interview-section/hld/distributed/consensus' },
@@ -176,7 +182,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '7. Reliability & Fault Tolerance',
+          text: '8. Reliability & Fault Tolerance',
           items: [
             { text: 'Replication (Sync vs Async)', link: '/interview-section/hld/reliability/replication' },
             { text: 'Failover Strategies', link: '/interview-section/hld/reliability/failover' },
@@ -186,7 +192,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '8. Security',
+          text: '9. Security',
           items: [
             { text: 'Authentication vs Authorization', link: '/interview-section/hld/security/authentication-authorization' },
             { text: 'TLS & Encryption', link: '/interview-section/hld/security/encryption' },
@@ -195,7 +201,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '9. Observability',
+          text: '10. Observability',
           items: [
             { text: 'Monitoring', link: '/interview-section/hld/observability/monitoring' },
             { text: 'Centralized Logging', link: '/interview-section/hld/observability/logging' },
@@ -204,7 +210,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '10. Common System Design Problems',
+          text: '11. Common System Design Problems',
           items: [
             { text: 'URL Shortener', link: '/interview-section/hld/problems/url-shortener' },
             { text: 'News Feed', link: '/interview-section/hld/problems/news-feed' },
@@ -217,19 +223,19 @@ export default defineConfig({
           ]
         },
         {
-          text: '11. Soft Skills for HLD Interviews',
+          text: '12. Soft Skills for HLD Interviews',
           items: [
             { text: 'Interview Strategy & Trade-offs', link: '/interview-section/hld/soft-skills-hld' }
           ]
         },
         {
-          text: '12. Scaling to Millions',
+          text: '13. Scaling to Millions',
           items: [
             { text: 'Scaling One-Pager', link: '/interview-section/hld/scaling-one-pager' }
           ]
         },
         {
-          text: '13. Frequently Asked Problems',
+          text: '14. Frequently Asked Problems',
           items: [
             { text: 'Problem Index', link: '/interview-section/hld/faq-problems/frequently-asked-problems' }
           ]
@@ -315,21 +321,38 @@ export default defineConfig({
       ],
       '/interview-section/lld': [
         {
+          text: 'UML Modeling',
+          items: [
+            { text: 'What is UML Diagram?', link: '/interview-section/lld/uml/what_is_uml' },
+            { text: 'Use case Diagrams', link: '/interview-section/lld/uml/use_case_diagrams' },
+            { text: 'Class Diagrams', link: '/interview-section/lld/uml/class_diagrams' },
+            { text: 'Activity Diagrams', link: '/interview-section/lld/uml/activity_diagrams' },
+            { text: 'Sequence Diagrams', link: '/interview-section/lld/uml/sequence_diagrams' },
+            { text: 'Component Diagrams', link: '/interview-section/lld/uml/component_diagrams' },
+            { text: 'Class Relationships', link: '/interview-section/lld/uml/class_relationships' },
+          ]
+        },
+        {
+          text: 'Concepts revision',
+          items: [
+            { text: 'LLD Intro: From HLD to Detailed Design', link: '/interview-section/lld/intro-lld' },
+            { text: 'Database Design and Indexing', link: '/interview-section/lld/database-design' },
+            { text: 'API Design: RESTful, Idempotency, Versioning', link: '/interview-section/lld/api-design' },
+            { text: 'Concurrency Handling: Locks, Threads', link: '/interview-section/lld/concurrency-handling' },
+            { text: 'Error Handling, Edge Cases, and Resilience', link: '/interview-section/lld/error-handling' },
+          ]
+        },
+        {
           text: 'Low-Level System Design',
           items: [
-            { text: '1. LLD Intro: From HLD to Detailed Design', link: '/interview-section/lld/intro-lld' },
-            { text: '2. Database Design and Indexing', link: '/interview-section/lld/database-design' },
-            { text: '3. API Design: RESTful, Idempotency, Versioning', link: '/interview-section/lld/api-design' },
-            { text: '4. Concurrency Handling: Locks, Threads', link: '/interview-section/lld/concurrency-handling' },
-            { text: '5. Error Handling, Edge Cases, and Resilience', link: '/interview-section/lld/error-handling' },
-            { text: '6. Design a Parking Lot System', link: '/interview-section/lld/parking-lot' },
+            { text: '1. Design Tic-Tac-Toe', link: '/interview-section/lld/tic-tac-toe' },
+            { text: '2. Design a Parking Lot System', link: '/interview-section/lld/parking-lot' },
             { text: '7. Design an Elevator System', link: '/interview-section/lld/elevator-system' },
             { text: '8. Design a Vending Machine', link: '/interview-section/lld/vending-machine' },
             { text: '9. Design an ATM Machine', link: '/interview-section/lld/atm-machine' },
             { text: '10. Design a Restaurant Management System', link: '/interview-section/lld/restaurant-management' },
             { text: '11. Design a Library Management System', link: '/interview-section/lld/library-management' },
             { text: '12. Design a Chess Game', link: '/interview-section/lld/chess-game' },
-            { text: '13. Design Tic-Tac-Toe', link: '/interview-section/lld/tic-tac-toe' },
             { text: '14. Design Snake and Ladder Game', link: '/interview-section/lld/snake-ladder' },
             { text: '15. Design a Deck of Cards', link: '/interview-section/lld/deck-of-cards' },
             { text: '16. Design an LRU Cache', link: '/interview-section/lld/lru-cache' },
@@ -386,14 +409,6 @@ export default defineConfig({
             { text: 'Abstraction vs Encapsulation', link: '/interview-section/oop-java/essentials/abstraction-vs-encapsulation' },
             { text: 'Inheritance', link: '/interview-section/oop-java/essentials/inheritance' },
             { text: 'Polymorphism', link: '/interview-section/oop-java/essentials/polymorphism' },
-          ]
-        },
-        {
-          text: 'UML Modeling',
-          items: [
-            { text: 'Use case Diagrams', link: '/interview-section/oop-java/uml/use_case_diagrams' },
-            { text: 'Class Diagrams', link: '/interview-section/oop-java/uml/class_diagrams' },
-            { text: 'Sequence Diagrams', link: '/interview-section/oop-java/uml/sequence_diagrams' },
           ]
         },
         {

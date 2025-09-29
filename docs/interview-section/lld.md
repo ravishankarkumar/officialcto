@@ -129,7 +129,6 @@ Repository & Service highlights:
 ## Instructor Note
 This section is practical and code-first. You’ll learn by implementing small components, reading a short design doc, and running tests. Aim for readability and testability over clever one-liners.
 
----
 
 <footer>
   <p>Connect: <a href="https://github.com/your-profile">GitHub</a> | <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>

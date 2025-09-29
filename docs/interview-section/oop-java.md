@@ -22,13 +22,6 @@ It covers both the theory (OOP principles, UML modeling) and the **practical Jav
 
 ---
 
-### 2. UML Modeling
-- [**Use Case Diagrams**: show actors and goals](/interview-section/oop-java/uml/use_case_diagrams)  
-- [**Class Diagrams**: structure of objects, attributes, methods](/interview-section/oop-java/uml/class_diagrams)  
-- [**Sequence Diagrams**: object interactions over time](/interview-section/oop-java/uml/sequence_diagrams)  
-
----
-
 ### 3. Java Multithreading & Concurrency
 - [Overview](/interview-section/oop-java/multithreading-concurrency/overview)  
 - [Thread Basics](/interview-section/oop-java/multithreading-concurrency/java-thread-basics)  

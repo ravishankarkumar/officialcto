@@ -23,6 +23,9 @@ This series is structured to take you from **fundamentals → advanced distribut
 
 ---
 
+### **2. Diagramming**
+1. [C4 Model](/interview-section/hld/diagramming/c4_model)
+
 ### **2. Databases & Storage**
 <!-- //todo PACELC in parallel tp cap etc -->
 1. [Database for HLD](/interview-section/hld/database-for-hld.md)  
