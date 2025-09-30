@@ -1,297 +1,201 @@
+# Builder Pattern in Java – A Delicious Pizza Example
+
+*By Ravi Shankar · officialcto.com*
+
 ---
-title: Builder Pattern
-description: Master the Builder pattern in Java to construct complex objects step-by-step, with practical examples for better software engineering.
+
+## Introduction
+
+Some objects are simple to construct — you pass two or three arguments, and you’re done.  
+
+But what happens when an object has **many optional fields**?  
+
+Consider building a **Pizza**:
+- Base: thin crust, regular, deep-dish  
+- Sauce: tomato, pesto, barbecue  
+- Topping: cheese, chicken, veggies, or combinations  
+
+If we try to handle this with constructors, we quickly fall into the **telescoping constructor anti-pattern**.
+
 ---
 
-# Builder Pattern
+## The Telescoping Constructor Problem
 
-## Overview
-The Builder pattern is a creational design pattern that allows step-by-step construction of complex objects, ensuring flexibility and readability. In this fifth lesson of Section 3 in the *Official CTO* journey, we explore the **Builder pattern**, its implementation in Java, and its applications in system design. Whether building customer orders for an e-commerce system or configuring a user profile for a social app, this pattern simplifies object creation. By mastering Builder, you’ll create scalable Java systems and mentor others effectively.
-
-Inspired by *Design Patterns* by Gang of Four, *Head First Design Patterns*, and *Clean Code*, this 20-minute lesson covers the concepts, a practical Java example with a UML diagram, and practice exercises to advance your skills. Let’s continue the journey to becoming a better engineer!
-
-## Learning Objectives
-- Understand the **Builder pattern** and its role as a creational pattern.
-- Learn to implement a **thread-safe Builder** in Java.
-- Apply **OOP principles** (Section 2, Lecture 1), **UML** (Section 2, Lecture 2), and creational patterns (Section 3, Lectures 2-4).
-- Use the pattern in real-world scenarios with clean code practices (Section 9).
-
-## Why the Builder Pattern Matters
-The Builder pattern simplifies the creation of complex objects with many optional parameters, avoiding unwieldy constructors. Early in my career, I used it to streamline order creation in an e-commerce system, making the code more readable and extensible. This pattern—leveraging encapsulation and abstraction—enhances maintainability and flexibility. Explaining it clearly showcases your mentorship skills.
-
-In software engineering, the Builder pattern helps you:
-- **Simplify Object Creation**: Handle complex objects with optional fields.
-- **Enhance Readability**: Use fluent interfaces for clear configuration.
-- **Improve Extensibility**: Support new attributes without breaking code.
-- **Teach Effectively**: Share structured design solutions with teams.
-
-## Key Concepts
-### 1. Builder Pattern Overview
-The Builder pattern separates the construction of a complex object from its representation, allowing step-by-step configuration.
-
-**Structure**:
-- **Product**: The complex object (e.g., `Order`).
-- **Builder Interface**: Defines methods for setting attributes (e.g., `setItem()`, `setQuantity()`).
-- **Concrete Builder**: Implements the builder interface to construct the product.
-- **Director**: Optionally orchestrates the builder (e.g., `OrderDirector`).
-
-### 2. Comparison to Other Creational Patterns
-- **Singleton** (Lecture 2): Ensures a single instance.
-- **Factory Method** (Lecture 3): Creates one type of object.
-- **Abstract Factory** (Lecture 4): Creates families of related objects.
-- **Builder**: Constructs a single complex object step-by-step.
-
-### 3. Thread Safety
-In multi-threaded environments, builders should be stateless or synchronized:
-- Use immutable products or thread-safe collections (e.g., `ConcurrentHashMap`).
-- Ensure thread-safe construction if shared.
-
-### 4. Use Cases
-- Building complex orders with optional items.
-- Configuring user profiles with variable settings.
-- Creating documents with customizable attributes.
-
-**Example**: An order builder for an e-commerce system with items, discounts, and shipping.
-
-## Code Example: Order Builder
-Let’s implement a thread-safe order builder for an e-commerce system, with a UML class diagram.
-
-### UML Class Diagram
-```
-+---------------------+
-|      Order         |
-+---------------------+
-| -items: List<Item>  |
-| -discount: double   |
-| -shippingAddress: String |
-| -total: double      |
-+---------------------+
-| +getItems(): List<Item> |
-| +getDiscount(): double |
-| +getShippingAddress(): String |
-| +getTotal(): double |
-+---------------------+
-            |
-            | built by
-+---------------------+
-|    OrderBuilder    |
-+---------------------+
-| -items: List<Item>  |
-| -discount: double   |
-| -shippingAddress: String |
-+---------------------+
-| +addItem(item: Item): OrderBuilder |
-| +setDiscount(discount: double): OrderBuilder |
-| +setShippingAddress(address: String): OrderBuilder |
-| +build(): Order     |
-+---------------------+
-            |
-            | used by
-+---------------------+
-|    OrderDirector   |
-+---------------------+
-| +constructStandardOrder(): Order |
-| +constructDiscountedOrder(): Order |
-+---------------------+
-```
-
-### Java Implementation
 ```java
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.locks.ReentrantLock;
+Pizza pizza = new Pizza("thin crust", "pesto", "chicken");
+```
 
-// Item class
-public class Item {
-    private String name;
-    private double price;
-    
-    public Item(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public double getPrice() {
-        return price;
-    }
-}
+Looks fine. But what if tomorrow we add:
+- Extra cheese (boolean)  
+- Size (enum: SMALL, MEDIUM, LARGE)  
+- Gluten-free (boolean)  
 
-// Order class (Product)
-public class Order {
-    private final List<Item> items;
-    private final double discount;
-    private final String shippingAddress;
-    private final double total;
-    
-    private Order(OrderBuilder builder) {
-        this.items = new ArrayList<>(builder.items);
-        this.discount = builder.discount;
-        this.shippingAddress = builder.shippingAddress;
-        this.total = calculateTotal();
-    }
-    
-    private double calculateTotal() {
-        double sum = items.stream().mapToDouble(Item::getPrice).sum();
-        return sum - discount;
-    }
-    
-    public List<Item> getItems() {
-        return new ArrayList<>(items); // Defensive copy
-    }
-    
-    public double getDiscount() {
-        return discount;
-    }
-    
-    public String getShippingAddress() {
-        return shippingAddress;
-    }
-    
-    public double getTotal() {
-        return total;
-    }
-}
+Now we need multiple overloaded constructors — messy, hard to read, and error-prone.
 
-// OrderBuilder class
-public class OrderBuilder {
-    protected List<Item> items;
-    protected double discount;
-    protected String shippingAddress;
-    private final ReentrantLock lock;
-    
-    public OrderBuilder() {
-        this.items = new ArrayList<>();
-        this.discount = 0.0;
-        this.shippingAddress = "";
-        this.lock = new ReentrantLock();
-    }
-    
-    public OrderBuilder addItem(Item item) {
-        lock.lock();
-        try {
-            items.add(item);
-            return this;
-        } finally {
-            lock.unlock();
-        }
-    }
-    
-    public OrderBuilder setDiscount(double discount) {
-        lock.lock();
-        try {
-            this.discount = discount;
-            return this;
-        } finally {
-            lock.unlock();
-        }
-    }
-    
-    public OrderBuilder setShippingAddress(String address) {
-        lock.lock();
-        try {
-            this.shippingAddress = address;
-            return this;
-        } finally {
-            lock.unlock();
-        }
-    }
-    
-    public Order build() {
-        lock.lock();
-        try {
-            return new Order(this);
-        } finally {
-            lock.unlock();
-        }
-    }
-}
+---
 
-// OrderDirector class
-public class OrderDirector {
-    public Order constructStandardOrder(OrderBuilder builder, Item item) {
-        return builder.addItem(item)
-                      .setShippingAddress("123 Main St")
-                      .build();
-    }
-    
-    public Order constructDiscountedOrder(OrderBuilder builder, Item item, double discount) {
-        return builder.addItem(item)
-                      .setDiscount(discount)
-                      .setShippingAddress("123 Main St")
-                      .build();
-    }
-}
+## The Builder Pattern
 
-// Example usage
-public class Main {
-    public static void main(String[] args) {
-        OrderBuilder builder = new OrderBuilder();
-        OrderDirector director = new OrderDirector();
-        
-        // Simulate concurrent order construction
-        Thread t1 = new Thread(() -> {
-            Order order = director.constructStandardOrder(builder, new Item("Book", 29.99));
-            System.out.println("Standard Order Total: $" + order.getTotal());
-        });
-        
-        Thread t2 = new Thread(() -> {
-            Order order = director.constructDiscountedOrder(builder, new Item("Laptop", 999.99), 100.0);
-            System.out.println("Discounted Order Total: $" + order.getTotal());
-        });
-        
-        t1.start();
-        t2.start();
-        
-        try {
-            t1.join();
-            t2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        // Output: Standard Order Total: $29.99
-        //         Discounted Order Total: $899.99
+**Intent:**  
+The Builder pattern provides a **step-by-step** way to construct complex objects.  
+
+- Keeps the object **immutable** (fields are `final`).  
+- Provides a **fluent API** (`.sauce("pesto").topping("chicken")`).  
+- Handles **defaults** for optional fields.  
+- Allows **validation** before building.  
+
+---
+
+## UML Sketch
+
+```
+       +----------------+
+       |    Pizza       |  (Product)
+       |----------------|
+       | - base         |
+       | - sauce        |
+       | - topping      |
+       +----------------+
+               ^
+               |
+        builds from
+               |
+       +----------------+
+       | Pizza.Builder  |  (Builder)
+       |----------------|
+       | + base(...)    |
+       | + sauce(...)   |
+       | + topping(...) |
+       | + build()      |
+       +----------------+
+```
+
+---
+
+## The Pizza Class with Builder
+
+```java
+public class Pizza {
+  private final String base;
+  private final String sauce;
+  private final String topping;
+
+  private Pizza(String base, String sauce, String topping) {
+    this.base = base;
+    this.sauce = sauce;
+    this.topping = topping;
+  }
+
+  public String getBase() { return base; }
+  public String getSauce() { return sauce; }
+  public String getTopping() { return topping; }
+
+  public static class Builder {
+    private String base = "regular";
+    private String sauce = "tomato";
+    private String topping = "cheese";
+
+    public Builder base(String base) {
+      this.base = base;
+      return this;
     }
+
+    public Builder sauce(String sauce) {
+      this.sauce = sauce;
+      return this;
+    }
+
+    public Builder topping(String topping) {
+      this.topping = topping;
+      return this;
+    }
+
+    public Pizza build() {
+      if (base == null || base.isBlank()) {
+        throw new IllegalStateException("Pizza base is required");
+      }
+      return new Pizza(base, sauce, topping);
+    }
+  }
 }
 ```
-- **Builder and OOP Principles**:
-  - **Encapsulation**: Private fields in `Order` and `OrderBuilder` with getters.
-  - **Abstraction**: `OrderBuilder` hides construction complexity.
-  - **Thread Safety**: Uses `ReentrantLock` for concurrent building (Section 2, Lecture 4).
-  - **Clean Code**: Fluent interface, meaningful names, modularity (Section 9).
-- **Big O**: O(1) for `addItem`, `setDiscount`, `setShippingAddress`, `build`; O(n) for `getItems` copy.
-- **Edge Cases**: Handles empty items, invalid discounts, concurrent builds.
 
-**Systematic Approach**:
-- Clarified requirements (construct orders with optional fields, thread-safe).
-- Designed UML diagram to model `Order`, `OrderBuilder`, `OrderDirector`.
-- Implemented Java classes with Builder pattern and thread safety.
-- Tested with `main` method for concurrent order construction.
+---
 
-## Real-World Application
-Imagine building customer orders for an e-commerce system, where the Builder pattern simplifies creating orders with optional items, discounts, and shipping details. Thread-safe construction ensures concurrent users can place orders without conflicts. This approach—leveraging Builder for flexibility—enhances scalability and demonstrates your ability to mentor teams on robust design.
+## Usage Example
 
-## Practice Exercises
-Apply the Builder pattern with these exercises:
-- **Easy**: Design a UML diagram and Java code for a `UserProfileBuilder` to create user profiles with optional fields (e.g., bio, avatar).
-- **Medium**: Implement a thread-safe `DocumentBuilder` for creating documents with sections and styles.
-- **Medium**: Create a `MealBuilder` for a food delivery app, supporting dishes and dietary preferences.
-- **Hard**: Design a `ReservationBuilder` for a travel platform, building bookings with rooms, dates, and extras.
+```java
+public class Main {
+  public static void main(String[] args) {
+    Pizza pizza = new Pizza.Builder()
+        .base("thin crust")
+        .sauce("pesto")
+        .topping("chicken")
+        .build();
 
-Try implementing one exercise in Java with a UML diagram, ensuring thread safety and clean code principles.
+    System.out.println("Pizza with " 
+        + pizza.getBase() + " base, " 
+        + pizza.getSauce() + " sauce, and " 
+        + pizza.getTopping() + " topping created.");
+  }
+}
+```
+
+### Output
+```
+Pizza with thin crust base, pesto sauce, and chicken topping created.
+```
+
+---
+
+## Why is this the Builder Pattern?
+
+1. **Readable**: Method chaining makes the construction expressive.  
+2. **Immutable**: Once built, `Pizza` fields cannot be changed.  
+3. **Defaults**: If you don’t specify sauce, it defaults to tomato.  
+4. **Validation**: Builder can enforce rules (e.g., base cannot be empty).  
+5. **Extensible**: Adding new options (size, extra cheese) is easy — just add more builder methods.  
+
+---
+
+## Advantages
+
+- Cleaner construction of complex objects.  
+- No explosion of constructors.  
+- Easy to add optional fields.  
+- Supports immutability.  
+- Improves readability with fluent API.  
+
+---
+
+## Limitations
+
+- More boilerplate code compared to simple constructors.  
+- For trivial objects, Builder may be overkill.  
+- Without tools like **Lombok**, you must manually maintain the Builder.  
+
+---
+
+## TODOs and Suggested Improvements
+
+1. **Add more fields**: Extend Pizza with `size`, `extraCheese`, `glutenFree`.  
+2. **Required fields**: Enforce mandatory options (e.g., `base`) via the Builder’s constructor.  
+3. **Validation logic**: Prevent invalid pizzas (e.g., gluten-free + deep-dish not allowed).  
+4. **Factory integration**: Combine with Abstract Factory — `ItalianPizzaFactory` could return pre-seeded builders with defaults.  
+5. **Testing**: Add JUnit tests to verify default values and validation rules.  
+6. **Lombok**: Use `@Builder` annotation to generate the builder automatically and compare.  
+
+---
 
 ## Conclusion
-The Builder pattern equips you to design flexible, readable Java systems for complex object construction. By mastering this creational pattern, you’ll optimize software, ensure maintainability, and teach others effectively. This advances your progress in Section 3 of the *Official CTO* journey.
 
-**Next Step**: Explore [Adapter Pattern](/interview-section/design-patterns/adapter-pattern) to learn about bridging incompatible interfaces, or check out [all sections](/interview-section/) to continue your journey.
+The **Builder pattern** is an elegant solution when object construction gets messy.  
+In our example, instead of juggling overloaded constructors, we used a fluent, immutable builder for **Pizza**.  
+
+This pattern is widely applicable — from **configuring pizzas** to **building HTTP requests** or **complex UI components**.  
+
+Once you get comfortable with Builder, you’ll start noticing where it can simplify code and improve readability.  
 
 ---
 
-<footer>
-  <p>Connect: <a href="https://github.com/your-profile">GitHub</a> | <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
-  <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-  <p>&copy; 2025 Official CTO. All rights reserved.</p>
-</footer>
+✍️ *Written by Ravi Shankar for officialcto.com*
