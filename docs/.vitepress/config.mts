@@ -513,15 +513,15 @@ export default defineConfig({
             },
             {
               text: 'Modern & Architectural Patterns', items: [
-                { text: '26. Dependency Injection', link: '/interview-section/design-patterns/dependency-injection' },
-                { text: '27. Repository Pattern', link: '/interview-section/design-patterns/repository-pattern' },
-                { text: '28. Event Sourcing', link: '/interview-section/design-patterns/event-sourcing-pattern' },
-                { text: '29. CQRS (Command Query Responsibility Segregation)', link: '/interview-section/design-patterns/cqrs-pattern' }
+                { text: '1. Dependency Injection', link: '/interview-section/design-patterns/dependency-injection' },
+                { text: '2. Repository Pattern', link: '/interview-section/design-patterns/repository-pattern' },
+                { text: '3. Event Sourcing', link: '/interview-section/design-patterns/event-sourcing-pattern' },
+                { text: '4. CQRS (Command Query Responsibility Segregation)', link: '/interview-section/design-patterns/cqrs-pattern' }
               ]
             },
             {
               text: 'Capstone', items: [
-                { text: '30. Mock Interview: Applying Patterns', link: '/interview-section/design-patterns/mock-interview-patterns' }
+                { text: 'Mock Interview: Applying Patterns', link: '/interview-section/design-patterns/mock-interview-patterns' }
               ]
             }
           ]

@@ -1,222 +1,233 @@
+# Strategy Pattern in Java: A Step-by-Step Tutorial with Example
+
+Software systems often face the problem of **choosing between multiple algorithms** to perform the same task.  
+For example:
+
+- A navigation app may calculate the *fastest route* or the *shortest route*.  
+- An e-commerce site may recommend products *by rating* or *by discount*.  
+- A service platform may assign providers *based on lowest cost* or *highest customer rating*.  
+
+Hard-coding these choices into the business logic leads to messy `if-else` or `switch` blocks, and every time you add a new rule, you must change existing code. This violates the **Open/Closed Principle** (classes should be open for extension, but closed for modification).
+
+The **Strategy Pattern** solves this problem.
+
 ---
-title: Strategy Pattern
-description: Master the Strategy pattern in Java to implement interchangeable algorithms, with practical examples for better software engineering.
+
+## What is the Strategy Pattern?
+
+The **Strategy Pattern** is a behavioral design pattern that:
+
+1. Defines a **family of algorithms**.
+2. Encapsulates each algorithm into its own class.
+3. Lets clients choose which algorithm to use at runtime.
+
+This keeps the code clean and makes algorithms interchangeable without modifying the main logic.
+
 ---
 
-# Strategy Pattern
+## Strategy Pattern Structure
 
-## Overview
-The Strategy pattern is a behavioral design pattern that enables interchangeable algorithms to be selected at runtime, promoting flexibility and modularity. In this tenth lesson of Section 3 in the *Official CTO* journey, we explore the **Strategy pattern**, its implementation in Java, and its applications in system design. Whether sorting products in an e-commerce catalog or applying discounts in a retail app, this pattern ensures dynamic behavior. By mastering Strategy, you’ll create adaptable Java systems and mentor others effectively.
+Here’s the UML skeleton:
 
-Inspired by *Design Patterns* by Gang of Four, *Head First Design Patterns*, and *Clean Code*, this 20-minute lesson covers the concepts, a practical Java example with a UML diagram, and practice exercises to advance your skills. Let’s continue the journey to becoming a better engineer!
-
-## Learning Objectives
-- Understand the **Strategy pattern** and its role as a behavioral pattern.
-- Learn to implement a **Strategy** in Java for interchangeable algorithms.
-- Apply **OOP principles** (Section 2, Lecture 1) and **UML** (Section 2, Lecture 2) to Strategy design.
-- Use the pattern in real-world scenarios with clean code practices (Section 9).
-
-## Why the Strategy Pattern Matters
-The Strategy pattern allows systems to switch algorithms dynamically, enhancing flexibility without altering core logic. Early in my career, I used it to implement sorting strategies for an e-commerce product catalog, enabling users to sort by price or rating seamlessly. This pattern—leveraging polymorphism and encapsulation—promotes maintainability and scalability. Explaining it clearly showcases your mentorship skills.
-
-In software engineering, the Strategy pattern helps you:
-- **Enable Flexibility**: Switch algorithms at runtime.
-- **Enhance Modularity**: Encapsulate algorithms for low coupling.
-- **Improve Maintainability**: Write clean, reusable code (Section 9).
-- **Teach Effectively**: Share dynamic design solutions with teams.
-
-## Key Concepts
-### 1. Strategy Pattern Overview
-The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable within a context.
-
-**Structure**:
-- **Context**: Maintains a reference to a strategy (e.g., `ProductCatalog`).
-- **Strategy Interface**: Defines the algorithm interface (e.g., `SortStrategy`).
-- **Concrete Strategies**: Implement specific algorithms (e.g., `PriceSort`, `RatingSort`).
-- **Client**: Configures the context with a strategy.
-
-### 2. Comparison to Other Behavioral Patterns
-- **Strategy**: Encapsulates interchangeable algorithms.
-- **Observer** (upcoming Lecture 11): Manages event-driven communication.
-- **Command** (upcoming Lecture 12): Encapsulates actions as objects.
-
-### 3. Use Cases
-- Sorting products by different criteria (price, rating).
-- Applying various discount strategies in a retail app.
-- Processing payments with different algorithms (e.g., credit card, PayPal).
-
-**Example**: A product catalog with interchangeable sorting strategies.
-
-## Code Example: Sorting Strategy for Product Catalog
-Let’s implement a sorting strategy system for an e-commerce product catalog, with a UML class diagram.
-
-### UML Class Diagram
 ```
-+---------------------+
-|   ProductCatalog    |
-+---------------------+
-| -strategy: SortStrategy |
-| -products: List<Product> |
-+---------------------+
-| +setStrategy(strategy: SortStrategy) |
-| +sortProducts(): List<Product> |
-+---------------------+
-            |
-            | uses
-+---------------------+
-|    SortStrategy     |
-+---------------------+
-| +sort(products: List<Product>): List<Product> |
-+---------------------+
-            |
-            | implements
-+---------------------+       +---------------------+
-|   PriceSortStrategy |       | RatingSortStrategy  |
-+---------------------+       +---------------------+
-| +sort               |       | +sort               |
-+---------------------+       +---------------------+
+                +---------------------+
+                |    IStrategy        | <--- interface
+                |---------------------|
+                | + execute(): Result |
+                +---------------------+
+                          ^
+                          |
+        +-----------------+-----------------+
+        |                                   |
++---------------------+            +---------------------+
+| ConcreteStrategyA   |            | ConcreteStrategyB   |
+|---------------------|            |---------------------|
+| + execute(): Result |            | + execute(): Result |
++---------------------+            +---------------------+
+
+                +---------------------+
+                |     Context         |
+                |---------------------|
+                | - strategy:IStrategy|
+                | + doWork()          |
+                +---------------------+
 ```
 
-### Java Implementation
+- **IStrategy** → common interface for algorithms.  
+- **ConcreteStrategyA/B** → different implementations.  
+- **Context** → uses whichever strategy it is given.  
+
+---
+
+## Our Example: Assigning Service Providers
+
+Let’s apply Strategy Pattern to a **service assignment system**.  
+We have multiple providers, and a customer can request assignment based on:
+
+- Lowest cost (`RateStrategy`)
+- Highest rating (`RatingStrategy`)
+
+The customer decides *which strategy to apply*.
+
+---
+
+## Step 1: Define the Strategy Interface
+
 ```java
-import java.util.ArrayList;
+package dp.strategy;
+
+import dp.Provider;
 import java.util.List;
-import java.util.Comparator;
+import java.util.Optional;
 
-// Product class
-public class Product {
-    private String name;
-    private double price;
-    private double rating;
-    
-    public Product(String name, double price, double rating) {
-        this.name = name;
-        this.price = price;
-        this.rating = rating;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public double getPrice() {
-        return price;
-    }
-    
-    public double getRating() {
-        return rating;
-    }
-    
+@FunctionalInterface
+public interface IProviderSelect {
+    Optional<Provider> select(List<Provider> providers);
+}
+```
+
+---
+
+## Step 2: Implement Strategies
+
+### Lowest-Charge Strategy
+```java
+public class RateStrategy implements IProviderSelect {
     @Override
-    public String toString() {
-        return "Product{name='" + name + "', price=" + price + ", rating=" + rating + "}";
-    }
-}
-
-// Strategy interface
-public interface SortStrategy {
-    List<Product> sort(List<Product> products);
-}
-
-// Concrete strategy: PriceSort
-public class PriceSortStrategy implements SortStrategy {
-    @Override
-    public List<Product> sort(List<Product> products) {
-        List<Product> sorted = new ArrayList<>(products);
-        sorted.sort(Comparator.comparingDouble(Product::getPrice));
-        return sorted;
-    }
-}
-
-// Concrete strategy: RatingSort
-public class RatingSortStrategy implements SortStrategy {
-    @Override
-    public List<Product> sort(List<Product> products) {
-        List<Product> sorted = new ArrayList<>(products);
-        sorted.sort(Comparator.comparingDouble(Product::getRating).reversed());
-        return sorted;
-    }
-}
-
-// Context: ProductCatalog
-public class ProductCatalog {
-    private SortStrategy strategy;
-    private List<Product> products;
-    
-    public ProductCatalog() {
-        this.products = new ArrayList<>();
-    }
-    
-    public void addProduct(Product product) {
-        products.add(product);
-    }
-    
-    public void setStrategy(SortStrategy strategy) {
-        this.strategy = strategy;
-    }
-    
-    public List<Product> sortProducts() {
-        if (strategy == null) {
-            throw new IllegalStateException("Sort strategy not set");
-        }
-        return strategy.sort(products);
-    }
-    
-    // Example usage
-    public static void main(String[] args) {
-        ProductCatalog catalog = new ProductCatalog();
-        catalog.addProduct(new Product("Laptop", 999.99, 4.5));
-        catalog.addProduct(new Product("Phone", 499.99, 4.8));
-        catalog.addProduct(new Product("Tablet", 299.99, 4.2));
-        
-        // Sort by price
-        catalog.setStrategy(new PriceSortStrategy());
-        System.out.println("Sorted by price: " + catalog.sortProducts());
-        
-        // Sort by rating
-        catalog.setStrategy(new RatingSortStrategy());
-        System.out.println("Sorted by rating: " + catalog.sortProducts());
-        // Output:
-        // Sorted by price: [Product{name='Tablet', price=299.99, rating=4.2}, Product{name='Phone', price=499.99, rating=4.8}, Product{name='Laptop', price=999.99, rating=4.5}]
-        // Sorted by rating: [Product{name='Phone', price=499.99, rating=4.8}, Product{name='Laptop', price=999.99, rating=4.5}, Product{name='Tablet', price=299.99, rating=4.2}]
+    public Optional<Provider> select(List<Provider> providers) {
+        if (providers == null || providers.isEmpty()) return Optional.empty();
+        return providers.stream().min(Comparator.comparingDouble(Provider::getCharge));
     }
 }
 ```
-- **Strategy and OOP Principles**:
-  - **Encapsulation**: Private `strategy` and `products` fields in `ProductCatalog`.
-  - **Polymorphism**: `SortStrategy` interface supports multiple algorithms.
-  - **Abstraction**: `ProductCatalog` hides sorting logic.
-  - **Clean Code**: Meaningful names, modularity (Section 9).
-- **Big O**: O(n log n) for `sortProducts` (due to sorting), O(1) for `setStrategy`, `addProduct`.
-- **Edge Cases**: Handles null strategy, empty product list.
 
-**Systematic Approach**:
-- Clarified requirements (sort products by different criteria, flexible algorithms).
-- Designed UML diagram to model `ProductCatalog`, `SortStrategy`, and concrete strategies.
-- Implemented Java classes with Strategy pattern.
-- Tested with `main` method for different sorting strategies.
+### Highest-Rating Strategy
+```java
+public class RatingStrategy implements IProviderSelect {
+    @Override
+    public Optional<Provider> select(List<Provider> providers) {
+        if (providers == null || providers.isEmpty()) return Optional.empty();
+        return providers.stream().max(Comparator.comparingDouble(Provider::getRating));
+    }
+}
+```
 
-## Real-World Application
-Imagine designing a product catalog for an e-commerce app, where the Strategy pattern allows users to sort products by price, rating, or other criteria dynamically. This ensures flexibility for adding new sorting algorithms (e.g., by popularity) without modifying core logic. The Strategy pattern—leveraging polymorphism and encapsulation—demonstrates your ability to mentor teams on adaptable design solutions.
+---
 
-## Practice Exercises
-Apply the Strategy pattern with these exercises:
-- **Easy**: Design a UML diagram and Java code for a `DiscountStrategy` with `PercentageDiscount` and `FixedDiscount` for a retail app.
-- **Medium**: Implement a `PaymentStrategy` with `CreditCardPayment` and `PayPalPayment` for an e-commerce app.
-- **Medium**: Create a `CompressionStrategy` with `ZipCompression` and `GzipCompression` for a file system.
-- **Hard**: Design a `RecommendationStrategy` for a social app, supporting `PopularityBased` and `UserPreferenceBased` algorithms.
+## Step 3: Service Request Holds the User’s Choice
 
-Try implementing one exercise in Java with a UML diagram, ensuring clean code principles.
+Instead of hard-coding, the user provides their chosen strategy along with the request.
+
+```java
+public class ServiceRequest {
+    private final String customerName;
+    private final IProviderSelect preferredStrategy;
+
+    public ServiceRequest(String customerName, IProviderSelect preferredStrategy) {
+        this.customerName = customerName;
+        this.preferredStrategy = preferredStrategy;
+    }
+
+    public IProviderSelect getPreferredStrategy() {
+        return preferredStrategy;
+    }
+}
+```
+
+---
+
+## Step 4: Assignment Service Delegates to Strategy
+
+```java
+public class AssignmentService {
+    public Optional<Provider> assignProvider(ServiceRequest sr, List<Provider> providers) {
+        if (providers == null || providers.isEmpty()) return Optional.empty();
+
+        IProviderSelect strategy = sr.getPreferredStrategy();
+        if (strategy == null) {
+            return Optional.of(providers.get(0)); // default fallback
+        }
+        return strategy.select(providers);
+    }
+}
+```
+
+Notice:  
+- The service does **not know** which strategy it is using.  
+- It simply delegates to whatever was provided.  
+
+This is the essence of Strategy Pattern.
+
+---
+
+## Step 5: Putting It All Together
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        ProviderRepository pr = new ProviderRepository();
+        List<Provider> providers = pr.getProviders();
+
+        // Customer 1 prefers cheapest provider
+        ServiceRequest sr1 = new ServiceRequest("Customer 1", new RateStrategy());
+        System.out.println("Selected: " +
+            new AssignmentService().assignProvider(sr1, providers).get().getProviderName());
+
+        // Customer 2 prefers highest-rated provider
+        ServiceRequest sr2 = new ServiceRequest("Customer 2", new RatingStrategy());
+        System.out.println("Selected: " +
+            new AssignmentService().assignProvider(sr2, providers).get().getProviderName());
+    }
+}
+```
+
+Output might look like:
+
+```
+Selected: Manish
+Selected: Baklol
+```
+
+---
+
+## Benefits of Using Strategy Pattern Here
+
+- **Flexibility at runtime**: The user decides which algorithm applies.  
+- **Extensibility**: New strategies can be added without modifying existing code.  
+- **Testability**: Each strategy can be unit-tested independently.  
+- **Separation of concerns**: Business logic (`AssignmentService`) is free from selection rules.  
+
+---
+
+## When to Use Strategy Pattern
+
+Use it when:
+
+- You have multiple ways of doing the same thing.
+- You need to switch algorithms at runtime.
+- You want to avoid cluttered `if-else` or `switch` chains.
+- You want new behaviors to be added easily.
+
+Examples in the real world:
+
+- Payment methods (credit card, UPI, PayPal).  
+- Sorting algorithms (by name, by price, by rating).  
+- Compression (zip, gzip, rar).  
+- Game AI (aggressive vs defensive strategy).  
+
+---
+
+## Next Steps / Exercises
+
+- Add a new strategy: *“Best Value Strategy”* (balances cost and rating).  
+- Ask the user via CLI which strategy to apply.  
+- Explore how Dependency Injection frameworks (like Spring) can auto-wire strategies.  
+
+---
 
 ## Conclusion
-The Strategy pattern equips you to design flexible Java systems with interchangeable algorithms. By mastering this behavioral pattern, you’ll optimize software, ensure maintainability, and teach others effectively. This advances your progress in Section 3 of the *Official CTO* journey.
 
-**Next Step**: Explore [Observer Pattern](/interview-section/design-patterns/observer-pattern) to manage event-driven systems, or check out [all sections](/interview-section/) to continue your journey.
+The Strategy Pattern allows us to **decouple algorithms from the code that uses them**.  
+In our service provider assignment example, customers can select whether they want the cheapest or the best-rated provider — all without changing the core service logic.  
 
----
-
-<footer>
-  <p>Connect: <a href="https://github.com/your-profile">GitHub</a> | <a href="https://linkedin.com/in/your-profile">LinkedIn</a></p>
-  <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-  <p>&copy; 2025 Official CTO. All rights reserved.</p>
-</footer>
+Whenever you see branching logic to choose between multiple algorithms, consider replacing it with the Strategy Pattern for cleaner, extensible, and testable design.
