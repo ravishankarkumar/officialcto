@@ -35,6 +35,7 @@ export default defineConfig({
           { text: 'Mock Practice', link: '/interview-section/mocks' }
         ]
       },
+      { text: 'Blogs', link: '/blogs'},
       { text: 'About', link: '/about' },
       { text: 'Contact', link: '/contact' }
     ],
