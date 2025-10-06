@@ -9,7 +9,7 @@ export default defineConfig({
   cleanUrls: true,
   head: [
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css' }],
-    ['link', { rel: 'icon', href: 'https://officialcto.com/images/favicon.png' }]
+    ['link', { rel: 'icon', href: 'https://officialcto.com/images/favicon_io/android-chrome-192x192.png' }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
