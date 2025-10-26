@@ -32,10 +32,11 @@ export default defineConfig({
           { text: 'Behavioral Skills', link: '/interview-section/behavioral' },
           { text: 'Clean Code', link: '/interview-section/clean-code' },
           { text: 'Refactoring', link: '/interview-section/refactoring' },
-          { text: 'Mock Practice', link: '/interview-section/mocks' }
+          { text: 'Mock Practice', link: '/interview-section/mocks' },
+          { text: 'External Resources', link: '/interview-section/external-resources' }
         ]
       },
-      { text: 'Blogs', link: '/blogs'},
+      { text: 'Blogs', link: '/blogs' },
       { text: 'About', link: '/about' },
       { text: 'Contact', link: '/contact' }
     ],
@@ -444,6 +445,14 @@ export default defineConfig({
             { text: 'GC Implementations in HotSpot JVM', link: '/interview-section/oop-java/memory-gc/gc_hotspot' },
             { text: 'Tuning & Monitoring Garbage Collection in JVM', link: '/interview-section/oop-java/memory-gc/gc_tuning_monitoring' },
             { text: 'Advanced GC Topics in Java', link: '/interview-section/oop-java/memory-gc/gc_advanced_topics' }
+          ]
+        },
+        {
+          text: 'Handling race conditions in Java',
+          items: [
+            { text: 'Race Conditions in Java', link: '/interview-section/oop-java/race-condition/introduction' },
+            { text: 'Preventing Race Conditions in Java', link: '/interview-section/oop-java/race-condition/preventing-race-conditions-java' },
+            { text: 'Advanced topics and Design Patterns', link: '/interview-section/oop-java/race-condition/advanced-topics-design-patterns-java'}
           ]
         },
         {
