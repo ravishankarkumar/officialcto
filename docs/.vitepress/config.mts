@@ -33,7 +33,7 @@ export default defineConfig({
           { text: 'Clean Code', link: '/interview-section/clean-code' },
           { text: 'Refactoring', link: '/interview-section/refactoring' },
           { text: 'Mock Practice', link: '/interview-section/mocks' },
-          { text: 'External Resources', link: '/interview-section/external-resources' }
+          { text: 'Interview Experience', link: '/interview-section/interview-experiences' }
         ]
       },
       { text: 'Blogs', link: '/blogs' },

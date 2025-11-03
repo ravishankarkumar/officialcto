@@ -10,7 +10,7 @@ There are certain patterns that are used for scaling simple monolithic structure
 
 **NOTE**: There are many philosophies in designing a high level architecture of an application including API-First principle, DevOps principle ("The phoenix project" book) and 12-factor app principle. In our case, we will try to follow [15 factor app principle](https://developer.ibm.com/articles/15-factor-applications/), which is an extension of [12 factor app principle](https://12factor.net/) to guide us in our journey. If we follow 12/15-factor app principle, it justifies our action, such as stateless architecture etc.
 
-::: info mnemonic(trick) to memorise 15-factor app methodology (developed by official CTO)
+::: info mnemonic(trick) to memorise 15-factor app methodology
 1. (Codebase) One codebase, one application
 2. API first
 3. Dependency management

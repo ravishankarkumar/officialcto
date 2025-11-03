@@ -346,7 +346,7 @@ Languages like **Java (synchronized blocks)** and **pthreads** implement monitor
 - **Livelock** = two people stepping aside endlessly, blocking each other.  
 
 
-## 9. (Bonus) Banker’s Algorithm (Deadlock Avoidance)
+## 9. Banker’s Algorithm (Deadlock Avoidance)
 
 The **Banker’s Algorithm** (by Dijkstra) is used for **deadlock avoidance**.  
 It ensures the system never enters an **unsafe state** where deadlock is possible.

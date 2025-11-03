@@ -4,8 +4,22 @@ description: Links for Karat Interviews
 # image: /images/cg_gpu_tpu.png
 keywords:
   - Karat
-  - ATlassian Karat
+  - Atlassian
 ---
+
+# Karat Interview round for Atlassian
+
+## Karat Round 1
+
+> Date: 30th October 2025
+
+> Role: P50(Backend) - Senior Software Engineer
+
+> Status: Rejected
+
+## Points to keep in ming
+
+[Points to keep in mind](/interview-section/interview-experiences/karat/points-to-keep-in-mind)
 
 ## External Links
 
@@ -15,7 +29,7 @@ keywords:
 
 [External - karat official](https://karat.com/guide-to-technical-interviews/)
 
-[example](https://leetcode.com/playground/UuNgWiaL)
+[Example - longest common substring](https://leetcode.com/playground/UuNgWiaL)
 
 [interview query](https://www.interviewquery.com/interview-guides/atlassian-software-engineer)
 
@@ -33,6 +47,6 @@ keywords:
 
 ## Few internal links
 
-[Linked List vs Array](/interview-section/external-resources/karat/linked_list_vs_array)
+[Linked List vs Array](/interview-section/interview-experiences/karat/linked_list_vs_array)
 
-[Detect cycle in Linked List](/interview-section/external-resources/karat/detect_cycle_linked_list)
+[Detect cycle in Linked List](/interview-section/interview-experiences/karat/detect_cycle_linked_list)

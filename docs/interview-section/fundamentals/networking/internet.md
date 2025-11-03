@@ -1,6 +1,9 @@
 ---
 title: How the Internet Works
 description: A step-by-step journey of how the internet works — from typing a URL to rendering a web page, with supporting explanations of DNS, IP, routing, and NAT.
+tags: ["Networking", "DNS", "Web", "Interview Prep"]
+date: 2025-10-27
+author: Ravi Shankar
 ---
 
 # How the Internet Works: From URL to Website  
