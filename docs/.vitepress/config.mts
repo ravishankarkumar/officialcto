@@ -655,7 +655,10 @@ export default defineConfig({
           items: [
             { text: 'Event Loop', link: '/interview-section/nodejs/event-loop' }
           ]
-        }
+        },
+        { text: 'Common JS questions', link: '/interview-section/nodejs/javascript/common' },
+        { text: 'Backend JS', link: '/interview-section/nodejs/javascript/backend' },
+        { text: 'Frontend JS', link: '/interview-section/nodejs/javascript/frontend' }
       ],
     },
     socialLinks: [
