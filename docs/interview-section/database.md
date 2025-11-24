@@ -23,7 +23,7 @@ This series is structured to take you from **basics → advanced → real-world 
    Understanding consistency, availability, and partition tolerance in distributed systems.  
 4. [Database Indexing](/interview-section/database/indexing.md)  
    How indexes speed up queries, different indexing techniques, and common pitfalls.  
-5. [Sharding vs Replication](/interview-section/database/sharding-vs-replication.md)  
+5. [Sharding vs Replication vs Partitioning](/interview-section/database/sharding-vs-replication-vs-partitioning.md)  
    Core scaling strategies, when to use them, and their trade-offs.
 
 ---

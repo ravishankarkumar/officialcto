@@ -97,7 +97,7 @@ export default defineConfig({
             { text: 'SQL vs NoSQL', link: '/interview-section/database/sql-vs-nosql' },
             { text: 'CAP Theorem & Consistency Models', link: '/interview-section/database/cap-theorem' },
             { text: 'Database Indexing', link: '/interview-section/database/indexing' },
-            { text: 'Sharding vs Replication', link: '/interview-section/database/sharding-vs-replication' }
+            { text: 'Sharding vs Replication vs partitioning', link: '/interview-section/database/sharding-vs-replication-vs-partitioning' }
           ]
         },
         {

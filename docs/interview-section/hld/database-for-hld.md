@@ -29,7 +29,7 @@ This page is a **one-pager summary** of key database concepts for HLD interviews
   - Multi-primary (many writes, conflict resolution needed).  
 - **Sharding**: split data across nodes (range, hash, directory).  
 
-🔗 Deep dive: [Sharding vs Replication](/interview-section/database/sharding-vs-replication.md)  
+🔗 Deep dive: [Sharding vs Replication vs Partitioning](/interview-section/database/sharding-vs-replication-vs-partitioning.md)  
 🔗 Deep dive: [Scaling Patterns](/interview-section/database/scaling-patterns.md)
 
 ---

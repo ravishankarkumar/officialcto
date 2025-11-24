@@ -157,7 +157,7 @@ When asked about **database internals** in interviews:
 ---
 
 ## Next Steps
-👉 Revisit [Sharding vs Replication](/interview-section/database/sharding-vs-replication.md) and [Scaling Patterns](/interview-section/database/scaling-patterns.md) to see how these internals play into distributed scaling.
+👉 Revisit [Sharding vs Replication vs Partitioning](/interview-section/database/sharding-vs-replication-vs-partitioning.md) and [Scaling Patterns](/interview-section/database/scaling-patterns.md) to see how these internals play into distributed scaling.
 
 ---
 

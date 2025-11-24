@@ -4,8 +4,9 @@
 
 I can't paste the questions here, because Karat in known to ask people to take it down and initiate some form of action. But, largey the questions are available on different platforms where users can paste it anonymously.
 
-## 🧩 1. Understanding the Karat Interview Format
+## 1. Understanding the Karat Interview Format
 
+The interview format is different for different
 Karat interviews are **structured technical interviews** often focused on:
 
 - **Coding problems** (data structures, algorithms)

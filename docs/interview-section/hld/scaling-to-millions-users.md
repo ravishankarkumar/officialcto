@@ -145,7 +145,7 @@ Please note that incorrect sharding can lead to hotspot problem. Also, sharding 
 
 Oftentimes, sharding is used in combination with replication to achieve optimal results.
 
-[Please read about sharding vs replication here](/interview-section/database/sharding-vs-replication).
+[Please read about sharding vs replication vs replication here](/interview-section/database/sharding-vs-replication-vs-partitioning).
 
 ### Bottleneck Mitigation
 

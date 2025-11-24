@@ -172,7 +172,7 @@ When asked *“How do you optimize slow queries?”*:
 ---
 
 ## Next Steps
-👉 Continue with [Sharding vs Replication](/interview-section/database/sharding-vs-replication.md) to learn scaling strategies beyond indexing.
+👉 Continue with [Sharding vs Replication vs Partitioning](/interview-section/database/sharding-vs-replication-vs-partitioning.md) to learn scaling strategies beyond indexing.
 
 ---
 
