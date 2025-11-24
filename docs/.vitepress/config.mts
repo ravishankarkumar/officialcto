@@ -649,6 +649,7 @@ export default defineConfig({
         }
       ],
       '/interview-section/nodejs': [
+        { text: 'Node specific questions', link: '/interview-section/nodejs/node-specific' },
         {
           text: 'Core JavaScript & Node.js Concepts',
           link: '/interview-section/nodejs',

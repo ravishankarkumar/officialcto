@@ -10,7 +10,19 @@ Welcome — this page is the **root/hub** for all Node.js interview material on 
 > **Audience:** Job-seekers (junior → senior), interviewers, hiring managers, and engineering mentors.
 
 
+--- 
+
+[Node specific](/interview-section/nodejs/node-specific)
+
 [Event Loop](/interview-section/nodejs/event-loop)
+
+[Common JS](/interview-section/nodejs/javascript/common)
+
+[Backend JS](/interview-section/nodejs/javascript/backend)
+
+[Frontend JS](/interview-section/nodejs/javascript/frontend)
+
+
 <!-- ---
 
 ## How this hub is organized
