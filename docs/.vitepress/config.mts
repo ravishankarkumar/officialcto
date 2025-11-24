@@ -33,7 +33,8 @@ export default defineConfig({
           { text: 'Clean Code', link: '/interview-section/clean-code' },
           { text: 'Refactoring', link: '/interview-section/refactoring' },
           { text: 'Mock Practice', link: '/interview-section/mocks' },
-          { text: 'Interview Experience', link: '/interview-section/interview-experiences' }
+          { text: 'Interview Experience', link: '/interview-section/interview-experiences' },
+          { text: 'NodeJS', link: '/interview-section/nodejs' }
         ]
       },
       { text: 'Blogs', link: '/blogs' },
@@ -646,7 +647,16 @@ export default defineConfig({
             { text: 'Common terms in Infra and System Design', link: '/interview-section/fundamentals/misc/common_terms' }
           ]
         }
-      ]
+      ],
+      '/interview-section/nodejs': [
+        {
+          text: 'Core JavaScript & Node.js Concepts',
+          link: '/interview-section/nodejs',
+          items: [
+            { text: 'Event Loop', link: '/interview-section/nodejs/event-loop' }
+          ]
+        }
+      ],
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ravishankarkumar/officialcto' }
