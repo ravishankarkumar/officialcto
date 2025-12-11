@@ -5,6 +5,8 @@ description: A complete 12,000-word guide to the Java Collections Framework and 
 
 # Collections Framework & Hashing in Java
 
+[takeuforward article on Java Collections Framework](https://takeuforward.org/data-structure/java-collections)
+
 The Java Collections Framework (JCF) is one of the most powerful parts of the Java platform. It provides data structures and algorithms that developers use daily. Combined with the concept of **hashing**, it makes storing, retrieving, and organizing data efficient. This mega-guide (~12,000 words) will serve as a **definitive reference** for both learning and interview preparation.
 
 ---

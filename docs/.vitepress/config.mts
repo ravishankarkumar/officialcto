@@ -38,6 +38,7 @@ export default defineConfig({
         ]
       },
       { text: 'Blogs', link: '/blogs' },
+      { text: 'My works', link: '/my-works' },
       { text: 'About', link: '/about' },
       { text: 'Contact', link: '/contact' }
     ],
@@ -482,9 +483,9 @@ export default defineConfig({
           text: 'Design Patterns',
           items: [
             { text: 'Overview', link: '/interview-section/design-patterns' },
+            { text: 'GFG Cheat sheet', link: 'https://www.geeksforgeeks.org/system-design/design-patterns-cheat-sheet-when-to-use-which-design-pattern' },
             {
               text: 'Introduction', items: [
-                { text: 'Introduction to Design Patterns', link: '/interview-section/design-patterns/intro-design-patterns' },
                 { text: 'Classification of Design Patterns', link: '/interview-section/design-patterns/patterns-classification' }
               ]
             },

@@ -132,7 +132,3 @@ These patterns often *compose* multiple GoF patterns internally (e.g., MVC uses 
 - *Clean Architecture* (Robert C. Martin) — architectural guidance and dependency rules.
 
 ---
-
-<footer>
-  <p>Next: Explore <a href="/interview-section/design-patterns/intro-design-patterns">Introduction to Design Patterns</a> or view the <a href="/interview-section/design-patterns">Design Patterns Hub</a>.</p>
-</footer>
